@@ -1,0 +1,870 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		063647E995DFE6403354E00B /* Pods_HealthSelf_HealthSelfUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27364A9B2DBB36388175765 /* Pods_HealthSelf_HealthSelfUITests.framework */; };
+		130C728503F83B1455C2923E /* Pods_HealthSelfTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5294D67AFAACE1C2561EF761 /* Pods_HealthSelfTests.framework */; };
+		2A3C23BF293DACB0008C8D07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23BE293DACB0008C8D07 /* AppDelegate.m */; };
+		2A3C23C2293DACB0008C8D07 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23C1293DACB0008C8D07 /* SceneDelegate.m */; };
+		2A3C23C5293DACB0008C8D07 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23C4293DACB0008C8D07 /* ViewController.m */; };
+		2A3C23C8293DACB0008C8D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C23C6293DACB0008C8D07 /* Main.storyboard */; };
+		2A3C23CA293DACB2008C8D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C23C9293DACB2008C8D07 /* Assets.xcassets */; };
+		2A3C23CD293DACB2008C8D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C23CB293DACB2008C8D07 /* LaunchScreen.storyboard */; };
+		2A3C23D0293DACB2008C8D07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23CF293DACB2008C8D07 /* main.m */; };
+		2A3C23DA293DACB2008C8D07 /* HealthSelfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23D9293DACB2008C8D07 /* HealthSelfTests.m */; };
+		2A3C23E4293DACB2008C8D07 /* HealthSelfUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23E3293DACB2008C8D07 /* HealthSelfUITests.m */; };
+		2A3C23E6293DACB2008C8D07 /* HealthSelfUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23E5293DACB2008C8D07 /* HealthSelfUITestsLaunchTests.m */; };
+		2A3C23F6293DACD7008C8D07 /* ModelLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23F5293DACD7008C8D07 /* ModelLogin.m */; };
+		2A3C23FC293DAD45008C8D07 /* ViewLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23FB293DAD45008C8D07 /* ViewLogin.m */; };
+		2A3C23FF293DAD54008C8D07 /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C23FE293DAD54008C8D07 /* ViewControllerLogin.m */; };
+		2A3C2406293DAE69008C8D07 /* ModelRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C2405293DAE69008C8D07 /* ModelRegister.m */; };
+		2A3C2409293DAE82008C8D07 /* ViewRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C2408293DAE82008C8D07 /* ViewRegister.m */; };
+		2A3C240C293DAE93008C8D07 /* ViewControllerRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C240B293DAE93008C8D07 /* ViewControllerRegister.m */; };
+		2A3C240F293DF9E6008C8D07 /* jiankang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C240E293DF9E6008C8D07 /* jiankang.png */; };
+		2A3C2411293E1076008C8D07 /* weibiaoti--.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C2410293E1076008C8D07 /* weibiaoti--.png */; };
+		2A3C2413293EEE3B008C8D07 /* shoujihao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C2412293EEE3B008C8D07 /* shoujihao.png */; };
+		FE54BA50F953BA8FEC71BBEB /* Pods_HealthSelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E3397042EFB7287379704B /* Pods_HealthSelf.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A3C23D6293DACB2008C8D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A3C23B2293DACB0008C8D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A3C23B9293DACB0008C8D07;
+			remoteInfo = HealthSelf;
+		};
+		2A3C23E0293DACB2008C8D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A3C23B2293DACB0008C8D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A3C23B9293DACB0008C8D07;
+			remoteInfo = HealthSelf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02E3397042EFB7287379704B /* Pods_HealthSelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthSelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3C23BA293DACB0008C8D07 /* HealthSelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthSelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3C23BD293DACB0008C8D07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A3C23BE293DACB0008C8D07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A3C23C0293DACB0008C8D07 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		2A3C23C1293DACB0008C8D07 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		2A3C23C3293DACB0008C8D07 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2A3C23C4293DACB0008C8D07 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2A3C23C7293DACB0008C8D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A3C23C9293DACB2008C8D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A3C23CC293DACB2008C8D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A3C23CE293DACB2008C8D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A3C23CF293DACB2008C8D07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A3C23D5293DACB2008C8D07 /* HealthSelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthSelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3C23D9293DACB2008C8D07 /* HealthSelfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthSelfTests.m; sourceTree = "<group>"; };
+		2A3C23DF293DACB2008C8D07 /* HealthSelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthSelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3C23E3293DACB2008C8D07 /* HealthSelfUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthSelfUITests.m; sourceTree = "<group>"; };
+		2A3C23E5293DACB2008C8D07 /* HealthSelfUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthSelfUITestsLaunchTests.m; sourceTree = "<group>"; };
+		2A3C23F4293DACD7008C8D07 /* ModelLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelLogin.h; sourceTree = "<group>"; };
+		2A3C23F5293DACD7008C8D07 /* ModelLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelLogin.m; sourceTree = "<group>"; };
+		2A3C23FA293DAD45008C8D07 /* ViewLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewLogin.h; sourceTree = "<group>"; };
+		2A3C23FB293DAD45008C8D07 /* ViewLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewLogin.m; sourceTree = "<group>"; };
+		2A3C23FD293DAD54008C8D07 /* ViewControllerLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
+		2A3C23FE293DAD54008C8D07 /* ViewControllerLogin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
+		2A3C2404293DAE69008C8D07 /* ModelRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelRegister.h; sourceTree = "<group>"; };
+		2A3C2405293DAE69008C8D07 /* ModelRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelRegister.m; sourceTree = "<group>"; };
+		2A3C2407293DAE82008C8D07 /* ViewRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewRegister.h; sourceTree = "<group>"; };
+		2A3C2408293DAE82008C8D07 /* ViewRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewRegister.m; sourceTree = "<group>"; };
+		2A3C240A293DAE93008C8D07 /* ViewControllerRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerRegister.h; sourceTree = "<group>"; };
+		2A3C240B293DAE93008C8D07 /* ViewControllerRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRegister.m; sourceTree = "<group>"; };
+		2A3C240E293DF9E6008C8D07 /* jiankang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiankang.png; sourceTree = "<group>"; };
+		2A3C2410293E1076008C8D07 /* weibiaoti--.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibiaoti--.png"; sourceTree = "<group>"; };
+		2A3C2412293EEE3B008C8D07 /* shoujihao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoujihao.png; sourceTree = "<group>"; };
+		49624CA0E928BE8E740CB95E /* Pods-HealthSelf-HealthSelfUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4AC5ED638484572A00038F25 /* Pods-HealthSelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelfTests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelfTests/Pods-HealthSelfTests.release.xcconfig"; sourceTree = "<group>"; };
+		5294D67AFAACE1C2561EF761 /* Pods_HealthSelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthSelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5B890E30F327BE16B54812 /* Pods-HealthSelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf.release.xcconfig"; path = "Target Support Files/Pods-HealthSelf/Pods-HealthSelf.release.xcconfig"; sourceTree = "<group>"; };
+		74D54003B57851DBAC97A34D /* Pods-HealthSelf-HealthSelfUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf-HealthSelfUITests.debug.xcconfig"; path = "Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B51941EC480BE2995D40F11A /* Pods-HealthSelfTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelfTests.debug.xcconfig"; path = "Target Support Files/Pods-HealthSelfTests/Pods-HealthSelfTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F27364A9B2DBB36388175765 /* Pods_HealthSelf_HealthSelfUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthSelf_HealthSelfUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6C566F2E9F0D124CB925D14 /* Pods-HealthSelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf.debug.xcconfig"; path = "Target Support Files/Pods-HealthSelf/Pods-HealthSelf.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A3C23B7293DACB0008C8D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE54BA50F953BA8FEC71BBEB /* Pods_HealthSelf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23D2293DACB2008C8D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				130C728503F83B1455C2923E /* Pods_HealthSelfTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23DC293DACB2008C8D07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				063647E995DFE6403354E00B /* Pods_HealthSelf_HealthSelfUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F3E0DC27F8B39765256787F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6C566F2E9F0D124CB925D14 /* Pods-HealthSelf.debug.xcconfig */,
+				5F5B890E30F327BE16B54812 /* Pods-HealthSelf.release.xcconfig */,
+				74D54003B57851DBAC97A34D /* Pods-HealthSelf-HealthSelfUITests.debug.xcconfig */,
+				49624CA0E928BE8E740CB95E /* Pods-HealthSelf-HealthSelfUITests.release.xcconfig */,
+				B51941EC480BE2995D40F11A /* Pods-HealthSelfTests.debug.xcconfig */,
+				4AC5ED638484572A00038F25 /* Pods-HealthSelfTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2A3C23B1293DACB0008C8D07 = {
+			isa = PBXGroup;
+			children = (
+				2A3C23BC293DACB0008C8D07 /* HealthSelf */,
+				2A3C23D8293DACB2008C8D07 /* HealthSelfTests */,
+				2A3C23E2293DACB2008C8D07 /* HealthSelfUITests */,
+				2A3C23BB293DACB0008C8D07 /* Products */,
+				1F3E0DC27F8B39765256787F /* Pods */,
+				F0C85A3EAC82983CD0BBD42E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2A3C23BB293DACB0008C8D07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23BA293DACB0008C8D07 /* HealthSelf.app */,
+				2A3C23D5293DACB2008C8D07 /* HealthSelfTests.xctest */,
+				2A3C23DF293DACB2008C8D07 /* HealthSelfUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A3C23BC293DACB0008C8D07 /* HealthSelf */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C240D293DF281008C8D07 /* Coins */,
+				2A3C2400293DAE46008C8D07 /* Register */,
+				2A3C23F2293DACBA008C8D07 /* Login */,
+				2A3C23BD293DACB0008C8D07 /* AppDelegate.h */,
+				2A3C23BE293DACB0008C8D07 /* AppDelegate.m */,
+				2A3C23C0293DACB0008C8D07 /* SceneDelegate.h */,
+				2A3C23C1293DACB0008C8D07 /* SceneDelegate.m */,
+				2A3C23C3293DACB0008C8D07 /* ViewController.h */,
+				2A3C23C4293DACB0008C8D07 /* ViewController.m */,
+				2A3C23C6293DACB0008C8D07 /* Main.storyboard */,
+				2A3C23C9293DACB2008C8D07 /* Assets.xcassets */,
+				2A3C23CB293DACB2008C8D07 /* LaunchScreen.storyboard */,
+				2A3C23CE293DACB2008C8D07 /* Info.plist */,
+				2A3C23CF293DACB2008C8D07 /* main.m */,
+			);
+			path = HealthSelf;
+			sourceTree = "<group>";
+		};
+		2A3C23D8293DACB2008C8D07 /* HealthSelfTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23D9293DACB2008C8D07 /* HealthSelfTests.m */,
+			);
+			path = HealthSelfTests;
+			sourceTree = "<group>";
+		};
+		2A3C23E2293DACB2008C8D07 /* HealthSelfUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23E3293DACB2008C8D07 /* HealthSelfUITests.m */,
+				2A3C23E5293DACB2008C8D07 /* HealthSelfUITestsLaunchTests.m */,
+			);
+			path = HealthSelfUITests;
+			sourceTree = "<group>";
+		};
+		2A3C23F2293DACBA008C8D07 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23F8293DAD28008C8D07 /* C */,
+				2A3C23F7293DAD23008C8D07 /* V */,
+				2A3C23F3293DACC6008C8D07 /* M */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2A3C23F3293DACC6008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23F4293DACD7008C8D07 /* ModelLogin.h */,
+				2A3C23F5293DACD7008C8D07 /* ModelLogin.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2A3C23F7293DAD23008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23FA293DAD45008C8D07 /* ViewLogin.h */,
+				2A3C23FB293DAD45008C8D07 /* ViewLogin.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2A3C23F8293DAD28008C8D07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C23FD293DAD54008C8D07 /* ViewControllerLogin.h */,
+				2A3C23FE293DAD54008C8D07 /* ViewControllerLogin.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2A3C2400293DAE46008C8D07 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C2403293DAE55008C8D07 /* C */,
+				2A3C2402293DAE51008C8D07 /* V */,
+				2A3C2401293DAE4D008C8D07 /* M */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		2A3C2401293DAE4D008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C2404293DAE69008C8D07 /* ModelRegister.h */,
+				2A3C2405293DAE69008C8D07 /* ModelRegister.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2A3C2402293DAE51008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C2407293DAE82008C8D07 /* ViewRegister.h */,
+				2A3C2408293DAE82008C8D07 /* ViewRegister.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2A3C2403293DAE55008C8D07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C240A293DAE93008C8D07 /* ViewControllerRegister.h */,
+				2A3C240B293DAE93008C8D07 /* ViewControllerRegister.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2A3C240D293DF281008C8D07 /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C2410293E1076008C8D07 /* weibiaoti--.png */,
+				2A3C240E293DF9E6008C8D07 /* jiankang.png */,
+				2A3C2412293EEE3B008C8D07 /* shoujihao.png */,
+			);
+			path = Coins;
+			sourceTree = "<group>";
+		};
+		F0C85A3EAC82983CD0BBD42E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02E3397042EFB7287379704B /* Pods_HealthSelf.framework */,
+				F27364A9B2DBB36388175765 /* Pods_HealthSelf_HealthSelfUITests.framework */,
+				5294D67AFAACE1C2561EF761 /* Pods_HealthSelfTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A3C23B9293DACB0008C8D07 /* HealthSelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A3C23E9293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelf" */;
+			buildPhases = (
+				EE6CC32D95BC124151374573 /* [CP] Check Pods Manifest.lock */,
+				2A3C23B6293DACB0008C8D07 /* Sources */,
+				2A3C23B7293DACB0008C8D07 /* Frameworks */,
+				2A3C23B8293DACB0008C8D07 /* Resources */,
+				B8E7B0971B1F1A0EB0FE1086 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HealthSelf;
+			productName = HealthSelf;
+			productReference = 2A3C23BA293DACB0008C8D07 /* HealthSelf.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A3C23D4293DACB2008C8D07 /* HealthSelfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A3C23EC293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelfTests" */;
+			buildPhases = (
+				A076FAD5AEF7077055B6B41C /* [CP] Check Pods Manifest.lock */,
+				2A3C23D1293DACB2008C8D07 /* Sources */,
+				2A3C23D2293DACB2008C8D07 /* Frameworks */,
+				2A3C23D3293DACB2008C8D07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A3C23D7293DACB2008C8D07 /* PBXTargetDependency */,
+			);
+			name = HealthSelfTests;
+			productName = HealthSelfTests;
+			productReference = 2A3C23D5293DACB2008C8D07 /* HealthSelfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A3C23DE293DACB2008C8D07 /* HealthSelfUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A3C23EF293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelfUITests" */;
+			buildPhases = (
+				5AF3E8A1B2D84A1646C2CA94 /* [CP] Check Pods Manifest.lock */,
+				2A3C23DB293DACB2008C8D07 /* Sources */,
+				2A3C23DC293DACB2008C8D07 /* Frameworks */,
+				2A3C23DD293DACB2008C8D07 /* Resources */,
+				6939F6C827534DB33AB731DF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A3C23E1293DACB2008C8D07 /* PBXTargetDependency */,
+			);
+			name = HealthSelfUITests;
+			productName = HealthSelfUITests;
+			productReference = 2A3C23DF293DACB2008C8D07 /* HealthSelfUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A3C23B2293DACB0008C8D07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					2A3C23B9293DACB0008C8D07 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					2A3C23D4293DACB2008C8D07 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 2A3C23B9293DACB0008C8D07;
+					};
+					2A3C23DE293DACB2008C8D07 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 2A3C23B9293DACB0008C8D07;
+					};
+				};
+			};
+			buildConfigurationList = 2A3C23B5293DACB0008C8D07 /* Build configuration list for PBXProject "HealthSelf" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A3C23B1293DACB0008C8D07;
+			productRefGroup = 2A3C23BB293DACB0008C8D07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A3C23B9293DACB0008C8D07 /* HealthSelf */,
+				2A3C23D4293DACB2008C8D07 /* HealthSelfTests */,
+				2A3C23DE293DACB2008C8D07 /* HealthSelfUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A3C23B8293DACB0008C8D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A3C2413293EEE3B008C8D07 /* shoujihao.png in Resources */,
+				2A3C2411293E1076008C8D07 /* weibiaoti--.png in Resources */,
+				2A3C23CD293DACB2008C8D07 /* LaunchScreen.storyboard in Resources */,
+				2A3C23CA293DACB2008C8D07 /* Assets.xcassets in Resources */,
+				2A3C240F293DF9E6008C8D07 /* jiankang.png in Resources */,
+				2A3C23C8293DACB0008C8D07 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23D3293DACB2008C8D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23DD293DACB2008C8D07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AF3E8A1B2D84A1646C2CA94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HealthSelf-HealthSelfUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6939F6C827534DB33AB731DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A076FAD5AEF7077055B6B41C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HealthSelfTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E7B0971B1F1A0EB0FE1086 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthSelf/Pods-HealthSelf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HealthSelf/Pods-HealthSelf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HealthSelf/Pods-HealthSelf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE6CC32D95BC124151374573 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HealthSelf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A3C23B6293DACB0008C8D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A3C2406293DAE69008C8D07 /* ModelRegister.m in Sources */,
+				2A3C23FF293DAD54008C8D07 /* ViewControllerLogin.m in Sources */,
+				2A3C23FC293DAD45008C8D07 /* ViewLogin.m in Sources */,
+				2A3C240C293DAE93008C8D07 /* ViewControllerRegister.m in Sources */,
+				2A3C23C5293DACB0008C8D07 /* ViewController.m in Sources */,
+				2A3C23BF293DACB0008C8D07 /* AppDelegate.m in Sources */,
+				2A3C23F6293DACD7008C8D07 /* ModelLogin.m in Sources */,
+				2A3C23D0293DACB2008C8D07 /* main.m in Sources */,
+				2A3C2409293DAE82008C8D07 /* ViewRegister.m in Sources */,
+				2A3C23C2293DACB0008C8D07 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23D1293DACB2008C8D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A3C23DA293DACB2008C8D07 /* HealthSelfTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A3C23DB293DACB2008C8D07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A3C23E6293DACB2008C8D07 /* HealthSelfUITestsLaunchTests.m in Sources */,
+				2A3C23E4293DACB2008C8D07 /* HealthSelfUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A3C23D7293DACB2008C8D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A3C23B9293DACB0008C8D07 /* HealthSelf */;
+			targetProxy = 2A3C23D6293DACB2008C8D07 /* PBXContainerItemProxy */;
+		};
+		2A3C23E1293DACB2008C8D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A3C23B9293DACB0008C8D07 /* HealthSelf */;
+			targetProxy = 2A3C23E0293DACB2008C8D07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A3C23C6293DACB0008C8D07 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A3C23C7293DACB0008C8D07 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A3C23CB293DACB2008C8D07 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A3C23CC293DACB2008C8D07 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A3C23E7293DACB2008C8D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2A3C23E8293DACB2008C8D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A3C23EA293DACB2008C8D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6C566F2E9F0D124CB925D14 /* Pods-HealthSelf.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthSelf/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelf";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A3C23EB293DACB2008C8D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F5B890E30F327BE16B54812 /* Pods-HealthSelf.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealthSelf/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelf";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A3C23ED293DACB2008C8D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B51941EC480BE2995D40F11A /* Pods-HealthSelfTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelfTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthSelf.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthSelf";
+			};
+			name = Debug;
+		};
+		2A3C23EE293DACB2008C8D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4AC5ED638484572A00038F25 /* Pods-HealthSelfTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelfTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthSelf.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HealthSelf";
+			};
+			name = Release;
+		};
+		2A3C23F0293DACB2008C8D07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74D54003B57851DBAC97A34D /* Pods-HealthSelf-HealthSelfUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelfUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthSelf;
+			};
+			name = Debug;
+		};
+		2A3C23F1293DACB2008C8D07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49624CA0E928BE8E740CB95E /* Pods-HealthSelf-HealthSelfUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-11111.HealthSelfUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HealthSelf;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A3C23B5293DACB0008C8D07 /* Build configuration list for PBXProject "HealthSelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A3C23E7293DACB2008C8D07 /* Debug */,
+				2A3C23E8293DACB2008C8D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A3C23E9293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A3C23EA293DACB2008C8D07 /* Debug */,
+				2A3C23EB293DACB2008C8D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A3C23EC293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A3C23ED293DACB2008C8D07 /* Debug */,
+				2A3C23EE293DACB2008C8D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A3C23EF293DACB2008C8D07 /* Build configuration list for PBXNativeTarget "HealthSelfUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A3C23F0293DACB2008C8D07 /* Debug */,
+				2A3C23F1293DACB2008C8D07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A3C23B2293DACB0008C8D07 /* Project object */;
+}
