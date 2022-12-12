@@ -28,6 +28,18 @@
 		2A3C240F293DF9E6008C8D07 /* jiankang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C240E293DF9E6008C8D07 /* jiankang.png */; };
 		2A3C2411293E1076008C8D07 /* weibiaoti--.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C2410293E1076008C8D07 /* weibiaoti--.png */; };
 		2A3C2413293EEE3B008C8D07 /* shoujihao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3C2412293EEE3B008C8D07 /* shoujihao.png */; };
+		2A3C248E2946FC4F008C8D07 /* ModelDiet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C248D2946FC4F008C8D07 /* ModelDiet.m */; };
+		2A3C24912946FC62008C8D07 /* VIewDiet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24902946FC62008C8D07 /* VIewDiet.m */; };
+		2A3C24972946FC8C008C8D07 /* ModelBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24962946FC8C008C8D07 /* ModelBody.m */; };
+		2A3C249A2946FC9F008C8D07 /* ViewBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24992946FC9F008C8D07 /* ViewBody.m */; };
+		2A3C249D2946FCB4008C8D07 /* ViewControllerBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C249C2946FCB4008C8D07 /* ViewControllerBody.m */; };
+		2A3C24A42946FD37008C8D07 /* ViewControllerDiet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24A32946FD37008C8D07 /* ViewControllerDiet.m */; };
+		2A3C24A72946FD60008C8D07 /* ModelCommunityShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24A62946FD60008C8D07 /* ModelCommunityShare.m */; };
+		2A3C24AA2946FD72008C8D07 /* ViewCommunityShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24A92946FD72008C8D07 /* ViewCommunityShare.m */; };
+		2A3C24AD2946FD87008C8D07 /* ViewControllerCommityShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24AC2946FD87008C8D07 /* ViewControllerCommityShare.m */; };
+		2A3C24B12946FDAC008C8D07 /* ViewControllerPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B02946FDAC008C8D07 /* ViewControllerPersonalInformation.m */; };
+		2A3C24B42946FDC6008C8D07 /* ViewPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B32946FDC6008C8D07 /* ViewPersonalInformation.m */; };
+		2A3C24B72946FDDA008C8D07 /* ModelPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B62946FDDA008C8D07 /* ModelPersonalInformation.m */; };
 		FE54BA50F953BA8FEC71BBEB /* Pods_HealthSelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E3397042EFB7287379704B /* Pods_HealthSelf.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +94,30 @@
 		2A3C240E293DF9E6008C8D07 /* jiankang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiankang.png; sourceTree = "<group>"; };
 		2A3C2410293E1076008C8D07 /* weibiaoti--.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibiaoti--.png"; sourceTree = "<group>"; };
 		2A3C2412293EEE3B008C8D07 /* shoujihao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoujihao.png; sourceTree = "<group>"; };
+		2A3C248C2946FC4F008C8D07 /* ModelDiet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelDiet.h; sourceTree = "<group>"; };
+		2A3C248D2946FC4F008C8D07 /* ModelDiet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelDiet.m; sourceTree = "<group>"; };
+		2A3C248F2946FC62008C8D07 /* VIewDiet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIewDiet.h; sourceTree = "<group>"; };
+		2A3C24902946FC62008C8D07 /* VIewDiet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIewDiet.m; sourceTree = "<group>"; };
+		2A3C24952946FC8C008C8D07 /* ModelBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelBody.h; sourceTree = "<group>"; };
+		2A3C24962946FC8C008C8D07 /* ModelBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelBody.m; sourceTree = "<group>"; };
+		2A3C24982946FC9F008C8D07 /* ViewBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewBody.h; sourceTree = "<group>"; };
+		2A3C24992946FC9F008C8D07 /* ViewBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewBody.m; sourceTree = "<group>"; };
+		2A3C249B2946FCB4008C8D07 /* ViewControllerBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerBody.h; sourceTree = "<group>"; };
+		2A3C249C2946FCB4008C8D07 /* ViewControllerBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerBody.m; sourceTree = "<group>"; };
+		2A3C24A22946FD37008C8D07 /* ViewControllerDiet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewControllerDiet.h; path = HealthSelf/Diet/ViewControllerDiet.h; sourceTree = SOURCE_ROOT; };
+		2A3C24A32946FD37008C8D07 /* ViewControllerDiet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewControllerDiet.m; path = HealthSelf/Diet/ViewControllerDiet.m; sourceTree = SOURCE_ROOT; };
+		2A3C24A52946FD60008C8D07 /* ModelCommunityShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelCommunityShare.h; sourceTree = "<group>"; };
+		2A3C24A62946FD60008C8D07 /* ModelCommunityShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelCommunityShare.m; sourceTree = "<group>"; };
+		2A3C24A82946FD72008C8D07 /* ViewCommunityShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewCommunityShare.h; sourceTree = "<group>"; };
+		2A3C24A92946FD72008C8D07 /* ViewCommunityShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewCommunityShare.m; sourceTree = "<group>"; };
+		2A3C24AB2946FD87008C8D07 /* ViewControllerCommityShare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerCommityShare.h; sourceTree = "<group>"; };
+		2A3C24AC2946FD87008C8D07 /* ViewControllerCommityShare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCommityShare.m; sourceTree = "<group>"; };
+		2A3C24AF2946FDAC008C8D07 /* ViewControllerPersonalInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPersonalInformation.h; sourceTree = "<group>"; };
+		2A3C24B02946FDAC008C8D07 /* ViewControllerPersonalInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerPersonalInformation.m; sourceTree = "<group>"; };
+		2A3C24B22946FDC6008C8D07 /* ViewPersonalInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewPersonalInformation.h; sourceTree = "<group>"; };
+		2A3C24B32946FDC6008C8D07 /* ViewPersonalInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewPersonalInformation.m; sourceTree = "<group>"; };
+		2A3C24B52946FDDA008C8D07 /* ModelPersonalInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelPersonalInformation.h; sourceTree = "<group>"; };
+		2A3C24B62946FDDA008C8D07 /* ModelPersonalInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelPersonalInformation.m; sourceTree = "<group>"; };
 		49624CA0E928BE8E740CB95E /* Pods-HealthSelf-HealthSelfUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AC5ED638484572A00038F25 /* Pods-HealthSelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelfTests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelfTests/Pods-HealthSelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		5294D67AFAACE1C2561EF761 /* Pods_HealthSelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthSelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				2A3C240D293DF281008C8D07 /* Coins */,
+				2A3C247F29462459008C8D07 /* PersonalInformation */,
+				2A3C247E2946243E008C8D07 /* CommunityShare */,
+				2A3C247D2946242B008C8D07 /* Body */,
+				2A3C247C29462409008C8D07 /* Diet */,
 				2A3C2400293DAE46008C8D07 /* Register */,
 				2A3C23F2293DACBA008C8D07 /* Login */,
 				2A3C23BD293DACB0008C8D07 /* AppDelegate.h */,
@@ -275,6 +315,154 @@
 				2A3C2412293EEE3B008C8D07 /* shoujihao.png */,
 			);
 			path = Coins;
+			sourceTree = "<group>";
+		};
+		2A3C247C29462409008C8D07 /* Diet */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24A12946FD1F008C8D07 /* Cc */,
+				2A3C24812946F9D6008C8D07 /* V */,
+				2A3C24802946F9CA008C8D07 /* M */,
+			);
+			path = Diet;
+			sourceTree = "<group>";
+		};
+		2A3C247D2946242B008C8D07 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24852946F9EE008C8D07 /* C */,
+				2A3C24842946F9EA008C8D07 /* V */,
+				2A3C24832946F9E6008C8D07 /* M */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		2A3C247E2946243E008C8D07 /* CommunityShare */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24882946FA02008C8D07 /* C */,
+				2A3C24872946F9FD008C8D07 /* V */,
+				2A3C24862946F9F3008C8D07 /* M */,
+			);
+			name = CommunityShare;
+			sourceTree = "<group>";
+		};
+		2A3C247F29462459008C8D07 /* PersonalInformation */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C248B2946FA11008C8D07 /* C */,
+				2A3C248A2946FA0C008C8D07 /* V */,
+				2A3C24892946FA05008C8D07 /* M */,
+			);
+			path = PersonalInformation;
+			sourceTree = "<group>";
+		};
+		2A3C24802946F9CA008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C248C2946FC4F008C8D07 /* ModelDiet.h */,
+				2A3C248D2946FC4F008C8D07 /* ModelDiet.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2A3C24812946F9D6008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C248F2946FC62008C8D07 /* VIewDiet.h */,
+				2A3C24902946FC62008C8D07 /* VIewDiet.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2A3C24832946F9E6008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24952946FC8C008C8D07 /* ModelBody.h */,
+				2A3C24962946FC8C008C8D07 /* ModelBody.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2A3C24842946F9EA008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24982946FC9F008C8D07 /* ViewBody.h */,
+				2A3C24992946FC9F008C8D07 /* ViewBody.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2A3C24852946F9EE008C8D07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C249B2946FCB4008C8D07 /* ViewControllerBody.h */,
+				2A3C249C2946FCB4008C8D07 /* ViewControllerBody.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2A3C24862946F9F3008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24A52946FD60008C8D07 /* ModelCommunityShare.h */,
+				2A3C24A62946FD60008C8D07 /* ModelCommunityShare.m */,
+			);
+			name = M;
+			sourceTree = "<group>";
+		};
+		2A3C24872946F9FD008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24A82946FD72008C8D07 /* ViewCommunityShare.h */,
+				2A3C24A92946FD72008C8D07 /* ViewCommunityShare.m */,
+			);
+			name = V;
+			sourceTree = "<group>";
+		};
+		2A3C24882946FA02008C8D07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24AB2946FD87008C8D07 /* ViewControllerCommityShare.h */,
+				2A3C24AC2946FD87008C8D07 /* ViewControllerCommityShare.m */,
+			);
+			name = C;
+			sourceTree = "<group>";
+		};
+		2A3C24892946FA05008C8D07 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24B52946FDDA008C8D07 /* ModelPersonalInformation.h */,
+				2A3C24B62946FDDA008C8D07 /* ModelPersonalInformation.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2A3C248A2946FA0C008C8D07 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24B22946FDC6008C8D07 /* ViewPersonalInformation.h */,
+				2A3C24B32946FDC6008C8D07 /* ViewPersonalInformation.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2A3C248B2946FA11008C8D07 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24AF2946FDAC008C8D07 /* ViewControllerPersonalInformation.h */,
+				2A3C24B02946FDAC008C8D07 /* ViewControllerPersonalInformation.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2A3C24A12946FD1F008C8D07 /* Cc */ = {
+			isa = PBXGroup;
+			children = (
+				2A3C24A22946FD37008C8D07 /* ViewControllerDiet.h */,
+				2A3C24A32946FD37008C8D07 /* ViewControllerDiet.m */,
+			);
+			path = Cc;
 			sourceTree = "<group>";
 		};
 		F0C85A3EAC82983CD0BBD42E /* Frameworks */ = {
@@ -528,13 +716,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3C24AA2946FD72008C8D07 /* ViewCommunityShare.m in Sources */,
 				2A3C2406293DAE69008C8D07 /* ModelRegister.m in Sources */,
 				2A3C23FF293DAD54008C8D07 /* ViewControllerLogin.m in Sources */,
+				2A3C24B12946FDAC008C8D07 /* ViewControllerPersonalInformation.m in Sources */,
+				2A3C249A2946FC9F008C8D07 /* ViewBody.m in Sources */,
+				2A3C24912946FC62008C8D07 /* VIewDiet.m in Sources */,
+				2A3C24A72946FD60008C8D07 /* ModelCommunityShare.m in Sources */,
+				2A3C24A42946FD37008C8D07 /* ViewControllerDiet.m in Sources */,
+				2A3C24972946FC8C008C8D07 /* ModelBody.m in Sources */,
+				2A3C24B42946FDC6008C8D07 /* ViewPersonalInformation.m in Sources */,
+				2A3C24B72946FDDA008C8D07 /* ModelPersonalInformation.m in Sources */,
 				2A3C23FC293DAD45008C8D07 /* ViewLogin.m in Sources */,
 				2A3C240C293DAE93008C8D07 /* ViewControllerRegister.m in Sources */,
+				2A3C248E2946FC4F008C8D07 /* ModelDiet.m in Sources */,
 				2A3C23C5293DACB0008C8D07 /* ViewController.m in Sources */,
 				2A3C23BF293DACB0008C8D07 /* AppDelegate.m in Sources */,
 				2A3C23F6293DACD7008C8D07 /* ModelLogin.m in Sources */,
+				2A3C24AD2946FD87008C8D07 /* ViewControllerCommityShare.m in Sources */,
+				2A3C249D2946FCB4008C8D07 /* ViewControllerBody.m in Sources */,
 				2A3C23D0293DACB2008C8D07 /* main.m in Sources */,
 				2A3C2409293DAE82008C8D07 /* ViewRegister.m in Sources */,
 				2A3C23C2293DACB0008C8D07 /* SceneDelegate.m in Sources */,

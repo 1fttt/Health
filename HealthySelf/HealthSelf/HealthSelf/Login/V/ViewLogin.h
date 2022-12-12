@@ -20,9 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *imageViewUserName;
 @property (nonatomic, strong) UIImageView *imageViewPassWord;
 
-
 @property (nonatomic, strong) UIButton *buttontLogin;
 @property (nonatomic, strong) UIButton *buttontRegister;
+
+@property (nonatomic, strong) UILabel *labelHealth;
 
 @property (nonatomic, copy) NSDictionary* dictionaryUser;
 

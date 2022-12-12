@@ -11,16 +11,19 @@
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 @implementation ViewRegister
 - (void)viewInit {
-    UIColor *newGreen = [UIColor colorWithRed:111 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
+    UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
     UIColor *newGreen2 = [UIColor colorWithRed:69 / 255.0f green:113 / 255.0f blue:81 / 255.0f alpha:1.0];
+    UIColor *newBackGreen = [UIColor colorWithRed:20 / 255.0f green:220 / 255.0f blue:150 / 255.0f alpha:1.0];
+    self.backgroundColor = newBackGreen;
 #pragma mark TELNumber
     //手机号
     self.textFieldTelNumber = [[UITextField alloc] init];
     self.textFieldTelNumber .placeholder = @"请输入手机号                               +86";
     self.textFieldTelNumber .borderStyle = UITextBorderStyleRoundedRect;
     self.textFieldTelNumber .keyboardType = UIKeyboardTypeURL;
-    self.textFieldTelNumber .layer.cornerRadius = 18.0;
+    self.textFieldTelNumber .layer.cornerRadius = 16.0;
     self.textFieldTelNumber .layer.borderWidth = 0.5;
+    self.textFieldTelNumber.layer.masksToBounds = YES;
     self.textFieldTelNumber .layer.borderColor = newGreen2.CGColor;
     // 输入框的图片
     self.imageViewPassWord  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"shoujihao.png"]];
@@ -35,7 +38,7 @@
         make.height.equalTo(@26);
         make.width.equalTo(@26);
     }];
-    [self.self.textFieldTelNumber mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.textFieldTelNumber mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@(ScreenWidth / 8 - 10));
         make.height.equalTo(@40);
         make.width.equalTo(@(ScreenWidth / 4 * 3 +20));
@@ -47,7 +50,8 @@
     self.textFieldVerificationCode .placeholder = @"输入验证码";
     self.textFieldVerificationCode .borderStyle = UITextBorderStyleRoundedRect;
     self.textFieldVerificationCode .keyboardType = UIKeyboardTypeURL;
-    self.textFieldVerificationCode .layer.cornerRadius = 18.0;
+    self.textFieldVerificationCode.layer.masksToBounds = YES;
+    self.textFieldVerificationCode .layer.cornerRadius = 16.0;
     self.textFieldVerificationCode.layer.borderWidth = 0.5;
     self.textFieldVerificationCode.layer.borderColor = newGreen2.CGColor;
     // textField协议
@@ -119,7 +123,7 @@
     self.textFieldSurePassWord .layer.borderWidth = 0.5;
     self.textFieldSurePassWord .layer.borderColor = newGreen2.CGColor;
         // 输入框的图片
-        self.imageViewPassWord  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"weibiaoti--.png"]];
+    self.imageViewPassWord  = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"weibiaoti--.png"]];
     self.textFieldSurePassWord .leftViewMode = UITextFieldViewModeAlways;
     self.textFieldSurePassWord .leftView = self.imageViewPassWord;
     self.textFieldSurePassWord .secureTextEntry = YES;

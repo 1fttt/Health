@@ -11,8 +11,10 @@
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 @implementation ViewLogin
 - (void)viewInit {
-    UIColor *newGreen = [UIColor colorWithRed:111 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
+    UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
     UIColor *newGreen2 = [UIColor colorWithRed:69 / 255.0f green:113 / 255.0f blue:81 / 255.0f alpha:1.0];
+    UIColor *backGreen = [UIColor colorWithRed:20 / 255.0f green:220 / 255.0f blue:150 / 255.0f alpha:1.0];
+    self.backgroundColor = backGreen;
 #pragma mark UserName
     //用户名输入框
     self.textFieldUserName = [[UITextField alloc] init];
@@ -97,12 +99,8 @@
     self.buttontRegister = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.buttontRegister setTitle:@"Register" forState:UIControlStateNormal];
     self.buttontRegister.titleLabel.font = [UIFont systemFontOfSize:18];
-//    self.buttontRegister.layer.masksToBounds = YES;
-//    self.buttontRegister.layer.cornerRadius = 14;
-//    self.buttontRegister.layer.borderWidth = 0.5;
-    self.buttontRegister.tintColor = newGreen;
+    self.buttontRegister.tintColor = [UIColor whiteColor];
     self.buttontRegister.layer.borderColor = [UIColor grayColor].CGColor;
-//    self.buttontRegister.backgroundColor = newGreen;
     self.buttontRegister.tag = 1;
     [self.buttontRegister addTarget:self action:@selector(pressLogin:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.buttontRegister];
@@ -111,6 +109,23 @@
         make.left.equalTo(@(ScreenWidth / 4 + 14));
         make.width.equalTo(@150);
         make.height.equalTo(@30);
+    }];
+#pragma mark Label
+    self.labelHealth = [[UILabel alloc] init];
+    self.labelHealth.text = @" Keep Healthy";
+    self.labelHealth.textColor = [UIColor whiteColor];
+    /**
+     关于字体斜体的设置- 我测试了好半天才发现只有英语能设置斜体等字体- 坑啊 Helvetica-BoldOblique
+     Zapfino 花体 Georgia-BoldItalic
+     */
+    self.labelHealth.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:33];
+    self.labelHealth.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.labelHealth];
+    [self.labelHealth mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.textFieldUserName).offset(-125);
+        make.left.equalTo(@-10);
+        make.height.equalTo(@50);
+        make.width.equalTo(@(ScreenWidth));
     }];
 }
 #pragma mark TextFieldDelegateMEthod

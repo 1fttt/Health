@@ -4,19 +4,38 @@
 //
 //  Created by 李育腾 on 2022/12/5.
 //
-
+#import <AFNetworking.h>
+/**
+ 登陆注册
+ */
 #import "ViewControllerLogin.h"
 #import "ViewLogin.h"
 #import "ViewControllerRegister.h"
-#import <AFNetworking.h>
+/**
+ 主界面
+ */
+#import "ViewControllerBody.h"
+#import "ViewControllerDiet.h"
+#import "ViewControllerCommityShare.h"
+#import "ViewControllerPersonalInformation.h"
+
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 @interface ViewControllerLogin ()<delegateButton>
 @property (nonatomic, copy) NSDictionary *dictionaryUser;
 @property (nonatomic, copy) NSDictionary *dictionaryPostUser;
+@property (nonatomic, assign) NSInteger isLogin;
+
 @property (nonatomic, strong) ViewLogin *viewLogin;
 @property (nonatomic, strong) ViewControllerRegister *ViewConRegistr;
-@property (nonatomic, assign) NSInteger isLogin;
+
+// 主界面
+@property (nonatomic, strong) ViewControllerBody *viewControllerBody;
+@property (nonatomic, strong) ViewControllerDiet *viewControllerDiet;
+@property (nonatomic, strong) ViewControllerCommityShare *viewControllerCommityShare;
+@property (nonatomic, strong) ViewControllerPersonalInformation *viewControllerPersonalInformation;
+@property (nonatomic, strong) NSArray *arrayTabbar;
+@property (nonatomic, strong) UITabBarController *tabBarController;
 @end
 
 @implementation ViewControllerLogin
@@ -35,7 +54,6 @@
      注册观察者，接收通知
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveUserMessage:) name:@"userMessage" object:nil];
-    
 }
 #pragma mark DelegateButton
 - (void)returnButton:(UIButton *)button {
@@ -46,6 +64,7 @@
         [self Login];
         if (self.isLogin == 1) {
             NSLog(@"登陆成功");
+            [self ToMainView];
         } else if (self.isLogin == 0){
             NSLog(@"用户不存在");
         } else {
@@ -95,6 +114,25 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error");
     }];
+}
+#pragma mark 跳转主界面函数
+- (void)ToMainView {
+    self.viewControllerBody = [[ViewControllerBody alloc] init];
+    self.viewControllerDiet = [[ViewControllerDiet alloc] init];
+    self.viewControllerCommityShare = [[ViewControllerCommityShare alloc] init];
+    self.viewControllerPersonalInformation = [[ViewControllerPersonalInformation alloc] init];
+    
+    UINavigationController *navConBody = [[UINavigationController alloc] initWithRootViewController:self.viewControllerBody];
+    UINavigationController *navConDiet = [[UINavigationController alloc] initWithRootViewController:self.viewControllerDiet];
+    UINavigationController *navConCommityShare = [[UINavigationController alloc] initWithRootViewController:self.viewControllerCommityShare];
+    UINavigationController *navConPersonalInformation = [[UINavigationController alloc] initWithRootViewController:self.viewControllerPersonalInformation];
+    
+    self.arrayTabbar = [NSArray arrayWithObjects:navConBody, navConDiet, navConCommityShare, navConPersonalInformation, nil];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = self.arrayTabbar;
+    UIWindow *keyWindow = self.view.window.windowScene.keyWindow;
+    keyWindow.rootViewController = self.tabBarController;
+    
 }
 /*
 #pragma mark - Navigation
