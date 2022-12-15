@@ -40,6 +40,14 @@
 		2A3C24B12946FDAC008C8D07 /* ViewControllerPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B02946FDAC008C8D07 /* ViewControllerPersonalInformation.m */; };
 		2A3C24B42946FDC6008C8D07 /* ViewPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B32946FDC6008C8D07 /* ViewPersonalInformation.m */; };
 		2A3C24B72946FDDA008C8D07 /* ModelPersonalInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24B62946FDDA008C8D07 /* ModelPersonalInformation.m */; };
+		2A3E3086294A1492003472F7 /* jilu-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E3085294A1492003472F7 /* jilu-2.png */; };
+		2A3E3088294A149C003472F7 /* jilu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E3087294A149C003472F7 /* jilu.png */; };
+		2A3E308A294A162B003472F7 /* spare1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E3089294A162B003472F7 /* spare1.png */; };
+		2A3E308C294A1633003472F7 /* spare.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E308B294A1633003472F7 /* spare.png */; };
+		2A3E308E294A1837003472F7 /* wode-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E308D294A1837003472F7 /* wode-2.png */; };
+		2A3E3090294A183E003472F7 /* wode.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A3E308F294A183E003472F7 /* wode.png */; };
+		2AD5C4052948BA2900043B1E /* diet.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD5C4042948BA2900043B1E /* diet.png */; };
+		2AD5C40D2948C8CA00043B1E /* diet6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD5C40C2948C8CA00043B1E /* diet6.png */; };
 		FE54BA50F953BA8FEC71BBEB /* Pods_HealthSelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E3397042EFB7287379704B /* Pods_HealthSelf.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +126,14 @@
 		2A3C24B32946FDC6008C8D07 /* ViewPersonalInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewPersonalInformation.m; sourceTree = "<group>"; };
 		2A3C24B52946FDDA008C8D07 /* ModelPersonalInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelPersonalInformation.h; sourceTree = "<group>"; };
 		2A3C24B62946FDDA008C8D07 /* ModelPersonalInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelPersonalInformation.m; sourceTree = "<group>"; };
+		2A3E3085294A1492003472F7 /* jilu-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jilu-2.png"; sourceTree = "<group>"; };
+		2A3E3087294A149C003472F7 /* jilu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jilu.png; sourceTree = "<group>"; };
+		2A3E3089294A162B003472F7 /* spare1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spare1.png; sourceTree = "<group>"; };
+		2A3E308B294A1633003472F7 /* spare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spare.png; sourceTree = "<group>"; };
+		2A3E308D294A1837003472F7 /* wode-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wode-2.png"; sourceTree = "<group>"; };
+		2A3E308F294A183E003472F7 /* wode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wode.png; sourceTree = "<group>"; };
+		2AD5C4042948BA2900043B1E /* diet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diet.png; sourceTree = "<group>"; };
+		2AD5C40C2948C8CA00043B1E /* diet6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diet6.png; sourceTree = "<group>"; };
 		49624CA0E928BE8E740CB95E /* Pods-HealthSelf-HealthSelfUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelf-HealthSelfUITests/Pods-HealthSelf-HealthSelfUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4AC5ED638484572A00038F25 /* Pods-HealthSelfTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthSelfTests.release.xcconfig"; path = "Target Support Files/Pods-HealthSelfTests/Pods-HealthSelfTests.release.xcconfig"; sourceTree = "<group>"; };
 		5294D67AFAACE1C2561EF761 /* Pods_HealthSelfTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthSelfTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,9 +326,17 @@
 		2A3C240D293DF281008C8D07 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
+				2A3E308F294A183E003472F7 /* wode.png */,
+				2A3E308D294A1837003472F7 /* wode-2.png */,
+				2A3E308B294A1633003472F7 /* spare.png */,
+				2A3E3089294A162B003472F7 /* spare1.png */,
+				2AD5C40C2948C8CA00043B1E /* diet6.png */,
+				2AD5C4042948BA2900043B1E /* diet.png */,
 				2A3C2410293E1076008C8D07 /* weibiaoti--.png */,
 				2A3C240E293DF9E6008C8D07 /* jiankang.png */,
 				2A3C2412293EEE3B008C8D07 /* shoujihao.png */,
+				2A3E3085294A1492003472F7 /* jilu-2.png */,
+				2A3E3087294A149C003472F7 /* jilu.png */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -583,11 +607,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3E3090294A183E003472F7 /* wode.png in Resources */,
 				2A3C2413293EEE3B008C8D07 /* shoujihao.png in Resources */,
+				2A3E3088294A149C003472F7 /* jilu.png in Resources */,
+				2A3E308A294A162B003472F7 /* spare1.png in Resources */,
+				2AD5C4052948BA2900043B1E /* diet.png in Resources */,
 				2A3C2411293E1076008C8D07 /* weibiaoti--.png in Resources */,
+				2A3E3086294A1492003472F7 /* jilu-2.png in Resources */,
+				2AD5C40D2948C8CA00043B1E /* diet6.png in Resources */,
+				2A3E308C294A1633003472F7 /* spare.png in Resources */,
 				2A3C23CD293DACB2008C8D07 /* LaunchScreen.storyboard in Resources */,
 				2A3C23CA293DACB2008C8D07 /* Assets.xcassets in Resources */,
 				2A3C240F293DF9E6008C8D07 /* jiankang.png in Resources */,
+				2A3E308E294A1837003472F7 /* wode-2.png in Resources */,
 				2A3C23C8293DACB0008C8D07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

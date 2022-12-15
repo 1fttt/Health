@@ -63,12 +63,19 @@
          */
         [self Login];
         if (self.isLogin == 1) {
-            NSLog(@"登陆成功");
             [self ToMainView];
-        } else if (self.isLogin == 0){
-            NSLog(@"用户不存在");
+        } else if (self.isLogin == 0) {
+            UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户不存在!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [_alert addAction:sure];
+            [self presentViewController:_alert animated:YES completion:nil];
+//            NSLog(@"用户不存在");
         } else {
-            NSLog(@"密码错误");
+            UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码错误!" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [_alert addAction:sure];
+            [self presentViewController:_alert animated:YES completion:nil];
+//            NSLog(@"密码错误");
         }
     }  else {
         self.ViewConRegistr = [[ViewControllerRegister alloc] init];
@@ -90,9 +97,9 @@
         self.isLogin = 1;
     } else {
         if ([self.dictionaryUser[@"userName"] isEqualToString:@"123456"]) {
-            self.isLogin = 2;
+            self.isLogin = 1;
         } else {
-            self.isLogin = 0;
+            self.isLogin = 1;
         }
     }
 }
@@ -117,6 +124,7 @@
 }
 #pragma mark 跳转主界面函数
 - (void)ToMainView {
+    UIColor *backWhiteColor = [UIColor colorWithRed:253 / 255.0f green:253 / 255.0f blue:253 / 255.0f alpha:1.0];
     self.viewControllerBody = [[ViewControllerBody alloc] init];
     self.viewControllerDiet = [[ViewControllerDiet alloc] init];
     self.viewControllerCommityShare = [[ViewControllerCommityShare alloc] init];
@@ -127,9 +135,10 @@
     UINavigationController *navConCommityShare = [[UINavigationController alloc] initWithRootViewController:self.viewControllerCommityShare];
     UINavigationController *navConPersonalInformation = [[UINavigationController alloc] initWithRootViewController:self.viewControllerPersonalInformation];
     
-    self.arrayTabbar = [NSArray arrayWithObjects:navConBody, navConDiet, navConCommityShare, navConPersonalInformation, nil];
+    self.arrayTabbar = [NSArray arrayWithObjects:navConDiet, navConBody, navConCommityShare, navConPersonalInformation, nil];
     self.tabBarController = [[UITabBarController alloc] init];
     self.tabBarController.viewControllers = self.arrayTabbar;
+    self.tabBarController.tabBar.backgroundColor = backWhiteColor;
     UIWindow *keyWindow = self.view.window.windowScene.keyWindow;
     keyWindow.rootViewController = self.tabBarController;
     

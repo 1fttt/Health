@@ -9,7 +9,7 @@
 
 @implementation ViewBody
 - (void)viewInit {
-    self.backgroundColor = [UIColor greenColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

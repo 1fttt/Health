@@ -9,7 +9,7 @@
 
 @implementation ViewPersonalInformation
 - (void)viewInit {
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

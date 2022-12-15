@@ -9,7 +9,7 @@
 
 @implementation VIewDiet
 - (void)viewInit {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = [UIColor whiteColor];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

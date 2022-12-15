@@ -16,12 +16,23 @@
 @implementation ViewControllerCommityShare
 
 - (void)viewDidLoad {
+    [self initTabBarItem];
     [super viewDidLoad];
+   
     // Do any additional setup after loading the view.
     self.viewCommityShare = [[ViewCommunityShare alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     [self.view addSubview:self.viewCommityShare];
     [self.viewCommityShare viewInit];
-    self.title = @"Commity";
+}
+- (void)initTabBarItem {
+    UIColor *backGreen = [UIColor colorWithRed:123 / 255.0f green:209 / 255.0f blue:147 / 255.0f alpha:1.0];
+    UITabBarItem *tabBarDiet = [[UITabBarItem alloc] init];
+    tabBarDiet.image = [[UIImage imageNamed:@"spare.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarDiet.selectedImage = [[UIImage imageNamed:@"spare1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarDiet.title = @"广场";
+    // 一句话设置选中状态下的颜色
+    self.tabBarController.tabBar.tintColor = backGreen;
+    self.tabBarItem = tabBarDiet;
 }
 
 /*
