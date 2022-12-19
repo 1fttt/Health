@@ -42,7 +42,7 @@
         make.left.equalTo(@(ScreenWidth / 8 - 10));
         make.height.equalTo(@40);
         make.width.equalTo(@(ScreenWidth / 4 * 3 +20));
-        make.top.equalTo(@(ScreenHeight / 2 - 180));
+        make.top.equalTo(@(ScreenHeight / 2 - 200));
     }];
 #pragma mark VerificationCode
     //验证码
@@ -62,7 +62,7 @@
         make.left.equalTo(@(ScreenWidth / 8 - 10));
         make.height.equalTo(@35);
         make.width.equalTo(@(ScreenWidth / 2));
-        make.top.equalTo(self.textFieldTelNumber).offset(60);
+        make.top.equalTo(self.textFieldTelNumber).offset(70);
     }];
 #pragma mark buttonVerificationCode
     self.buttonSendVerificationCode = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -78,7 +78,7 @@
     [self.buttonSendVerificationCode addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.buttonSendVerificationCode];
     [self.buttonSendVerificationCode mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.textFieldTelNumber).offset(63);
+        make.top.equalTo(self.textFieldTelNumber).offset(73);
         make.left.equalTo(self.textFieldVerificationCode.mas_right).offset (10);
         make.width.equalTo(@107);
         make.height.equalTo(@30);
@@ -110,7 +110,7 @@
         make.left.equalTo(@(ScreenWidth / 8 - 10));
         make.height.equalTo(@35);
         make.width.equalTo(@(ScreenWidth / 3 * 2));
-        make.top.equalTo(self.textFieldVerificationCode).offset(50);
+        make.top.equalTo(self.textFieldVerificationCode).offset(60);
     }];
 #pragma mark SurePassWord
     //密码
@@ -140,7 +140,7 @@
         make.left.equalTo(@(ScreenWidth / 8 - 10));
         make.height.equalTo(@35);
         make.width.equalTo(@(ScreenWidth / 3 * 2));
-        make.top.equalTo(self.textFieldPassWord).offset(45);
+        make.top.equalTo(self.textFieldPassWord).offset(55);
     }];
 #pragma mark ButtonRegister
     self.buttontRegister = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -156,7 +156,7 @@
     [self.buttontRegister addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.buttontRegister];
     [self.buttontRegister mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.textFieldSurePassWord).offset(65);
+        make.top.equalTo(self.textFieldSurePassWord).offset(75);
         make.left.equalTo(@20);
         make.width.equalTo(@(ScreenWidth - 40));
         make.height.equalTo(@36);
@@ -172,6 +172,7 @@
     [self.textFieldVerificationCode resignFirstResponder];
 }
 - (void)pressButton: (UIButton *)button {
+    
     [self.delegate returnButton:button];
 }
 /*

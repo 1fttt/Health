@@ -73,7 +73,7 @@
         make.left.equalTo(@(ScreenWidth / 6));
         make.height.equalTo(@40);
         make.width.equalTo(@(ScreenWidth / 3 * 2));
-        make.top.equalTo(self.textFieldUserName).offset(60);
+        make.top.equalTo(self.textFieldUserName).offset(70);
     }];
 #pragma mark Login
     self.buttontLogin = [UIButton buttonWithType:UIButtonTypeRoundedRect];

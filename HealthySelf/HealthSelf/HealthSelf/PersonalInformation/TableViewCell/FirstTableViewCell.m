@@ -24,7 +24,7 @@
     if ([self.reuseIdentifier isEqualToString:@"first"]) {
         _avatarsButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _avatarsButton.backgroundColor = [UIColor redColor];
-        [_avatarsButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [_avatarsButton setImage:[UIImage imageNamed:@"touxiang.JPG"] forState:UIControlStateNormal];
         _avatarsButton.layer.masksToBounds = YES;
         _avatarsButton.layer.cornerRadius = 30;
         [self.contentView addSubview:_avatarsButton];

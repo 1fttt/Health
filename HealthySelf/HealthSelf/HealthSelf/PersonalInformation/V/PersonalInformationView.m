@@ -47,7 +47,8 @@
 -(void)initTableView {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SIZE_WIDTH, SIZE_HEIGHT-80) style:UITableViewStyleGrouped];
     _arrayData = [[NSMutableArray alloc] init];
-    _tableView.backgroundColor = [UIColor yellowColor];
+    _tableView.backgroundColor = [UIColor colorWithWhite:1.15 alpha:0.8];
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[FirstTableViewCell class] forCellReuseIdentifier:@"first"];
@@ -77,11 +78,15 @@
     if (indexPath.section == 0) {
         FirstTableViewCell* cell = [_tableView dequeueReusableCellWithIdentifier:@"first" forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
+        cell.layer.masksToBounds = YES;
+        cell.layer.cornerRadius = 35;
         return cell;
     }
     if (indexPath.section == 1) {
         SecondTableViewCell* cell = [_tableView dequeueReusableCellWithIdentifier:@"second" forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
+        cell.layer.masksToBounds = YES;
+        cell.layer.cornerRadius = 35;
         return cell;
     }
     if (indexPath.section == 2) {
@@ -115,7 +120,7 @@
     }
     if (indexPath.section == 3) {
         ThirdTableViewCell* cell = [_tableView dequeueReusableCellWithIdentifier:@"third" forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor whiteColor];
         if (indexPath.row == 0) {
             cell.label.text = @"健康测评";
             cell.labelImageView.image = [UIImage imageNamed:@"ceping.png"];

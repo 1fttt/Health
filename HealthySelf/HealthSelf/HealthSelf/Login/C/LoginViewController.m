@@ -85,8 +85,7 @@
 #pragma mark NSNotifivation通知传值函数
 - (void)receiveUserMessage: (NSNotification *)sender {
     self.dictionaryUser = sender.userInfo;
-//        NSLog(@"%@", self.dictionaryUser);
-    
+
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
