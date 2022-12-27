@@ -9,7 +9,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DietView : UIView
+@interface DietView : UIView <UITextFieldDelegate>
+@property (nonatomic, strong)UILabel *labelHealth;
+@property (nonatomic, strong)UIView *backView;
+
+@property (nonatomic, strong)UITextField *SearchTextFiled;
+@property (nonatomic, strong)UIImageView *searchImageView;
 - (void)viewInit;
 @end
 
