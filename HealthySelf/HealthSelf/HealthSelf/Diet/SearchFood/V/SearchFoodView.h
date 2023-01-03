@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)returnButton:(UIButton *)button;
 
 @end
-@interface SearchFoodView : UIView <UITextFieldDelegate>
+@protocol returnFoodNameDelegate <NSObject>
+
+- (void)returnFoodName:(NSString *)foodIdString;
+
+@end
+@interface SearchFoodView : UIView <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 - (void)viewInit;
 @property (nonatomic, strong)UITextField *SearchTextFiled;
 @property (nonatomic, strong)UIImageView *searchImageView;
@@ -30,7 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSMutableArray *keyFoodNameArray;
 @property (nonatomic, strong)NSMutableArray *keyFoodIdArray;
 @property (nonatomic, strong)UITableView *keyNameTableView;
+@property (nonatomic, weak)id<returnFoodNameDelegate>foodDetailsDelegate;
 
+- (void)creatTableView;
 @end
 
 NS_ASSUME_NONNULL_END

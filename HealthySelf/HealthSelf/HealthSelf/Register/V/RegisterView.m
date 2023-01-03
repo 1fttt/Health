@@ -161,6 +161,7 @@
         make.width.equalTo(@(ScreenWidth - 40));
         make.height.equalTo(@36);
     }];
+    
 }
 
 #pragma mark TextFieldDelegateMEthod

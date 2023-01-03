@@ -33,7 +33,12 @@ NSInteger myTIme;
     self.viewRegister.delegate = self;
     [self.viewRegister viewInit];
     myTIme = 10;
-    
+    UIBarButtonItem* leftBtn = [[UIBarButtonItem alloc]initWithTitle:@"登陆" style:UIBarButtonItemStyleDone target:self action:@selector(pressLeftLogin)];
+    leftBtn.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBtn;
+}
+- (void)pressLeftLogin {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 #pragma mark BUttonTarget
 - (void)returnButton:(UIButton *)button {

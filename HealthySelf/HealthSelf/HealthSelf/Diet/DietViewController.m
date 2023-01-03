@@ -43,8 +43,8 @@
 #pragma mark NSNotifivation通知传值函数
 - (void)ToSearchView {
     SearchFoodViewController *searchViewController = [[SearchFoodViewController alloc] init];
-    searchViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:searchViewController animated:YES completion:nil];
+    
+    [self.navigationController pushViewController:searchViewController animated:YES];
     
 }
 - (void)dealloc {

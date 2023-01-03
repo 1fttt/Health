@@ -26,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *buttontRegister;
 @property (nonatomic, strong) UIButton *buttonSendVerificationCode;
-
 - (void)viewInit;
 @property (nonatomic, weak) id<delegateRegisterButton>delegate;
 @end

@@ -12,6 +12,7 @@
 @implementation SearchFoodView
 
 - (void)viewInit {
+    self.keyNameTableView.hidden = YES;
     self.backgroundColor = [UIColor whiteColor];
 #pragma mark SearchFoodText
     //查询框
@@ -35,7 +36,7 @@
         make.left.equalTo(@25);
         make.height.equalTo(@35);
         make.width.equalTo(@(ScreenWidth - 90));
-        make.top.equalTo(@70);
+        make.top.equalTo(@100);
     }];
     [self.searchImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@21);
@@ -52,12 +53,12 @@
     [self addSubview:self.exitButton];
     [self.exitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo([self.SearchTextFiled mas_right]).offset(1);
-        make.top.equalTo(@63);
+        make.top.equalTo(@88);
         make.width.equalTo(@70);
         make.height.equalTo(@50);
     }];
     
-    
+  
     self.usersLabel= [[UILabel alloc] init];
     self.usersLabel.text = @"大家都在搜";
     self.usersLabel.textColor = [UIColor blackColor];
@@ -97,6 +98,7 @@
             }];
         }
     }
+    [self creatTableView];
 }
 - (void)pressExit:(UIButton *)button {
     [self.ExitDelegate returnButton:button];
@@ -105,6 +107,56 @@
     NSDictionary *keyNameDictionary = @{@"keyName":self.SearchTextFiled.text};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"keyNameFood" object:nil userInfo:keyNameDictionary];
     return YES;
+}
+- (void)creatTableView {
+    self.keyNameTableView = [[UITableView alloc] init];
+    self.keyNameTableView.delegate = self;
+    self.keyNameTableView.dataSource = self;
+    [self addSubview:self.keyNameTableView];
+    [self.keyNameTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.SearchTextFiled mas_bottom]).offset(2);
+        make.left.equalTo([self.SearchTextFiled mas_left]).offset(0);
+        make.width.equalTo([self.SearchTextFiled mas_width]);
+        make.height.equalTo(@(ScreenHeight / 2 - 20));
+    }];
+    self.keyNameTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.keyNameTableView.backgroundColor = [UIColor whiteColor];
+    [self.keyNameTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"keyFoodName"];
+    UIView *keyNameFooterView = [[UIView alloc] init];
+    self.keyNameTableView.tableFooterView = keyNameFooterView;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"keyFoodName" forIndexPath:indexPath];
+    while ([cell.contentView.subviews lastObject] != nil) {
+        [(UIView *)[cell.contentView.subviews lastObject] removeFromSuperview];
+    }
+    cell.textLabel.text = self.keyFoodNameArray[indexPath.row];
+    cell.textLabel.textColor = [UIColor blackColor];
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+    cell.textLabel.textAlignment = NSTextAlignmentLeft;
+    cell.backgroundColor = [UIColor whiteColor];
+    return cell;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.keyFoodNameArray.count;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 38;
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+    //准备开始输入
+    self.keyNameTableView.hidden = NO;
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    //回收键盘对象
+    //隐藏TableView
+    [self.SearchTextFiled resignFirstResponder];;
+    self.keyNameTableView.hidden = YES;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // https://www.mxnzp.com/api/food_heat/food/details?foodId=d2bd36c5754e36c4&page=1&app_id=icwnrnfenlpvforw&app_secret=N1BEY0R5ZkVMM1B0b2t6R3F6YkVzZz09
+    //
+    [self.foodDetailsDelegate returnFoodName:self.keyFoodIdArray[indexPath.row]];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
