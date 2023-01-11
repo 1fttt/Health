@@ -7,16 +7,32 @@
 
 #import "DietView.h"
 #import <Masonry.h>
+#import <SDWebImage/SDWebImage.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+@interface DietView()
+@property (nonatomic, strong)UIImageView *menuImageView1;
+@property (nonatomic, strong)UILabel *menuCategory1;
+@property (nonatomic, strong)UILabel *menuNameLabel1;
+@property (nonatomic, strong)UILabel *peopleNumaLabel1;
+@property (nonatomic, strong)UILabel *cookingtimeLabel1;
+
+@property (nonatomic, strong)UIImageView *menuImageView2;
+@property (nonatomic, strong)UILabel *menuCategory2;
+@property (nonatomic, strong)UILabel *menuNameLabel2;
+@property (nonatomic, strong)UILabel *peopleNumaLabel2;
+@property (nonatomic, strong)UILabel *cookingtimeLabel2;
+@end
 @implementation DietView
 - (void)viewInit {
     self.backgroundColor = [UIColor whiteColor];
-    UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
 #pragma mark Label
+    UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
     UIColor *labelGreen2 = [UIColor colorWithRed:235 / 255.0f green:255 / 255.0f blue:240 / 255.0f alpha:1.0];
     self.backView = [[UIView alloc] init];
     self.backView.backgroundColor = labelGreen2;
+    self.backView.layer.masksToBounds = YES;
+    self.backView.layer.cornerRadius = 20.0;
     [self addSubview:self.backView];
     [self.backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(ScreenWidth / 2 - 20));
@@ -24,8 +40,6 @@
         make.left.equalTo(@105);
         make.top.equalTo(@70);
     }];
-    self.backView.layer.masksToBounds = YES;
-    self.backView.layer.cornerRadius = 20.0;
     
     self.labelHealth = [[UILabel alloc] init];
     self.labelHealth.text = @"Healthy Diet";
@@ -73,12 +87,243 @@
         make.height.equalTo(@21);
         make.width.equalTo(@21);
     }];
+#pragma mark -MoreButton
+    NSArray *moreLabelArray = @[@"查水果", @"查饮品", @"拍照查", @"查食谱"];
+    NSArray *coinsArray = @[@"shuiguo.png", @"naicha.jpeg", @"xiangji.png", @"yiliaoshipu.png"];
+    for (int i = 0; i < 4; i++) {
+        self.moreLabel = [[UILabel alloc] init];
+        [self addSubview:self.moreLabel];
+        self.moreLabel.text = moreLabelArray[i];
+        self.moreLabel.font = [UIFont systemFontOfSize:13];
+        self.moreLabel.textColor = [UIColor blackColor];
+        self.moreLabel.frame = CGRectMake(35 + i * ScreenWidth / 4, 270, 150, 50);
+        
+        
+        self.moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.moreButton setImage:[UIImage imageNamed:coinsArray[i]] forState:UIControlStateNormal];
+        [self addSubview:self.moreButton];
+        self.moreButton.tag = 200 + i;
+        [self.moreButton addTarget:self action:@selector(pressMoreButton:) forControlEvents:UIControlEventTouchUpInside];
+        self.moreButton.frame = CGRectMake(27 + i * ScreenWidth / 4, 215, 55, 55);
+    }
+    [self creatMenu];
+}
+- (void)creatMenu {
+#pragma mark Menu
+    UIColor *menuLineViewColor = [UIColor colorWithRed: 248 / 255.0f green:248 / 255.0f blue:248 / 255.0f alpha:1.0];
+    UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
+    self.menuLabel = [[UILabel alloc] init];
+    self.menuLabel.layer.masksToBounds = YES;
+    self.menuLabel.layer.cornerRadius = 12.0;
+    self.menuLabel.text = @"营养菜谱";
+    self.menuLabel.textColor = [UIColor whiteColor];
+    self.menuLabel.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:13];
+    self.menuLabel.textAlignment = NSTextAlignmentCenter;
+    self.menuLabel.backgroundColor = labelGreen;
+    
+    self.menuLineView = [[UIView alloc] init];
+    self.menuLineView.backgroundColor = menuLineViewColor;
+    
+    self.menuLineView2 = [[UIView alloc] init];
+    self.menuLineView2.backgroundColor = menuLineViewColor;
+    
+    self.menuBackView = [[UIView alloc] init];
+    self.menuBackView.backgroundColor = [UIColor whiteColor];
+    self.menuBackView.layer.borderWidth = 0.2;
+    self.menuBackView.layer.borderColor = [UIColor grayColor].CGColor;
+    self.menuBackView.layer.masksToBounds = YES;
+    self.menuBackView.layer.cornerRadius = 20.0;
+    
+    self.menuBackView2 = [[UIView alloc] init];
+    self.menuBackView2.backgroundColor = [UIColor whiteColor];
+    self.menuBackView2.layer.borderWidth = 0.2;
+    self.menuBackView2.layer.borderColor = [UIColor grayColor].CGColor;
+    self.menuBackView2.layer.masksToBounds = YES;
+    self.menuBackView2.layer.cornerRadius = 20.0;
+    
+    [self addSubview:self.menuLabel];
+    [self addSubview:self.menuLineView];
+    [self addSubview:self.menuBackView];
+    [self addSubview:self.menuBackView2];
+    [self addSubview:self.menuLineView2];
+    [self.menuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.labelHealth mas_bottom]).offset(ScreenHeight / 4);
+        make.left.equalTo(@15);
+        make.height.equalTo(@25);
+        make.width.equalTo(@(ScreenWidth / 5 - 5));
+     }];
+    [self.menuLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo([self.menuLabel mas_bottom]).offset(-40);
+        make.height.equalTo(@2.5);
+        make.left.equalTo(@0);
+        make.width.equalTo(@(ScreenWidth));
+    }];
+    [self.menuBackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@160);
+        make.height.equalTo(@238);
+        make.left.equalTo([self.menuLabel mas_left]).offset(10);
+        make.top.equalTo([self.menuLabel mas_bottom]).offset(10);
+    }];
+    [self.menuBackView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@160);
+        make.height.equalTo(@238);
+        make.left.equalTo([self.menuBackView mas_right]).offset(20);
+        make.top.equalTo([self.menuLabel mas_bottom]).offset(10);
+    }];
+    [self.menuLineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo([self.menuBackView mas_bottom]).offset(20);
+        make.height.equalTo(@2.5);
+        make.left.equalTo(@0);
+        make.width.equalTo(@(ScreenWidth));
+    }];
+}
+- (void)creatMenuDetails {
+    self.menuImageView1 = [[UIImageView alloc] init];
+    self.menuImageView1.layer.masksToBounds = YES;
+    self.menuImageView1.layer.cornerRadius = 16.0;
+    NSString* imageName = [NSString stringWithFormat:@"%@", self.menuDicit1[@"result"][@"result"][@"list"][0][@"pic"]];
+    NSURL* urlImage = [NSURL URLWithString:imageName];
+    [self.menuImageView1 sd_setImageWithURL:urlImage];
+    
+    self.menuNameLabel1 = [[UILabel alloc] init];
+    self.menuNameLabel1.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:15];
+    self.menuNameLabel1.text = self.menuDicit1[@"result"][@"result"][@"list"][0][@"name"];
+    
+    self.menuCategory1 = [[UILabel alloc] init];
+    self.menuCategory1.font = [UIFont systemFontOfSize:12];
+    self.menuCategory1.textColor = [UIColor grayColor];
+    self.menuCategory1.text = @"减脂小餐";
+   
+    self.peopleNumaLabel1 = [[UILabel alloc] init];
+    self.peopleNumaLabel1.font = [UIFont systemFontOfSize:12];
+    self.peopleNumaLabel1.textColor = [UIColor redColor];
+    self.peopleNumaLabel1.text = self.menuDicit1[@"result"][@"result"][@"list"][0][@"peoplenum"];
+    
+    self.cookingtimeLabel1 = [[UILabel alloc] init];
+    self.cookingtimeLabel1.font = [UIFont systemFontOfSize:12];
+    self.cookingtimeLabel1.textColor = [UIColor grayColor];
+    self.cookingtimeLabel1.text = self.menuDicit1[@"result"][@"result"][@"list"][0][@"cookingtime"];
+    
+    self.menuButton1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.menuButton1 addTarget:self action:@selector(pressMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    self.menuButton1.tag = 667;
+    
+    [self.menuBackView addSubview:self.menuImageView1];
+    [self.menuBackView addSubview:self.menuNameLabel1];
+    [self.menuBackView addSubview:self.menuCategory1];
+    [self.menuBackView addSubview:self.peopleNumaLabel1];
+    [self.menuBackView addSubview:self.cookingtimeLabel1];
+    [self.menuBackView addSubview:self.menuButton1];
+    
+    [self.menuImageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.left.equalTo(@00);
+        make.width.equalTo(@158);
+        make.height.equalTo(@158);
+    }];
+    [self.menuNameLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuImageView1 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.menuCategory1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuNameLabel1 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.peopleNumaLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuCategory1 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.cookingtimeLabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuCategory1 mas_bottom]).offset(10);
+        make.left.equalTo([self.peopleNumaLabel1 mas_right]).offset(5);
+    }];
+    [self.menuButton1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@160);
+        make.height.equalTo(@238);
+        make.left.equalTo(@0);
+        make.top.equalTo(@0);
+    }];
+    
+    
+    self.menuImageView2 = [[UIImageView alloc] init];
+    self.menuImageView2.layer.masksToBounds = YES;
+    self.menuImageView2.layer.cornerRadius = 16.0;
+    NSString* imageName2 = [NSString stringWithFormat:@"%@", self.menuDicit2[@"result"][@"result"][@"list"][0][@"pic"]];
+    NSURL* urlImage2 = [NSURL URLWithString:imageName2];
+    [self.menuImageView2 sd_setImageWithURL:urlImage2];
+    
+    self.menuNameLabel2 = [[UILabel alloc] init];
+    self.menuNameLabel2.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:15];
+    self.menuNameLabel2.text = self.menuDicit2[@"result"][@"result"][@"list"][0][@"name"];
+    
+    self.menuCategory2 = [[UILabel alloc] init];
+    self.menuCategory2.font = [UIFont systemFontOfSize:12];
+    self.menuCategory2.textColor = [UIColor grayColor];
+    self.menuCategory2.text = @"营养搭配";
+   
+    self.peopleNumaLabel2 = [[UILabel alloc] init];
+    self.peopleNumaLabel2.font = [UIFont systemFontOfSize:12];
+    self.peopleNumaLabel2.textColor = [UIColor redColor];
+    self.peopleNumaLabel2.text = self.menuDicit2[@"result"][@"result"][@"list"][0][@"peoplenum"];
+    
+    self.cookingtimeLabel2 = [[UILabel alloc] init];
+    self.cookingtimeLabel2.font = [UIFont systemFontOfSize:12];
+    self.cookingtimeLabel2.textColor = [UIColor grayColor];
+    self.cookingtimeLabel2.text = self.menuDicit2[@"result"][@"result"][@"list"][0][@"cookingtime"];
+    
+    self.menuButton2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.menuButton2.tag = 666;
+    [self.menuButton2 addTarget:self action:@selector(pressMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.menuBackView2 addSubview:self.menuImageView2];
+    [self.menuBackView2 addSubview:self.menuNameLabel2];
+    [self.menuBackView2 addSubview:self.menuCategory2];
+    [self.menuBackView2 addSubview:self.peopleNumaLabel2];
+    [self.menuBackView2 addSubview:self.cookingtimeLabel2];
+    [self.menuBackView2 addSubview:self.menuButton2];
+    
+    [self.menuImageView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.left.equalTo(@0);
+        make.width.equalTo(@155);
+        make.height.equalTo(@155);
+    }];
+    [self.menuNameLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuImageView2 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.menuCategory2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuNameLabel2 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.peopleNumaLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuCategory2 mas_bottom]).offset(10);
+        make.left.equalTo(@10);
+    }];
+    [self.cookingtimeLabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuCategory2 mas_bottom]).offset(10);
+        make.left.equalTo([self.peopleNumaLabel2 mas_right]).offset(5);
+    }];
+    [self.menuButton2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@160);
+        make.height.equalTo(@238);
+        make.left.equalTo(@0);
+        make.top.equalTo(@0);
+    }];
+    
+    
 }
 #pragma mark SearchFood
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     /*注册通知并发送*/
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ToSearchFoodView" object:nil userInfo:nil];
+}
+- (void)pressMoreButton:(UIButton *)button {
+    [self.moreButtonDelegate returnMoreButtonTag:button];
+}
+- (void)pressMenuButton:(UIButton *)menuButton {
+    [self.menuButtonDelegate returnMenuButtonTag:menuButton];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

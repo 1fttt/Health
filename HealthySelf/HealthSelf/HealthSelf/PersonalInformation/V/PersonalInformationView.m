@@ -48,7 +48,6 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SIZE_WIDTH, SIZE_HEIGHT-80) style:UITableViewStyleGrouped];
     _arrayData = [[NSMutableArray alloc] init];
     _tableView.backgroundColor = [UIColor colorWithWhite:1.15 alpha:0.8];
-    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[FirstTableViewCell class] forCellReuseIdentifier:@"first"];

@@ -43,11 +43,9 @@
     /*
      注册观察者，接收通知
      */
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyNameFood:) name:@"keyNameFood" object:nil];
     UIColor *buttonColor = [UIColor colorWithRed:105 / 255.0f green:183 / 255.0f blue:135 / 255.0f alpha:1.0];
     UIBarButtonItem* leftBtn2 = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(pressLeftLogin)];
-//    UIBarButtonItem *leftBtn2 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"fanhui-2.png"] style:UIBarButtonItemStyleDone target:self action: @selector(pressLeftLogin)];
     leftBtn2.tintColor = buttonColor;
     self.navigationItem.leftBarButtonItem = leftBtn2;
 }
@@ -86,9 +84,6 @@
         [self sendFoodData];
     }
 }
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
 - (void)sendFoodData {
     self.keyFoodIdArray = [[NSMutableArray alloc] init];
     self.keyFoodNameArray = [[NSMutableArray alloc] init];
@@ -110,6 +105,7 @@
 - (void)returnFoodName:(NSString *)foodIdString {
     self.urlFoodIdString = foodIdString;
     [self searchFoodDetailsRequest];
+    NSLog(@"%@", self.urlFoodIdString);
 }
 
 - (void)searchFoodDetailsRequest {
@@ -125,10 +121,13 @@
         FoodDetailsViewController *foodVC = [[FoodDetailsViewController alloc] init];
         foodVC.foodDetailsDiciionary = self.foodDetailsDiciionary;
         [self.navigationController pushViewController:foodVC animated:YES];
-//        NSLog(@"SucceedRequest");
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"Details关键词查找失败");
     }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 /*
 #pragma mark - Navigation

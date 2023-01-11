@@ -36,6 +36,32 @@
 		2A3C24AD2946FD87008C8D07 /* CommitShareViewConreoller.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3C24AC2946FD87008C8D07 /* CommitShareViewConreoller.m */; };
 		2A48AC3B295DA2B80067600F /* FoodDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48AC3A295DA2B80067600F /* FoodDetailsViewController.m */; };
 		2A48AC41295DA2EE0067600F /* FoodDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A48AC40295DA2EE0067600F /* FoodDetailsView.m */; };
+		2ACA78AD296EE0AA00F124E3 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78AC296EE0AA00F124E3 /* MenuView.m */; };
+		2ACA78B0296EE0C200F124E3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78AF296EE0C200F124E3 /* MenuViewController.m */; };
+		2ACA78B3296EF5A600F124E3 /* MenuListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */; };
+		2ACA78B7296F237600F124E3 /* shu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ACA78B6296F237600F124E3 /* shu.png */; };
+		2AD1AFC62966DFFC00EB5ACF /* naicha.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC52966DFFC00EB5ACF /* naicha.jpeg */; };
+		2AD1AFC829670B6500EB5ACF /* shuiguo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC729670B6500EB5ACF /* shuiguo.png */; };
+		2AD1AFCA29670B6B00EB5ACF /* yiliaoshipu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC929670B6B00EB5ACF /* yiliaoshipu.png */; };
+		2AD1AFCC29670B7900EB5ACF /* xiangji.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFCB29670B7900EB5ACF /* xiangji.png */; };
+		2AD1AFD029671B8700EB5ACF /* FoodCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFCF29671B8700EB5ACF /* FoodCategoryModel.m */; };
+		2AD1AFD629671BB500EB5ACF /* FoodCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFD529671BB500EB5ACF /* FoodCategoryView.m */; };
+		2AD1AFD929671BCA00EB5ACF /* FoodCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFD829671BCA00EB5ACF /* FoodCategoryViewController.m */; };
+		2AD1AFE129671D1C00EB5ACF /* RecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFE029671D1C00EB5ACF /* RecipesViewController.m */; };
+		2AD1AFE429671D2C00EB5ACF /* RecipesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFE329671D2C00EB5ACF /* RecipesView.m */; };
+		2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFE62968798A00EB5ACF /* FoodOutlineTableViewCell.m */; };
+		2AD1AFEA2969D20000EB5ACF /* FoodRecipesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD1AFE92969D20000EB5ACF /* FoodRecipesTableViewCell.m */; };
+		2AD1AFF1296AFDD200EB5ACF /* zhushi-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF0296AFDD200EB5ACF /* zhushi-1.png */; };
+		2AD1AFFC296B049100EB5ACF /* shucai.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF3296B049000EB5ACF /* shucai.png */; };
+		2AD1AFFD296B049100EB5ACF /* xiangliao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF4296B049000EB5ACF /* xiangliao.png */; };
+		2AD1AFFE296B049100EB5ACF /* youzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF5296B049000EB5ACF /* youzhi.png */; };
+		2AD1B000296B049100EB5ACF /* lengyin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF7296B049100EB5ACF /* lengyin.png */; };
+		2AD1B001296B049100EB5ACF /* niunai.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF8296B049100EB5ACF /* niunai.png */; };
+		2AD1B002296B049100EB5ACF /* dadou.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFF9296B049100EB5ACF /* dadou.png */; };
+		2AD1B003296B049100EB5ACF /* jianguo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFFA296B049100EB5ACF /* jianguo.png */; };
+		2AD1B006296B049B00EB5ACF /* roudan.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1B004296B049B00EB5ACF /* roudan.png */; };
+		2AD1B009296B04BA00EB5ACF /* yinliao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1B008296B04BA00EB5ACF /* yinliao.png */; };
+		2AD1B00B296B06C300EB5ACF /* fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1B00A296B06C300EB5ACF /* fruit.png */; };
 		2ADB1F8E295DC565001F21A0 /* fanhui-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8D295DC565001F21A0 /* fanhui-2.png */; };
 		2ADB1F902961B304001F21A0 /* fanhui-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8F2961B304001F21A0 /* fanhui-3.png */; };
 		2ADB1F922961B648001F21A0 /* fenxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F912961B648001F21A0 /* fenxiang.png */; };
@@ -161,6 +187,42 @@
 		2A48AC3A295DA2B80067600F /* FoodDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodDetailsViewController.m; sourceTree = "<group>"; };
 		2A48AC3F295DA2EE0067600F /* FoodDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodDetailsView.h; sourceTree = "<group>"; };
 		2A48AC40295DA2EE0067600F /* FoodDetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodDetailsView.m; sourceTree = "<group>"; };
+		2ACA78AB296EE0AA00F124E3 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		2ACA78AC296EE0AA00F124E3 /* MenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
+		2ACA78AE296EE0C200F124E3 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		2ACA78AF296EE0C200F124E3 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		2ACA78B1296EF5A600F124E3 /* MenuListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuListTableViewCell.h; sourceTree = "<group>"; };
+		2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuListTableViewCell.m; sourceTree = "<group>"; };
+		2ACA78B6296F237600F124E3 /* shu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shu.png; sourceTree = "<group>"; };
+		2AD1AFC52966DFFC00EB5ACF /* naicha.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naicha.jpeg; sourceTree = "<group>"; };
+		2AD1AFC729670B6500EB5ACF /* shuiguo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuiguo.png; sourceTree = "<group>"; };
+		2AD1AFC929670B6B00EB5ACF /* yiliaoshipu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yiliaoshipu.png; sourceTree = "<group>"; };
+		2AD1AFCB29670B7900EB5ACF /* xiangji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiangji.png; sourceTree = "<group>"; };
+		2AD1AFCE29671B8700EB5ACF /* FoodCategoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodCategoryModel.h; sourceTree = "<group>"; };
+		2AD1AFCF29671B8700EB5ACF /* FoodCategoryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodCategoryModel.m; sourceTree = "<group>"; };
+		2AD1AFD429671BB500EB5ACF /* FoodCategoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodCategoryView.h; sourceTree = "<group>"; };
+		2AD1AFD529671BB500EB5ACF /* FoodCategoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodCategoryView.m; sourceTree = "<group>"; };
+		2AD1AFD729671BCA00EB5ACF /* FoodCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodCategoryViewController.h; sourceTree = "<group>"; };
+		2AD1AFD829671BCA00EB5ACF /* FoodCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodCategoryViewController.m; sourceTree = "<group>"; };
+		2AD1AFDF29671D1C00EB5ACF /* RecipesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipesViewController.h; sourceTree = "<group>"; };
+		2AD1AFE029671D1C00EB5ACF /* RecipesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesViewController.m; sourceTree = "<group>"; };
+		2AD1AFE229671D2C00EB5ACF /* RecipesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipesView.h; sourceTree = "<group>"; };
+		2AD1AFE329671D2C00EB5ACF /* RecipesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesView.m; sourceTree = "<group>"; };
+		2AD1AFE52968798A00EB5ACF /* FoodOutlineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodOutlineTableViewCell.h; sourceTree = "<group>"; };
+		2AD1AFE62968798A00EB5ACF /* FoodOutlineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodOutlineTableViewCell.m; sourceTree = "<group>"; };
+		2AD1AFE82969D20000EB5ACF /* FoodRecipesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodRecipesTableViewCell.h; sourceTree = "<group>"; };
+		2AD1AFE92969D20000EB5ACF /* FoodRecipesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodRecipesTableViewCell.m; sourceTree = "<group>"; };
+		2AD1AFF0296AFDD200EB5ACF /* zhushi-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhushi-1.png"; sourceTree = "<group>"; };
+		2AD1AFF3296B049000EB5ACF /* shucai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shucai.png; sourceTree = "<group>"; };
+		2AD1AFF4296B049000EB5ACF /* xiangliao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiangliao.png; sourceTree = "<group>"; };
+		2AD1AFF5296B049000EB5ACF /* youzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youzhi.png; sourceTree = "<group>"; };
+		2AD1AFF7296B049100EB5ACF /* lengyin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lengyin.png; sourceTree = "<group>"; };
+		2AD1AFF8296B049100EB5ACF /* niunai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = niunai.png; sourceTree = "<group>"; };
+		2AD1AFF9296B049100EB5ACF /* dadou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dadou.png; sourceTree = "<group>"; };
+		2AD1AFFA296B049100EB5ACF /* jianguo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jianguo.png; sourceTree = "<group>"; };
+		2AD1B004296B049B00EB5ACF /* roudan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roudan.png; sourceTree = "<group>"; };
+		2AD1B008296B04BA00EB5ACF /* yinliao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinliao.png; sourceTree = "<group>"; };
+		2AD1B00A296B06C300EB5ACF /* fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruit.png; sourceTree = "<group>"; };
 		2ADB1F8D295DC565001F21A0 /* fanhui-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-2.png"; sourceTree = "<group>"; };
 		2ADB1F8F2961B304001F21A0 /* fanhui-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-3.png"; sourceTree = "<group>"; };
 		2ADB1F912961B648001F21A0 /* fenxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fenxiang.png; sourceTree = "<group>"; };
@@ -420,9 +482,11 @@
 		2A3C247C29462409008C8D07 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
-				2A48AC38295DA27B0067600F /* FoodDetails */,
-				2AFDF5C32952F9B00056D231 /* SearchFood */,
+				2ACA78A7296D357B00F124E3 /* Menu */,
 				2AFDF57B29508D5B0056D231 /* DietCoins */,
+				2AD1AFDB29671CEE00EB5ACF /* Recipes */,
+				2AD1AFCD29671B4200EB5ACF /* Foodcategory */,
+				2AFDF5C32952F9B00056D231 /* SearchFood */,
 				2A3C24A12946FD1F008C8D07 /* C */,
 				2A3C24812946F9D6008C8D07 /* V */,
 				2A3C24802946F9CA008C8D07 /* M */,
@@ -568,6 +632,155 @@
 				2A48AC3A295DA2B80067600F /* FoodDetailsViewController.m */,
 			);
 			path = C;
+			sourceTree = "<group>";
+		};
+		2ACA78A7296D357B00F124E3 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78B5296F236900F124E3 /* MenuCoins */,
+				2ACA78A9296EE08400F124E3 /* M */,
+				2ACA78A8296EE07E00F124E3 /* V */,
+				2ACA78AA296EE08A00F124E3 /* C */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2ACA78A8296EE07E00F124E3 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78AB296EE0AA00F124E3 /* MenuView.h */,
+				2ACA78AC296EE0AA00F124E3 /* MenuView.m */,
+				2ACA78B4296F1BA900F124E3 /* cells */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2ACA78A9296EE08400F124E3 /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2ACA78AA296EE08A00F124E3 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78AE296EE0C200F124E3 /* MenuViewController.h */,
+				2ACA78AF296EE0C200F124E3 /* MenuViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2ACA78B4296F1BA900F124E3 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78B1296EF5A600F124E3 /* MenuListTableViewCell.h */,
+				2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		2ACA78B5296F236900F124E3 /* MenuCoins */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78B6296F237600F124E3 /* shu.png */,
+			);
+			path = MenuCoins;
+			sourceTree = "<group>";
+		};
+		2AD1AFCD29671B4200EB5ACF /* Foodcategory */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFD329671B9F00EB5ACF /* C */,
+				2AD1AFD229671B9B00EB5ACF /* V */,
+				2AD1AFD129671B8D00EB5ACF /* M */,
+			);
+			path = Foodcategory;
+			sourceTree = "<group>";
+		};
+		2AD1AFD129671B8D00EB5ACF /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFCE29671B8700EB5ACF /* FoodCategoryModel.h */,
+				2AD1AFCF29671B8700EB5ACF /* FoodCategoryModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2AD1AFD229671B9B00EB5ACF /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFD429671BB500EB5ACF /* FoodCategoryView.h */,
+				2AD1AFD529671BB500EB5ACF /* FoodCategoryView.m */,
+				2AD1AFE52968798A00EB5ACF /* FoodOutlineTableViewCell.h */,
+				2AD1AFE62968798A00EB5ACF /* FoodOutlineTableViewCell.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2AD1AFD329671B9F00EB5ACF /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFD729671BCA00EB5ACF /* FoodCategoryViewController.h */,
+				2AD1AFD829671BCA00EB5ACF /* FoodCategoryViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2AD1AFDB29671CEE00EB5ACF /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFDE29671D0200EB5ACF /* C */,
+				2AD1AFDD29671CFE00EB5ACF /* V */,
+				2AD1AFDC29671CF800EB5ACF /* M */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		2AD1AFDC29671CF800EB5ACF /* M */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2AD1AFDD29671CFE00EB5ACF /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFEB296AFC8B00EB5ACF /* icons */,
+				2AD1AFE229671D2C00EB5ACF /* RecipesView.h */,
+				2AD1AFE329671D2C00EB5ACF /* RecipesView.m */,
+				2AD1AFE82969D20000EB5ACF /* FoodRecipesTableViewCell.h */,
+				2AD1AFE92969D20000EB5ACF /* FoodRecipesTableViewCell.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2AD1AFDE29671D0200EB5ACF /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1AFDF29671D1C00EB5ACF /* RecipesViewController.h */,
+				2AD1AFE029671D1C00EB5ACF /* RecipesViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2AD1AFEB296AFC8B00EB5ACF /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				2AD1B00A296B06C300EB5ACF /* fruit.png */,
+				2AD1B008296B04BA00EB5ACF /* yinliao.png */,
+				2AD1B004296B049B00EB5ACF /* roudan.png */,
+				2AD1AFF9296B049100EB5ACF /* dadou.png */,
+				2AD1AFFA296B049100EB5ACF /* jianguo.png */,
+				2AD1AFF7296B049100EB5ACF /* lengyin.png */,
+				2AD1AFF8296B049100EB5ACF /* niunai.png */,
+				2AD1AFF3296B049000EB5ACF /* shucai.png */,
+				2AD1AFF4296B049000EB5ACF /* xiangliao.png */,
+				2AD1AFF5296B049000EB5ACF /* youzhi.png */,
+				2AD1AFF0296AFDD200EB5ACF /* zhushi-1.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		2AFDF55129508B8E0056D231 /* PersonalInformation */ = {
@@ -718,6 +931,10 @@
 		2AFDF57B29508D5B0056D231 /* DietCoins */ = {
 			isa = PBXGroup;
 			children = (
+				2AD1AFCB29670B7900EB5ACF /* xiangji.png */,
+				2AD1AFC929670B6B00EB5ACF /* yiliaoshipu.png */,
+				2AD1AFC729670B6500EB5ACF /* shuiguo.png */,
+				2AD1AFC52966DFFC00EB5ACF /* naicha.jpeg */,
 				2ADB1F912961B648001F21A0 /* fenxiang.png */,
 				2ADB1F8F2961B304001F21A0 /* fanhui-3.png */,
 				2ADB1F8D295DC565001F21A0 /* fanhui-2.png */,
@@ -731,6 +948,7 @@
 		2AFDF5C32952F9B00056D231 /* SearchFood */ = {
 			isa = PBXGroup;
 			children = (
+				2A48AC38295DA27B0067600F /* FoodDetails */,
 				2AFDF5C62952F9D90056D231 /* C */,
 				2AFDF5C52952F9D50056D231 /* M */,
 				2AFDF5C42952F9D10056D231 /* V */,
@@ -887,20 +1105,29 @@
 				2A3C23CD293DACB2008C8D07 /* LaunchScreen.storyboard in Resources */,
 				2AFDF54029508B890056D231 /* shoujihao.png in Resources */,
 				2AFDF54D29508B890056D231 /* jilu-2.png in Resources */,
+				2AD1B000296B049100EB5ACF /* lengyin.png in Resources */,
 				2AFDF5C02952EBB80056D231 /* canyin.png in Resources */,
+				2AD1B00B296B06C300EB5ACF /* fruit.png in Resources */,
 				2ADB1F8E295DC565001F21A0 /* fanhui-2.png in Resources */,
+				2AD1AFCA29670B6B00EB5ACF /* yiliaoshipu.png in Resources */,
 				2AFDF53729508B890056D231 /* wode.png in Resources */,
+				2ACA78B7296F237600F124E3 /* shu.png in Resources */,
 				2AFDF53329508B890056D231 /* zixun2.png in Resources */,
 				2AFDF54A29508B890056D231 /* weibiaoti--.png in Resources */,
 				2AFDF54329508B890056D231 /* duihuan.png in Resources */,
+				2AD1B001296B049100EB5ACF /* niunai.png in Resources */,
 				2AFDF54929508B890056D231 /* spare.png in Resources */,
+				2AD1AFFD296B049100EB5ACF /* xiangliao.png in Resources */,
 				2AFDF53229508B890056D231 /* shuju.png in Resources */,
 				2AFDF53129508B890056D231 /* shezhi-7.png in Resources */,
+				2AD1B002296B049100EB5ACF /* dadou.png in Resources */,
 				2AFDF54C29508B890056D231 /* touxiang.JPG in Resources */,
 				2AFDF54529508B890056D231 /* fanhui.png in Resources */,
+				2AD1AFFC296B049100EB5ACF /* shucai.png in Resources */,
 				2ADB1F922961B648001F21A0 /* fenxiang.png in Resources */,
 				2AFDF54629508B890056D231 /* shoucang.png in Resources */,
 				2AFDF54129508B890056D231 /* linggandengpao.png in Resources */,
+				2AD1AFC62966DFFC00EB5ACF /* naicha.jpeg in Resources */,
 				2AFDF53629508B890056D231 /* shebei.png in Resources */,
 				2AFDF54729508B890056D231 /* ceping.png in Resources */,
 				2AFDF53A29508B890056D231 /* bangzhu.png in Resources */,
@@ -915,11 +1142,18 @@
 				2AFDF53F29508B890056D231 /* jilu.png in Resources */,
 				2AFDF54229508B890056D231 /* xiaoxi.png in Resources */,
 				2A3C23CA293DACB2008C8D07 /* Assets.xcassets in Resources */,
+				2AD1B006296B049B00EB5ACF /* roudan.png in Resources */,
 				2AFDF5D1295320FD0056D231 /* sousuo-2.png in Resources */,
+				2AD1AFF1296AFDD200EB5ACF /* zhushi-1.png in Resources */,
 				2AFDF54829508B890056D231 /* jiankang.png in Resources */,
+				2AD1AFFE296B049100EB5ACF /* youzhi.png in Resources */,
 				2AFDF53C29508B890056D231 /* xinxi.png in Resources */,
+				2AD1B009296B04BA00EB5ACF /* yinliao.png in Resources */,
+				2AD1B003296B049100EB5ACF /* jianguo.png in Resources */,
 				2AFDF53B29508B890056D231 /* ziliao.png in Resources */,
 				2AFDF53D29508B890056D231 /* _xiangyou2.png in Resources */,
+				2AD1AFC829670B6500EB5ACF /* shuiguo.png in Resources */,
+				2AD1AFCC29670B7900EB5ACF /* xiangji.png in Resources */,
 				2AFDF54B29508B890056D231 /* spare1.png in Resources */,
 				2A3C23C8293DACB0008C8D07 /* Main.storyboard in Resources */,
 				2AFDF53929508B890056D231 /* gouwuche.png in Resources */,
@@ -1055,16 +1289,22 @@
 				2AFDF57329508B8E0056D231 /* SetModel.m in Sources */,
 				2AFDF5CC2952FD920056D231 /* SearchFoodModel.m in Sources */,
 				2ADB1F952961C039001F21A0 /* FoodFirstTableViewCell.m in Sources */,
+				2AD1AFD029671B8700EB5ACF /* FoodCategoryModel.m in Sources */,
+				2AD1AFD629671BB500EB5ACF /* FoodCategoryView.m in Sources */,
 				2AFDF5CF2952FDB40056D231 /* SearchFoodView.m in Sources */,
 				2AFDF57729508B8E0056D231 /* PersonalInformationViewController.m in Sources */,
 				2AFDF56F29508B8E0056D231 /* FirstTableViewCell.m in Sources */,
+				2AD1AFE429671D2C00EB5ACF /* RecipesView.m in Sources */,
 				2A3C23FF293DAD54008C8D07 /* LoginViewController.m in Sources */,
 				2AFDF57529508B8E0056D231 /* SetView.m in Sources */,
 				2A3C249A2946FC9F008C8D07 /* BodyView.m in Sources */,
 				2AFDF57129508B8E0056D231 /* ThirdTableViewCell.m in Sources */,
 				2A3C24912946FC62008C8D07 /* DietView.m in Sources */,
 				2A48AC3B295DA2B80067600F /* FoodDetailsViewController.m in Sources */,
+				2ACA78AD296EE0AA00F124E3 /* MenuView.m in Sources */,
 				2A3C24A72946FD60008C8D07 /* CommitShareModel.m in Sources */,
+				2ACA78B0296EE0C200F124E3 /* MenuViewController.m in Sources */,
+				2ACA78B3296EF5A600F124E3 /* MenuListTableViewCell.m in Sources */,
 				2A3C24A42946FD37008C8D07 /* DietViewController.m in Sources */,
 				2A3C24972946FC8C008C8D07 /* BodyModel.m in Sources */,
 				2A3C23FC293DAD45008C8D07 /* LoginView.m in Sources */,
@@ -1074,7 +1314,9 @@
 				2AFDF57629508B8E0056D231 /* PersonalInformationModel.m in Sources */,
 				2A3C23BF293DACB0008C8D07 /* AppDelegate.m in Sources */,
 				2A3C23F6293DACD7008C8D07 /* LoginModel.m in Sources */,
+				2AD1AFD929671BCA00EB5ACF /* FoodCategoryViewController.m in Sources */,
 				2A3C24AD2946FD87008C8D07 /* CommitShareViewConreoller.m in Sources */,
+				2AD1AFE129671D1C00EB5ACF /* RecipesViewController.m in Sources */,
 				2A3C249D2946FCB4008C8D07 /* BodyViewConctroller.m in Sources */,
 				2AFDF5C92952FD7E0056D231 /* SearchFoodViewController.m in Sources */,
 				2AFDF57229508B8E0056D231 /* SetTableViewCell.m in Sources */,
@@ -1083,6 +1325,8 @@
 				2AFDF57829508B8E0056D231 /* PersonalInformationView.m in Sources */,
 				2ADB1F982961C047001F21A0 /* FoodSecondTableViewCell.m in Sources */,
 				2A3C2409293DAE82008C8D07 /* RegisterView.m in Sources */,
+				2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */,
+				2AD1AFEA2969D20000EB5ACF /* FoodRecipesTableViewCell.m in Sources */,
 				2AFDF57429508B8E0056D231 /* SetViewController.m in Sources */,
 				2A3C23C2293DACB0008C8D07 /* SceneDelegate.m in Sources */,
 				2A48AC41295DA2EE0067600F /* FoodDetailsView.m in Sources */,
