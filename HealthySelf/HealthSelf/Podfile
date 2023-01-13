@@ -18,4 +18,5 @@ target 'HealthSelf' do
 pod 'Masonry'
 pod 'AFNetworking'
 pod 'SDWebImage'
+pod 'JSONModel'
 end

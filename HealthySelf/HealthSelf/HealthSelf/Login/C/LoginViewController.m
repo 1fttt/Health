@@ -22,8 +22,8 @@
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 @interface LoginViewController ()<delegateButton>
-@property (nonatomic, copy) NSDictionary *dictionaryUser;
-@property (nonatomic, copy) NSDictionary *dictionaryPostUser;
+@property (nonatomic, strong) NSDictionary *dictionaryUser;
+@property (nonatomic, strong) NSDictionary *dictionaryPostUser;
 @property (nonatomic, assign) NSInteger isLogin;
 
 @property (nonatomic, strong) LoginView *viewLogin;
@@ -114,9 +114,9 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"" parameters:self.dictionaryUser headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://43.143.248.30:8082/login" parameters:self.dictionaryUser headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        self.dictionaryPostUser = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        self.dictionaryPostUser = responseObject;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error");
     }];
@@ -140,7 +140,6 @@
     self.tabBarController.tabBar.backgroundColor = backWhiteColor;
     UIWindow *keyWindow = self.view.window.windowScene.keyWindow;
     keyWindow.rootViewController = self.tabBarController;
-    
 }
 /*
 #pragma mark - Navigation

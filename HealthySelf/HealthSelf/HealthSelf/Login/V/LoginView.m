@@ -139,7 +139,7 @@
     if (button.tag == 0) {
         NSString *userName = self.textFieldUserName.text;
         NSString *passWord = self.textFieldPassWord.text;
-        self.dictionaryUser = @{@"userName":userName, @"passWord":passWord};
+        self.dictionaryUser = @{@"username":userName, @"password":passWord};
         /*注册通知并发送*/
         [[NSNotificationCenter defaultCenter] postNotificationName:@"userMessage" object:nil userInfo:self.dictionaryUser];
         /*清空输入栏*/

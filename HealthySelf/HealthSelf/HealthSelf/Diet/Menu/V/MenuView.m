@@ -87,7 +87,7 @@
         listCell.contenLabel.text = [NSString stringWithFormat:@"%@", self.menuListDictionary[@"result"][@"result"][@"list"][indexPath.row][@"content"]];
         listCell.stepButton.tag = 222;
         // 在自定义cell里将button添加到contenview才能实现点击事件，查看图层问题得知
-        [listCell.stepButton addTarget:self action:@selector(pressMoreButton:) forControlEvents:UIControlEventTouchUpInside];
+//        [listCell.stepButton addTarget:self action:@selector(pressMoreButton:) forControlEvents:UIControlEventTouchUpInside];
         return listCell;
     } else {
         UITableViewCell* normalCell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"normalButtonCell" forIndexPath:indexPath];
@@ -113,8 +113,10 @@
     }
     return 0;
 }
-- (void)pressMoreButton :(UIButton *)button{
-    NSLog(@"%ld", button.tag);
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *row = [NSString stringWithFormat:@"%ld", indexPath.row];
+    NSDictionary *cellRowDictionary = @{@"cellRowOfIndexPath": row};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ToMenuStepView" object:nil userInfo:cellRowDictionary];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -44,6 +44,7 @@
      注册观察者，接收通知
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyNameFood:) name:@"keyNameFood" object:nil];
+    //
     UIColor *buttonColor = [UIColor colorWithRed:105 / 255.0f green:183 / 255.0f blue:135 / 255.0f alpha:1.0];
     UIBarButtonItem* leftBtn2 = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(pressLeftLogin)];
     leftBtn2.tintColor = buttonColor;

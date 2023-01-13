@@ -40,6 +40,12 @@
 		2ACA78B0296EE0C200F124E3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78AF296EE0C200F124E3 /* MenuViewController.m */; };
 		2ACA78B3296EF5A600F124E3 /* MenuListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */; };
 		2ACA78B7296F237600F124E3 /* shu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ACA78B6296F237600F124E3 /* shu.png */; };
+		2ACA78D0296FCCCB00F124E3 /* MenuDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78CF296FCCCB00F124E3 /* MenuDetailsViewController.m */; };
+		2ACA78D3296FCDA600F124E3 /* MenuDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78D2296FCDA600F124E3 /* MenuDetailsModel.m */; };
+		2ACA78D6296FCDB800F124E3 /* MenuDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78D5296FCDB800F124E3 /* MenuDetailsView.m */; };
+		2ACA78DA296FCDD600F124E3 /* MenuStepsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78D9296FCDD600F124E3 /* MenuStepsTableViewCell.m */; };
+		2ACA78DD29702A7300F124E3 /* MaterialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78DC29702A7300F124E3 /* MaterialTableViewCell.m */; };
+		2ACA78E029702C1F00F124E3 /* FoodDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78DF29702C1F00F124E3 /* FoodDetailsModel.m */; };
 		2AD1AFC62966DFFC00EB5ACF /* naicha.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC52966DFFC00EB5ACF /* naicha.jpeg */; };
 		2AD1AFC829670B6500EB5ACF /* shuiguo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC729670B6500EB5ACF /* shuiguo.png */; };
 		2AD1AFCA29670B6B00EB5ACF /* yiliaoshipu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1AFC929670B6B00EB5ACF /* yiliaoshipu.png */; };
@@ -67,6 +73,9 @@
 		2ADB1F922961B648001F21A0 /* fenxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F912961B648001F21A0 /* fenxiang.png */; };
 		2ADB1F952961C039001F21A0 /* FoodFirstTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1F942961C039001F21A0 /* FoodFirstTableViewCell.m */; };
 		2ADB1F982961C047001F21A0 /* FoodSecondTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ADB1F972961C047001F21A0 /* FoodSecondTableViewCell.m */; };
+		2AE6BD8429719C3800314C7E /* MoreMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6BD8329719C3800314C7E /* MoreMenuModel.m */; };
+		2AE6BD8A29719C7200314C7E /* MoreMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6BD8929719C7200314C7E /* MoreMenuViewController.m */; };
+		2AE6BD8E29719CAB00314C7E /* MoreMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6BD8D29719CAB00314C7E /* MoreMenuView.m */; };
 		2AFDF53029508B890056D231 /* huahua.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDF50F29508B890056D231 /* huahua.png */; };
 		2AFDF53129508B890056D231 /* shezhi-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDF51029508B890056D231 /* shezhi-7.png */; };
 		2AFDF53229508B890056D231 /* shuju.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AFDF51129508B890056D231 /* shuju.png */; };
@@ -194,6 +203,18 @@
 		2ACA78B1296EF5A600F124E3 /* MenuListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuListTableViewCell.h; sourceTree = "<group>"; };
 		2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuListTableViewCell.m; sourceTree = "<group>"; };
 		2ACA78B6296F237600F124E3 /* shu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shu.png; sourceTree = "<group>"; };
+		2ACA78CE296FCCCB00F124E3 /* MenuDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDetailsViewController.h; sourceTree = "<group>"; };
+		2ACA78CF296FCCCB00F124E3 /* MenuDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuDetailsViewController.m; sourceTree = "<group>"; };
+		2ACA78D1296FCDA600F124E3 /* MenuDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDetailsModel.h; sourceTree = "<group>"; };
+		2ACA78D2296FCDA600F124E3 /* MenuDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuDetailsModel.m; sourceTree = "<group>"; };
+		2ACA78D4296FCDB800F124E3 /* MenuDetailsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuDetailsView.h; sourceTree = "<group>"; };
+		2ACA78D5296FCDB800F124E3 /* MenuDetailsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuDetailsView.m; sourceTree = "<group>"; };
+		2ACA78D8296FCDD600F124E3 /* MenuStepsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuStepsTableViewCell.h; sourceTree = "<group>"; };
+		2ACA78D9296FCDD600F124E3 /* MenuStepsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuStepsTableViewCell.m; sourceTree = "<group>"; };
+		2ACA78DB29702A7300F124E3 /* MaterialTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaterialTableViewCell.h; sourceTree = "<group>"; };
+		2ACA78DC29702A7300F124E3 /* MaterialTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaterialTableViewCell.m; sourceTree = "<group>"; };
+		2ACA78DE29702C1F00F124E3 /* FoodDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FoodDetailsModel.h; path = HealthSelf/Diet/Menu/MenuDEetails/V/cells/FoodDetailsModel.h; sourceTree = SOURCE_ROOT; };
+		2ACA78DF29702C1F00F124E3 /* FoodDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FoodDetailsModel.m; path = HealthSelf/Diet/Menu/MenuDEetails/V/cells/FoodDetailsModel.m; sourceTree = SOURCE_ROOT; };
 		2AD1AFC52966DFFC00EB5ACF /* naicha.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = naicha.jpeg; sourceTree = "<group>"; };
 		2AD1AFC729670B6500EB5ACF /* shuiguo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuiguo.png; sourceTree = "<group>"; };
 		2AD1AFC929670B6B00EB5ACF /* yiliaoshipu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yiliaoshipu.png; sourceTree = "<group>"; };
@@ -230,6 +251,12 @@
 		2ADB1F942961C039001F21A0 /* FoodFirstTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodFirstTableViewCell.m; sourceTree = "<group>"; };
 		2ADB1F962961C047001F21A0 /* FoodSecondTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoodSecondTableViewCell.h; sourceTree = "<group>"; };
 		2ADB1F972961C047001F21A0 /* FoodSecondTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodSecondTableViewCell.m; sourceTree = "<group>"; };
+		2AE6BD8229719C3800314C7E /* MoreMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreMenuModel.h; sourceTree = "<group>"; };
+		2AE6BD8329719C3800314C7E /* MoreMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreMenuModel.m; sourceTree = "<group>"; };
+		2AE6BD8829719C7200314C7E /* MoreMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreMenuViewController.h; sourceTree = "<group>"; };
+		2AE6BD8929719C7200314C7E /* MoreMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreMenuViewController.m; sourceTree = "<group>"; };
+		2AE6BD8C29719CAB00314C7E /* MoreMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoreMenuView.h; sourceTree = "<group>"; };
+		2AE6BD8D29719CAB00314C7E /* MoreMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoreMenuView.m; sourceTree = "<group>"; };
 		2AFDF50F29508B890056D231 /* huahua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huahua.png; sourceTree = "<group>"; };
 		2AFDF51029508B890056D231 /* shezhi-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shezhi-7.png"; sourceTree = "<group>"; };
 		2AFDF51129508B890056D231 /* shuju.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuju.png; sourceTree = "<group>"; };
@@ -482,6 +509,7 @@
 		2A3C247C29462409008C8D07 /* Diet */ = {
 			isa = PBXGroup;
 			children = (
+				2AE6BD7E29719C1000314C7E /* MoreMenuView */,
 				2ACA78A7296D357B00F124E3 /* Menu */,
 				2AFDF57B29508D5B0056D231 /* DietCoins */,
 				2AD1AFDB29671CEE00EB5ACF /* Recipes */,
@@ -608,6 +636,8 @@
 		2A48AC3C295DA2BD0067600F /* M */ = {
 			isa = PBXGroup;
 			children = (
+				2ACA78DE29702C1F00F124E3 /* FoodDetailsModel.h */,
+				2ACA78DF29702C1F00F124E3 /* FoodDetailsModel.m */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -637,8 +667,8 @@
 		2ACA78A7296D357B00F124E3 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2ACA78CA296FCCA000F124E3 /* MenuDEetails */,
 				2ACA78B5296F236900F124E3 /* MenuCoins */,
-				2ACA78A9296EE08400F124E3 /* M */,
 				2ACA78A8296EE07E00F124E3 /* V */,
 				2ACA78AA296EE08A00F124E3 /* C */,
 			);
@@ -653,13 +683,6 @@
 				2ACA78B4296F1BA900F124E3 /* cells */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		2ACA78A9296EE08400F124E3 /* M */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		2ACA78AA296EE08A00F124E3 /* C */ = {
@@ -686,6 +709,55 @@
 				2ACA78B6296F237600F124E3 /* shu.png */,
 			);
 			path = MenuCoins;
+			sourceTree = "<group>";
+		};
+		2ACA78CA296FCCA000F124E3 /* MenuDEetails */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78CD296FCCB400F124E3 /* C */,
+				2ACA78CC296FCCAF00F124E3 /* V */,
+				2ACA78CB296FCCAA00F124E3 /* M */,
+			);
+			path = MenuDEetails;
+			sourceTree = "<group>";
+		};
+		2ACA78CB296FCCAA00F124E3 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78D1296FCDA600F124E3 /* MenuDetailsModel.h */,
+				2ACA78D2296FCDA600F124E3 /* MenuDetailsModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2ACA78CC296FCCAF00F124E3 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78D4296FCDB800F124E3 /* MenuDetailsView.h */,
+				2ACA78D5296FCDB800F124E3 /* MenuDetailsView.m */,
+				2ACA78D7296FCDBB00F124E3 /* cells */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2ACA78CD296FCCB400F124E3 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78CE296FCCCB00F124E3 /* MenuDetailsViewController.h */,
+				2ACA78CF296FCCCB00F124E3 /* MenuDetailsViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2ACA78D7296FCDBB00F124E3 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				2ACA78D8296FCDD600F124E3 /* MenuStepsTableViewCell.h */,
+				2ACA78D9296FCDD600F124E3 /* MenuStepsTableViewCell.m */,
+				2ACA78DB29702A7300F124E3 /* MaterialTableViewCell.h */,
+				2ACA78DC29702A7300F124E3 /* MaterialTableViewCell.m */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		2AD1AFCD29671B4200EB5ACF /* Foodcategory */ = {
@@ -781,6 +853,43 @@
 				2AD1AFF0296AFDD200EB5ACF /* zhushi-1.png */,
 			);
 			path = icons;
+			sourceTree = "<group>";
+		};
+		2AE6BD7E29719C1000314C7E /* MoreMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				2AE6BD8B29719C7C00314C7E /* V */,
+				2AE6BD8129719C2400314C7E /* C */,
+				2AE6BD7F29719C1C00314C7E /* M */,
+			);
+			path = MoreMenuView;
+			sourceTree = "<group>";
+		};
+		2AE6BD7F29719C1C00314C7E /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2AE6BD8229719C3800314C7E /* MoreMenuModel.h */,
+				2AE6BD8329719C3800314C7E /* MoreMenuModel.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		2AE6BD8129719C2400314C7E /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2AE6BD8829719C7200314C7E /* MoreMenuViewController.h */,
+				2AE6BD8929719C7200314C7E /* MoreMenuViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2AE6BD8B29719C7C00314C7E /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2AE6BD8C29719CAB00314C7E /* MoreMenuView.h */,
+				2AE6BD8D29719CAB00314C7E /* MoreMenuView.m */,
+			);
+			path = V;
 			sourceTree = "<group>";
 		};
 		2AFDF55129508B8E0056D231 /* PersonalInformation */ = {
@@ -1298,7 +1407,11 @@
 				2A3C23FF293DAD54008C8D07 /* LoginViewController.m in Sources */,
 				2AFDF57529508B8E0056D231 /* SetView.m in Sources */,
 				2A3C249A2946FC9F008C8D07 /* BodyView.m in Sources */,
+				2AE6BD8429719C3800314C7E /* MoreMenuModel.m in Sources */,
 				2AFDF57129508B8E0056D231 /* ThirdTableViewCell.m in Sources */,
+				2AE6BD8E29719CAB00314C7E /* MoreMenuView.m in Sources */,
+				2ACA78D6296FCDB800F124E3 /* MenuDetailsView.m in Sources */,
+				2ACA78D0296FCCCB00F124E3 /* MenuDetailsViewController.m in Sources */,
 				2A3C24912946FC62008C8D07 /* DietView.m in Sources */,
 				2A48AC3B295DA2B80067600F /* FoodDetailsViewController.m in Sources */,
 				2ACA78AD296EE0AA00F124E3 /* MenuView.m in Sources */,
@@ -1308,12 +1421,15 @@
 				2A3C24A42946FD37008C8D07 /* DietViewController.m in Sources */,
 				2A3C24972946FC8C008C8D07 /* BodyModel.m in Sources */,
 				2A3C23FC293DAD45008C8D07 /* LoginView.m in Sources */,
+				2ACA78DD29702A7300F124E3 /* MaterialTableViewCell.m in Sources */,
+				2ACA78D3296FCDA600F124E3 /* MenuDetailsModel.m in Sources */,
 				2A3C240C293DAE93008C8D07 /* RegisterViewController.m in Sources */,
 				2A3C248E2946FC4F008C8D07 /* DietModel.m in Sources */,
 				2A3C23C5293DACB0008C8D07 /* ViewController.m in Sources */,
 				2AFDF57629508B8E0056D231 /* PersonalInformationModel.m in Sources */,
 				2A3C23BF293DACB0008C8D07 /* AppDelegate.m in Sources */,
 				2A3C23F6293DACD7008C8D07 /* LoginModel.m in Sources */,
+				2AE6BD8A29719C7200314C7E /* MoreMenuViewController.m in Sources */,
 				2AD1AFD929671BCA00EB5ACF /* FoodCategoryViewController.m in Sources */,
 				2A3C24AD2946FD87008C8D07 /* CommitShareViewConreoller.m in Sources */,
 				2AD1AFE129671D1C00EB5ACF /* RecipesViewController.m in Sources */,
@@ -1325,8 +1441,10 @@
 				2AFDF57829508B8E0056D231 /* PersonalInformationView.m in Sources */,
 				2ADB1F982961C047001F21A0 /* FoodSecondTableViewCell.m in Sources */,
 				2A3C2409293DAE82008C8D07 /* RegisterView.m in Sources */,
+				2ACA78DA296FCDD600F124E3 /* MenuStepsTableViewCell.m in Sources */,
 				2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */,
 				2AD1AFEA2969D20000EB5ACF /* FoodRecipesTableViewCell.m in Sources */,
+				2ACA78E029702C1F00F124E3 /* FoodDetailsModel.m in Sources */,
 				2AFDF57429508B8E0056D231 /* SetViewController.m in Sources */,
 				2A3C23C2293DACB0008C8D07 /* SceneDelegate.m in Sources */,
 				2A48AC41295DA2EE0067600F /* FoodDetailsView.m in Sources */,

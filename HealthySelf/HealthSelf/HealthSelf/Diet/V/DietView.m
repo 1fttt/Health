@@ -98,7 +98,6 @@
         self.moreLabel.textColor = [UIColor blackColor];
         self.moreLabel.frame = CGRectMake(35 + i * ScreenWidth / 4, 270, 150, 50);
         
-        
         self.moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.moreButton setImage:[UIImage imageNamed:coinsArray[i]] forState:UIControlStateNormal];
         [self addSubview:self.moreButton];
@@ -110,8 +109,8 @@
 }
 - (void)creatMenu {
 #pragma mark Menu
+    UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
     UIColor *menuLineViewColor = [UIColor colorWithRed: 248 / 255.0f green:248 / 255.0f blue:248 / 255.0f alpha:1.0];
-    UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
     self.menuLabel = [[UILabel alloc] init];
     self.menuLabel.layer.masksToBounds = YES;
     self.menuLabel.layer.cornerRadius = 12.0;
@@ -119,7 +118,7 @@
     self.menuLabel.textColor = [UIColor whiteColor];
     self.menuLabel.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:13];
     self.menuLabel.textAlignment = NSTextAlignmentCenter;
-    self.menuLabel.backgroundColor = labelGreen;
+    self.menuLabel.backgroundColor = newGreen;
     
     self.menuLineView = [[UIView alloc] init];
     self.menuLineView.backgroundColor = menuLineViewColor;
@@ -141,11 +140,36 @@
     self.menuBackView2.layer.masksToBounds = YES;
     self.menuBackView2.layer.cornerRadius = 20.0;
     
+   
+    self.moreMenuButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.moreMenuButton setTitle:@"获取更多菜谱" forState:UIControlStateNormal];
+    self.moreMenuButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    self.moreMenuButton.layer.masksToBounds = YES;
+    self.moreMenuButton.layer.cornerRadius = 14;
+    self.moreMenuButton.layer.borderWidth = 0.5;
+    self.moreMenuButton.tintColor = [UIColor whiteColor];
+    self.moreMenuButton.layer.borderColor = [UIColor grayColor].CGColor;
+    self.moreMenuButton.backgroundColor = newGreen;
+    self.moreMenuButton.tag = 668;
+    [self.moreMenuButton addTarget:self action:@selector(pressMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+  
+    self.weatherLabel = [[UILabel alloc] init];
+    self.weatherLabel.layer.masksToBounds = YES;
+    self.weatherLabel.layer.cornerRadius = 12.0;
+    self.weatherLabel.text = @"最近天气";
+    self.weatherLabel.textColor = [UIColor whiteColor];
+    self.weatherLabel.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:13];
+    self.weatherLabel.textAlignment = NSTextAlignmentCenter;
+    self.weatherLabel.backgroundColor = newGreen;
+    
+    
     [self addSubview:self.menuLabel];
     [self addSubview:self.menuLineView];
     [self addSubview:self.menuBackView];
     [self addSubview:self.menuBackView2];
+    [self addSubview:self.moreMenuButton];
     [self addSubview:self.menuLineView2];
+    [self addSubview:self.weatherLabel];
     [self.menuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo([self.labelHealth mas_bottom]).offset(ScreenHeight / 4);
         make.left.equalTo(@15);
@@ -170,12 +194,24 @@
         make.left.equalTo([self.menuBackView mas_right]).offset(20);
         make.top.equalTo([self.menuLabel mas_bottom]).offset(10);
     }];
+    [self.moreMenuButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuBackView mas_bottom]).offset(20);
+        make.left.equalTo(@(ScreenWidth / 4 + 30));
+        make.width.equalTo(@120);
+        make.height.equalTo(@30);
+    }];
     [self.menuLineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo([self.menuBackView mas_bottom]).offset(20);
+        make.bottom.equalTo([self.moreMenuButton mas_bottom]).offset(20);
         make.height.equalTo(@2.5);
         make.left.equalTo(@0);
         make.width.equalTo(@(ScreenWidth));
     }];
+    [self.weatherLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuLineView2 mas_bottom]).offset(15);
+        make.left.equalTo(@15);
+        make.height.equalTo(@25);
+        make.width.equalTo(@(ScreenWidth / 5 - 5));
+     }];
 }
 - (void)creatMenuDetails {
     self.menuImageView1 = [[UIImageView alloc] init];
@@ -310,7 +346,8 @@
         make.left.equalTo(@0);
         make.top.equalTo(@0);
     }];
-    
+}
+- (void)creatWeatherView {
     
 }
 #pragma mark SearchFood

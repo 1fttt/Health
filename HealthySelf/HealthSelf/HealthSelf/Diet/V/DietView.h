@@ -39,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)NSDictionary *menuDicit2;
 @property (nonatomic, strong)UIButton *menuButton1;
 @property (nonatomic, strong)UIButton *menuButton2;
+@property (nonatomic, strong)UIButton *moreMenuButton;
+@property (nonatomic, strong)UILabel *weatherLabel;
 @property (nonatomic, weak)id <MenuButtonDelegate>menuButtonDelegate;
 - (void)creatMenuDetails;
 - (void)viewInit;

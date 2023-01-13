@@ -12,6 +12,7 @@
 #import "FoodCategoryViewController.h"
 #import "RecipesViewController.h"
 #import "MenuViewController.h"
+#import "MoreMenuViewController.h"
 #import <AFNetworking.h>
 
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
@@ -152,8 +153,11 @@
 - (void)returnMenuButtonTag:(UIButton *)MenuButton {
     if (MenuButton.tag == 666) {
         [self menuCategoryRequest:@"减脂"];
-    } else {
+    } else if (MenuButton.tag == 667) {
         [self menuCategoryRequest:@"营养"];
+    } else {
+        MoreMenuViewController *moreMenuVc = [[MoreMenuViewController alloc] init];
+        [self.navigationController pushViewController:moreMenuVc animated:YES];
     }
 }
 - (void)menuCategoryRequest:(NSString *)menuName {
