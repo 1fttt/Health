@@ -42,6 +42,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong)UIButton *moreMenuButton;
 @property (nonatomic, strong)UILabel *weatherLabel;
 @property (nonatomic, weak)id <MenuButtonDelegate>menuButtonDelegate;
+// 每日一句
+@property (nonatomic, strong)NSDictionary *eveDDic;
+@property (nonatomic, strong)UILabel *eveContLabel;
+@property (nonatomic, strong)UILabel *eveAuthLabel;
+@property (nonatomic, strong)UIView *eveBackView;
 - (void)creatMenuDetails;
 - (void)viewInit;
 @end

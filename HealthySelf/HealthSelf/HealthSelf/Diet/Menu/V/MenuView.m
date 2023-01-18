@@ -63,12 +63,12 @@
     if (indexPath.section == 0) {
         UITableViewCell* normalCell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"normalLabelCell" forIndexPath:indexPath];
         self.foodCategoryNumbersLabel = [[UILabel alloc] init];
-        self.foodCategoryNumbersLabel.text = @"减脂菜谱献给你";
-        self.foodCategoryNumbersLabel.font = [UIFont systemFontOfSize:13];
+        self.foodCategoryNumbersLabel.text = [NSString stringWithFormat:@"推荐%ld个菜谱  健康好生活 做饭多选择", [self.menuListDictionary[@"result"][@"result"][@"list"] count]];
+        self.foodCategoryNumbersLabel.font = [UIFont systemFontOfSize:15];
         [normalCell addSubview:self.foodCategoryNumbersLabel];
         [self.foodCategoryNumbersLabel mas_makeConstraints:^(MASConstraintMaker* make) {
             make.top.equalTo(@0);
-            make.left.equalTo(@15);
+            make.left.equalTo(@12);
             make.width.equalTo(@(ScreenWidth));
             make.bottom.equalTo(@0);
         }];

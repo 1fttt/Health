@@ -106,9 +106,10 @@
         self.moreButton.frame = CGRectMake(27 + i * ScreenWidth / 4, 215, 55, 55);
     }
     [self creatMenu];
+    
 }
 - (void)creatMenu {
-#pragma mark Menu
+#pragma mark CreatMenu
     UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
     UIColor *menuLineViewColor = [UIColor colorWithRed: 248 / 255.0f green:248 / 255.0f blue:248 / 255.0f alpha:1.0];
     self.menuLabel = [[UILabel alloc] init];
@@ -156,7 +157,7 @@
     self.weatherLabel = [[UILabel alloc] init];
     self.weatherLabel.layer.masksToBounds = YES;
     self.weatherLabel.layer.cornerRadius = 12.0;
-    self.weatherLabel.text = @"最近天气";
+    self.weatherLabel.text = @"每日鸡汤";
     self.weatherLabel.textColor = [UIColor whiteColor];
     self.weatherLabel.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:13];
     self.weatherLabel.textAlignment = NSTextAlignmentCenter;
@@ -201,13 +202,13 @@
         make.height.equalTo(@30);
     }];
     [self.menuLineView2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo([self.moreMenuButton mas_bottom]).offset(20);
+        make.bottom.equalTo([self.moreMenuButton mas_bottom]).offset(15);
         make.height.equalTo(@2.5);
         make.left.equalTo(@0);
         make.width.equalTo(@(ScreenWidth));
     }];
     [self.weatherLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo([self.menuLineView2 mas_bottom]).offset(15);
+        make.top.equalTo([self.menuLineView2 mas_bottom]).offset(5);
         make.left.equalTo(@15);
         make.height.equalTo(@25);
         make.width.equalTo(@(ScreenWidth / 5 - 5));
@@ -346,8 +347,36 @@
         make.left.equalTo(@0);
         make.top.equalTo(@0);
     }];
+    [self creatEveLabelView];
 }
-- (void)creatWeatherView {
+#pragma mark EveLabel
+- (void)creatEveLabelView {
+    UIColor *eveDLabelBackViewColor = [UIColor colorWithRed:219 / 255.0f green:233 / 255.0f blue:254 / 255.0f alpha:1.0];
+    self.eveBackView = [[UIView alloc] init];
+    self.eveBackView.backgroundColor = eveDLabelBackViewColor;
+    self.eveBackView.layer.masksToBounds = YES;
+    self.eveBackView.layer.cornerRadius = 20.0;
+    
+    self.eveContLabel = [[UILabel alloc] init];
+    self.eveContLabel.text = self.eveDDic[@"data"][0][@"content"];
+    self.eveContLabel.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:13];
+    self.eveContLabel.numberOfLines = 0;
+    
+    [self addSubview:self.eveBackView];
+    [self.eveBackView addSubview:self.eveContLabel];
+    
+    [self.eveBackView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(ScreenWidth - 30));
+        make.height.equalTo(@58);
+        make.left.equalTo(@15);
+        make.top.equalTo([self.weatherLabel mas_bottom]).offset(5);
+    }];
+    [self.eveContLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(ScreenWidth - 50));
+        make.left.equalTo(@10);
+        make.top.equalTo(@7);
+    }];
+    
     
 }
 #pragma mark SearchFood
@@ -362,6 +391,7 @@
 - (void)pressMenuButton:(UIButton *)menuButton {
     [self.menuButtonDelegate returnMenuButtonTag:menuButton];
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

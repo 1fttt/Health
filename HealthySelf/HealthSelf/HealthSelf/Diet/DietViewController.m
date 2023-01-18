@@ -33,6 +33,7 @@
     [self.view addSubview:self.viewDiet];
 //    [self menuDictionary1Requet];
     [self menuDictionary2Requet];
+    [self getEvEDayLabel];
     [self.viewDiet viewInit];
     self.viewDiet.moreButtonDelegate = self;
     self.viewDiet.menuButtonDelegate = self;
@@ -174,6 +175,20 @@
         [self.navigationController pushViewController:menuViewC animated:YES];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"menuCategory查找失败");
+    }];
+}
+- (void)getEvEDayLabel {
+    //创建会话管理者
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    // 发送GET请求
+    NSString *urlString = [NSString stringWithFormat:@"https://www.mxnzp.com/api/daily_word/recommend?app_secret=N1BEY0R5ZkVMM1B0b2t6R3F6YkVzZz09&app_id=icwnrnfenlpvforw"];
+    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.viewDiet.eveDDic = responseObject;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"getEvEDayLabel查找失败");
     }];
 }
 /*

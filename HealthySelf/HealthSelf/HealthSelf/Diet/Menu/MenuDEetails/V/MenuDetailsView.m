@@ -95,7 +95,7 @@
             
         }
         return materialCell;
-    } else if (indexPath.section == 1){
+    } else if (indexPath.section == 1) {
         MenuStepsTableViewCell *stepCell = [self.menuDetailsTableView dequeueReusableCellWithIdentifier:@"menuStepsCell" forIndexPath:indexPath];
         UIColor *menuLineViewColor = [UIColor colorWithRed: 248 / 255.0f green:248 / 255.0f blue:248 / 255.0f alpha:1.0];
         for (int i = 0; i < [self.menuMaterialDiciionary[@"process"] count]; i++) {
