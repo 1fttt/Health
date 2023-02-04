@@ -47,18 +47,14 @@
 - (void)pressLeft {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 #pragma mark NSNotifivation通知传值函数
 - (void)ToSearchView {
     SearchFoodViewController *searchViewController = [[SearchFoodViewController alloc] init];
-    
     [self.navigationController pushViewController:searchViewController animated:YES];
-    
 }
 - (void)toFoodDetails:(NSNotification *)sender {
     self.urlFoodIdString = sender.userInfo[@"ID"];
     [self searchFoodDetailsRequest];
-    NSLog(@"AAAAAA%@", self.urlFoodIdString);
 }
 - (void)searchFoodDetailsRequest {
     //创建会话管理者

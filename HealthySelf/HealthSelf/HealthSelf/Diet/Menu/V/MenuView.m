@@ -59,6 +59,9 @@
     }
     return 0;
 }
+/**
+ sjkfafg a while daf sfgfbangafa fafjk whie while
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         UITableViewCell* normalCell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"normalLabelCell" forIndexPath:indexPath];
@@ -75,7 +78,6 @@
         return normalCell;
     } else if (indexPath.section == 1) {
         MenuListTableViewCell *listCell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"menuListCell" forIndexPath:indexPath];
-        
         NSString* imageName = [NSString stringWithFormat:@"%@", self.menuListDictionary[@"result"][@"result"][@"list"][indexPath.row][@"pic"]];
         NSURL* urlImage = [NSURL URLWithString:imageName];
         [listCell.foodImageView sd_setImageWithURL:urlImage];

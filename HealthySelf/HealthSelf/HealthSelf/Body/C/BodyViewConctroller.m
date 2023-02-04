@@ -30,7 +30,7 @@
     UITabBarItem *tabBarDiet = [[UITabBarItem alloc] init];
     tabBarDiet.image = [[UIImage imageNamed:@"jilu-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     tabBarDiet.selectedImage = [[UIImage imageNamed:@"jilu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarDiet.title = @"记录";
+    tabBarDiet.title = @"身体记录";
     // 一句话设置选中状态下的颜色
     self.tabBarController.tabBar.tintColor = backGreen;
     self.tabBarItem = tabBarDiet;
