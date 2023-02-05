@@ -10,7 +10,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface webNewsViewController : UIViewController
-
+@property (nonatomic, strong) NSDictionary *topNewsDictionary;
+@property (nonatomic, assign) NSInteger nowPage;
 @end
 
 NS_ASSUME_NONNULL_END

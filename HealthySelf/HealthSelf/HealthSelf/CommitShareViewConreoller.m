@@ -8,11 +8,13 @@
 #import "CommitShareViewConreoller.h"
 #import "CommitShareView.h"
 #import "EditViewController.h"
+#import "webNewsViewController.h"
 #import <AFNetworking/AFNetworking.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
 @interface CommitShareViewConreoller ()<buttonDelegate, imageDelegate>
 @property (nonatomic, strong) CommitShareView *viewCommityShare;
+@property (nonatomic, strong) NSDictionary *topNewsDictionary;
 - (void)returnButton:(UIButton *)button;
 - (void)returnNewsPage:(NSInteger)newsPage;
 @end
@@ -42,7 +44,7 @@
     self.tabBarItem = tabBarDiet;
 }
 - (void)requestNews {
-    //创建会话管理者
+    // 创建会话管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -50,6 +52,7 @@
     NSString *urlString = [NSString stringWithFormat:@"https://apis.tianapi.com/health/index?key=db18b0f596f91f4c3d454651b490dd84&num=5"];
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        self.topNewsDictionary = responseObject;
         self.viewCommityShare.topNewsDictionary = responseObject;
         [self.viewCommityShare viewInit];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -58,7 +61,10 @@
 }
 #pragma mark ToWebNewsView
 - (void)returnNewsPage:(NSInteger)newsPage {
-    
+    webNewsViewController *webVC = [[webNewsViewController alloc] init];
+    webVC.topNewsDictionary = self.topNewsDictionary;
+    webVC.nowPage = newsPage;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 #pragma mark ToEditView
 - (void)returnButton:(UIButton *)button {

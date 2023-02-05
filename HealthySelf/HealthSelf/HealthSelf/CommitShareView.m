@@ -107,7 +107,6 @@
 // 点击新闻界面
 - (void)pressImage:(UITapGestureRecognizer*)gesTrueRecognizer {
     NSInteger nowTag = gesTrueRecognizer.view.tag;
-    NSLog(@"%ld", nowTag);
     if (nowTag == 0) {
         [self.newsDelegate returnNewsPage:4];
     } else if (nowTag == 6) {

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImagePickerController* imagePickerController;
 @property (nonatomic, strong) UIImage* imageMyself;
 @property (nonatomic, assign) NSInteger isSelectImage;
+@property (nonatomic, strong) UIAlertController *timeAlter;
 - (void)returnButton:(UIButton *)button;
 @end
 
@@ -77,15 +78,20 @@
 }
 // 正确输入函数
 - (void)correctText {
+    self.timeAlter = [UIAlertController alertControllerWithTitle:@"提示" message:@"发布成功！快去看看吧" preferredStyle:UIAlertControllerStyleAlert];
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeOut) userInfo:nil repeats:NO];
+    [self presentViewController:self.timeAlter animated:YES completion:nil];
     if (self.isSelectImage == 0) {
         NSLog(@"不包含图片的分享");
     } else {
         NSLog(@"包含图片的分享");
     }
 }
-
-
-# pragma mark Camare
+- (void)timeOut {
+    [self.timeAlter dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+#pragma mark Camare
 // 返回imagePickerController实例
 - (UIImagePickerController *)imagePickerController {
     if (_imagePickerController == nil) {
@@ -107,7 +113,6 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
             [self dismissViewControllerAnimated:YES completion:nil];
         }];
-
     [alert addAction:camera];
     [alert addAction:album];
     [alert addAction:cancel];
