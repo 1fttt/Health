@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 @interface CommitShareView : UIView
 - (void)viewInit;
-@property (nonatomic, strong )NSDictionary *topNewsDictionary;
+@property (nonatomic, strong) NSDictionary *topNewsDictionary;
 @property (nonatomic, weak) id<buttonDelegate>delegate;
 @property (nonatomic, weak) id<imageDelegate>newsDelegate;
 

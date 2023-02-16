@@ -11,6 +11,7 @@
 #define MaxSize 36
 #import "Masonry.h"
 #import "TableViewCellTop.h"
+#import "CommentTableViewCell.h"
 #import <SDWebImage/SDWebImage.h>
 @interface CommitShareView() <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (nonatomic, strong) UILabel* labelMonth;
@@ -34,6 +35,7 @@
     self.tableView.dataSource = self;
     self.tableView.tag = 777;
     [self.tableView registerClass:[TableViewCellTop class] forCellReuseIdentifier:@"top"];
+    [self.tableView registerClass:[CommentTableViewCell class] forCellReuseIdentifier:@"comment"];
     [self.tableView reloadData];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.tableView];
@@ -46,11 +48,13 @@
     }];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return  1;
+    } else {
+        return 3;
     }
     return 0;
 }
@@ -101,7 +105,11 @@
             }
         }
         return topCell;
-    } 
+    } else if (indexPath.section == 1) {
+        CommentTableViewCell *cmtCell = [self.tableView dequeueReusableCellWithIdentifier:@"comment"];
+        return cmtCell;
+    }
+    
     return  0;
 }
 // 点击新闻界面
@@ -118,6 +126,8 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return Width / 2 + 20;
+    } else {
+        return 120;
     }
     return 0;
 }

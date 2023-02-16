@@ -18,6 +18,9 @@
 @property (nonatomic, strong) UIView *bottomBackView;
 @property (nonatomic, strong) UIButton *sendButton;
 @property (nonatomic, strong) UILabel *shareLabel;
+@property (nonatomic, strong) UILabel *addLabel;
+@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UILabel *huatiLabel;
 @end
 
 @implementation EditView
@@ -25,6 +28,7 @@
     UIColor* newBlack = [UIColor colorWithRed:37.0f / 255.0f green: 38.0f / 255.0f blue: 41.0f/255.0f alpha:1.0f];
     UIColor* newBlkGray = [UIColor colorWithRed:60.0f / 255.0f green: 61.0f / 255.0f blue: 72.0f/255.0f alpha:1.0f];
     UIColor* buttonTitleColor = [UIColor colorWithRed:172.0f / 255.0f green: 174.0f / 255.0f blue: 182.0f/255.0f alpha:1.0f];
+    UIColor* LabelTitleColor = [UIColor colorWithRed:244.0f / 255.0f green: 244.0f / 255.0f blue: 251.0f/255.0f alpha:1.0f];
     self.backgroundColor = [UIColor whiteColor];
     self.exitButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.exitButton setImage:[UIImage imageNamed:@"cha.png"] forState:UIControlStateNormal];
@@ -69,13 +73,29 @@
     self.sendButton.titleLabel.font = [UIFont systemFontOfSize:17];
     [self.sendButton addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
     
+    self.addLabel = [[UILabel alloc] init];
+    self.addLabel.text = @"#添加话题";
+    self.addLabel.backgroundColor = LabelTitleColor;
+    self.addLabel.textAlignment = NSTextAlignmentCenter;
+    self.addLabel.font = [UIFont systemFontOfSize:15];
+    
+    self.lineView = [[UIView alloc] init];
+    self.lineView.backgroundColor = LabelTitleColor;
+    
+    
+    
+    
     [self addSubview:self.exitButton];
     [self addSubview:self.titleTextField];
     [self addSubview:self.titleLabel];
     [self addSubview:self.imageViewAvatar];
     [self addSubview:self.bottomBackView];
+    [self addSubview:self.addLabel];
+    [self addSubview:self.lineView];
+    
     [self.bottomBackView addSubview:self.shareLabel];
     [self.bottomBackView addSubview:self.sendButton];
+    
     
     [self.exitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@10);
@@ -91,6 +111,7 @@
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo([self.titleTextField mas_bottom]).offset(20);
         make.left.equalTo(@15);
+       
     }];
     [self.imageViewAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo([self.titleLabel mas_bottom]).offset(17);
@@ -98,6 +119,32 @@
         make.height.equalTo(@126);
         make.width.equalTo(@130);
     }];
+    [self.addLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.imageViewAvatar mas_bottom]).offset(295);
+        make.left.equalTo(@15);
+        make.width.equalTo(@100);
+        make.height.equalTo(@22);
+    }];
+    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(ScreenWidth - 20));
+        make.left.equalTo(@10);
+        make.height.equalTo(@1);
+        make.top.equalTo([self.addLabel mas_bottom]).offset(10);
+    }];
+    NSArray *huatiArray = @[@"#过年胖了多少？", @"#减脂期的经验", @"#我的减肥之路"];
+    for (int i = 0; i < 3; i++) {
+        self.huatiLabel = [[UILabel alloc] init];
+        self.huatiLabel.backgroundColor = LabelTitleColor;
+        self.huatiLabel.textAlignment = NSTextAlignmentCenter;
+        self.huatiLabel.font = [UIFont systemFontOfSize:13];
+        self.huatiLabel.text = huatiArray[i];
+        [self addSubview: self.huatiLabel];
+        [self.huatiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.lineView mas_bottom]).offset(5);
+            make.left.equalTo(@(15 + 120 * i));
+            make.height.equalTo(@22);
+        }];
+    }
     [self.bottomBackView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@0);
         make.width.equalTo(@(ScreenWidth));

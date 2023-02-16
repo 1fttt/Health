@@ -24,14 +24,11 @@
     _pageControl.pageIndicatorTintColor = [UIColor grayColor];
     [self.contentView addSubview:_pageControl];
 
-    
     _myTimer = [NSTimer scheduledTimerWithTimeInterval:4.0 target:self selector:@selector(timeOut:) userInfo:nil repeats:YES];
     NSRunLoop* runloop = [NSRunLoop currentRunLoop];
     [runloop addTimer:_myTimer forMode:NSRunLoopCommonModes];
     return self;
-    
 }
-
 - (void)layoutSubviews {
     _pageControl.frame = CGRectMake(200, 160, 300, 50);
     self.scrollview.frame = CGRectMake(0, 0, Width, Width / 2 + 10);
@@ -48,8 +45,6 @@
         _scrollview.tag = 1;
     }
 }
-
-
 //当scrollView停止滚动之后调用此方法
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     if (scrollView.tag == 1) {
