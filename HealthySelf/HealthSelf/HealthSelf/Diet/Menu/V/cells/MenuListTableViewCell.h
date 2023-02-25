@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *stepLabel;
 @property (nonatomic, strong) UIButton *stepButton;
 @property (nonatomic, strong)UIView *lineView;
+
+- (void)addMasonry;
 @end
 
 NS_ASSUME_NONNULL_END

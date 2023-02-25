@@ -25,6 +25,7 @@
 @end
 @implementation CommitShareView
 - (void)viewInit {
+    self.backgroundColor = [UIColor whiteColor];
     [self setTopView];
     [self creatTableView];
 }

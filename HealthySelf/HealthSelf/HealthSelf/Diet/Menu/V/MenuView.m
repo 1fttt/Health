@@ -30,7 +30,6 @@
     self.recipesTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self addSubview:self.recipesTableView];
     // 自适应撑开cell?
-//    self.recipesTableView.estimatedRowHeight = 300;
 //    self.recipesTableView.rowHeight = UITableViewAutomaticDimension;
     
     [self.recipesTableView registerClass:[MenuListTableViewCell class] forCellReuseIdentifier:@"menuListCell"];
@@ -77,6 +76,7 @@
         }];
         return normalCell;
     } else if (indexPath.section == 1) {
+        
         MenuListTableViewCell *listCell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"menuListCell" forIndexPath:indexPath];
         NSString* imageName = [NSString stringWithFormat:@"%@", self.menuListDictionary[@"result"][@"result"][@"list"][indexPath.row][@"pic"]];
         NSURL* urlImage = [NSURL URLWithString:imageName];

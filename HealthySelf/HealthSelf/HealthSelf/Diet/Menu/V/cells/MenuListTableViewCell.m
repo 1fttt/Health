@@ -113,6 +113,66 @@
     }
     return self;
 }
+- (void)addMasonry {
+    [self.foodNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(5);
+        make.left.equalTo(self).offset(12);
+        make.width.equalTo(@(ScreenWidth / 4 * 3));
+    }];
+    [self.peopelNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.foodNameLabel mas_bottom]).offset(10);
+        make.left.equalTo(self).offset(14);
+    }];
+    [self.cookingtimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.foodNameLabel mas_bottom]).offset(10);
+        make.left.equalTo([self.peopelNumLabel mas_right]).offset(5);
+    }];
+    [self.menuLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.cookingtimeLabel mas_bottom]).offset(15);
+        make.left.equalTo(@12);
+        make.height.equalTo(@25);
+        make.width.equalTo(@(ScreenWidth / 5 - 5));
+    }];
+    [self.tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.menuLabel mas_bottom]).offset(8);
+        make.left.equalTo([self.menuLabel mas_left]).offset(5);
+        make.width.equalTo(@(ScreenWidth / 3 * 2 + 20));
+    }];
+    [self.foodImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(2);
+        make.right.equalTo(@-11);
+        make.width.equalTo(@92);
+        make.height.equalTo(@92);
+    }];
+    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo([self.contentView mas_bottom]).offset(-1);
+        make.height.equalTo(@2.5);
+        make.left.equalTo(@0);
+        make.width.equalTo(@(ScreenWidth));
+    }];
+    [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.tagLabel mas_bottom]).offset(10);
+        make.left.equalTo(@(ScreenWidth / 2 - 40));
+        make.height.equalTo(@25);
+        make.width.equalTo(@(ScreenWidth / 5 - 5));
+    }];
+    [self.contenLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.authorLabel mas_bottom]).offset(8);
+        make.left.equalTo(@20);
+        make.width.equalTo(@(ScreenWidth - 40));
+        make.bottom.equalTo([self.stepLabel mas_top]).offset(-10);
+    }];
+    [self.stepLabel mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.bottom.equalTo(@-25);
+        make.left.equalTo(@(ScreenWidth / 4));
+    }];
+    [self.stepButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(@-30);
+        make.left.equalTo([self.stepLabel mas_right]).offset(10);
+        make.height.equalTo(@20);
+        make.width.equalTo(@20);
+    }];
+}
 - (void)layoutSubviews {
     [self.foodNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(5);
@@ -160,6 +220,7 @@
         make.top.equalTo([self.authorLabel mas_bottom]).offset(8);
         make.left.equalTo(@20);
         make.width.equalTo(@(ScreenWidth - 40));
+        make.bottom.equalTo([self.stepLabel mas_top]).offset(-10);
     }];
     [self.stepLabel mas_makeConstraints:^(MASConstraintMaker* make) {
         make.bottom.equalTo(@-25);

@@ -124,10 +124,17 @@
 #pragma mark 跳转主界面函数
 - (void)ToMainView {
     UIColor *backWhiteColor = [UIColor colorWithRed:253 / 255.0f green:253 / 255.0f blue:253 / 255.0f alpha:1.0];
-    self.viewControllerBody = [[BodyViewConctroller alloc] init];
     self.viewControllerDiet = [[DietViewController alloc] init];
+//    self.viewControllerDiet.view.backgroundColor = [UIColor whiteColor];
+    
+    self.viewControllerBody = [[BodyViewConctroller alloc] init];
+    self.viewControllerBody.view.backgroundColor = [UIColor whiteColor];
+    
     self.viewControllerCommityShare = [[CommitShareViewConreoller alloc] init];
+    self.viewControllerCommityShare.view.backgroundColor = [UIColor blackColor];
+    
     self.viewControllerPersonalInformation = [[PersonalInformationViewController alloc] init];
+    self.viewControllerPersonalInformation.view.backgroundColor = [UIColor whiteColor];
     
     UINavigationController *navConBody = [[UINavigationController alloc] initWithRootViewController:self.viewControllerBody];
     UINavigationController *navConDiet = [[UINavigationController alloc] initWithRootViewController:self.viewControllerDiet];
