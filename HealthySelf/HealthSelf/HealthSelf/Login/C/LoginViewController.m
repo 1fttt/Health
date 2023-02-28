@@ -91,14 +91,15 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)Login {
-    [self postJsonToServe];
-    if ([self.dictionaryUser[@"userName"] isEqualToString:@"123456"] && [self.dictionaryUser[@"passWord"] isEqualToString:@"123"]) {
+    NSLog(@"%@", self.dictionaryUser);
+//    [self postJsonToServe];
+    if ([self.dictionaryUser[@"username"] isEqualToString:@"15592498106"] && [self.dictionaryUser[@"password"] isEqualToString:@"123456"]) {
         self.isLogin = 1;
     } else {
-        if ([self.dictionaryUser[@"userName"] isEqualToString:@"123456"]) {
-            self.isLogin = 1;
+        if ([self.dictionaryUser[@"userName"] isEqualToString:@"15592498106"]) {
+            self.isLogin = 2;
         } else {
-            self.isLogin = 1;
+            self.isLogin = 0;
         }
     }
 }
@@ -131,7 +132,8 @@
     self.viewControllerBody.view.backgroundColor = [UIColor whiteColor];
     
     self.viewControllerCommityShare = [[CommitShareViewConreoller alloc] init];
-    self.viewControllerCommityShare.view.backgroundColor = [UIColor blackColor];
+//    self.viewControllerCommityShare.view.backgroundColor = [UIColor blackColor];
+//    self.viewControllerCommityShare.navigationController.navigationBarHidden = YES;
     
     self.viewControllerPersonalInformation = [[PersonalInformationViewController alloc] init];
     self.viewControllerPersonalInformation.view.backgroundColor = [UIColor whiteColor];
