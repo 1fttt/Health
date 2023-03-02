@@ -97,9 +97,9 @@
         self.isLogin = 1;
     } else {
         if ([self.dictionaryUser[@"userName"] isEqualToString:@"15592498106"]) {
-            self.isLogin = 2;
+            self.isLogin = 1;
         } else {
-            self.isLogin = 0;
+            self.isLogin = 1;
         }
     }
 }
@@ -129,14 +129,14 @@
 //    self.viewControllerDiet.view.backgroundColor = [UIColor whiteColor];
     
     self.viewControllerBody = [[BodyViewConctroller alloc] init];
-    self.viewControllerBody.view.backgroundColor = [UIColor whiteColor];
+//    self.viewControllerBody.view.backgroundColor = [UIColor whiteColor];
     
     self.viewControllerCommityShare = [[CommitShareViewConreoller alloc] init];
 //    self.viewControllerCommityShare.view.backgroundColor = [UIColor blackColor];
 //    self.viewControllerCommityShare.navigationController.navigationBarHidden = YES;
     
     self.viewControllerPersonalInformation = [[PersonalInformationViewController alloc] init];
-    self.viewControllerPersonalInformation.view.backgroundColor = [UIColor whiteColor];
+//    self.viewControllerPersonalInformation.view.backgroundColor = [UIColor whiteColor];
     
     UINavigationController *navConBody = [[UINavigationController alloc] initWithRootViewController:self.viewControllerBody];
     UINavigationController *navConDiet = [[UINavigationController alloc] initWithRootViewController:self.viewControllerDiet];
@@ -149,6 +149,32 @@
     self.tabBarController.tabBar.backgroundColor = backWhiteColor;
     UIWindow *keyWindow = self.view.window.windowScene.keyWindow;
     keyWindow.rootViewController = self.tabBarController;
+    
+    UIColor *backGreen = [UIColor colorWithRed:123 / 255.0f green:209 / 255.0f blue:147 / 255.0f alpha:1.0];
+    UITabBarItem *tabBarDiet = [[UITabBarItem alloc] init];
+    tabBarDiet.image = [[UIImage imageNamed:@"jilu-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarDiet.selectedImage = [[UIImage imageNamed:@"jilu.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarDiet.title = @"身体记录";
+    // 一句话设置选中状态下的颜色
+    self.viewControllerBody.tabBarController.tabBar.tintColor = backGreen;
+    self.viewControllerBody.tabBarItem = tabBarDiet;
+    
+    
+    UITabBarItem *tabBarPersonal = [[UITabBarItem alloc] init];
+    tabBarPersonal.image = [[UIImage imageNamed:@"wode-2.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarPersonal.selectedImage = [[UIImage imageNamed:@"wode.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarPersonal.title = @"我的";
+    // 一句话设置选中状态下的颜色
+    self.viewControllerPersonalInformation.tabBarController.tabBar.tintColor = backGreen;
+    self.viewControllerPersonalInformation.tabBarItem = tabBarPersonal;
+    
+    UITabBarItem *tabBarCommt = [[UITabBarItem alloc] init];
+    tabBarCommt.image = [[UIImage imageNamed:@"spare.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarCommt.selectedImage = [[UIImage imageNamed:@"spare1.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarCommt.title = @"生活广场";
+    // 一句话设置选中状态下的颜色
+    self.viewControllerCommityShare.tabBarController.tabBar.tintColor = backGreen;
+    self.viewControllerCommityShare.tabBarItem = tabBarCommt;
 }
 /*
 #pragma mark - Navigation

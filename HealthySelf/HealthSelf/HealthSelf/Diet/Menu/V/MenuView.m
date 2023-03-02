@@ -42,10 +42,12 @@
     if (section == 0 || section == 2) {
         return 1;
     } else {
-        if ([self.menuListDictionary[@"result"][@"result"][@"list"] count] == 0) {
-            return 0;
+        if ([self.menuListDictionary[@"result"][@"result"][@"list"] count] != 0) {
+            return [self.menuListDictionary[@"result"][@"result"][@"list"] count];
+        } else {
+            [self failedMenu];
         }
-        return [self.menuListDictionary[@"result"][@"result"][@"list"] count];
+        return 0;
     }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -122,6 +124,10 @@
     NSString *row = [NSString stringWithFormat:@"%ld", indexPath.row];
     NSDictionary *cellRowDictionary = @{@"cellRowOfIndexPath": row};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ToMenuStepView" object:nil userInfo:cellRowDictionary];
+}
+#pragma mark -菜单失败
+- (void)failedMenu {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"failedMenu" object:nil userInfo:nil];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

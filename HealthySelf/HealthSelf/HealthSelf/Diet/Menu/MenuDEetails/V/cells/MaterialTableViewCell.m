@@ -57,7 +57,7 @@
         self.tintColor = [UIColor whiteColor];
         self.recordButton.backgroundColor = labelGreen;
 
-        [self addSubview:self.backView];
+        [self.contentView addSubview:self.backView];
         [self.backView addSubview:self.menuImageView];
         [self.backView addSubview:self.menuNameLabel];
         [self.backView addSubview:self.ingredientsListTitleLabel];

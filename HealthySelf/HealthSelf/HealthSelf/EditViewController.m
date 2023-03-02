@@ -80,6 +80,7 @@
 - (void)correctText {
     self.timeAlter = [UIAlertController alertControllerWithTitle:@"提示" message:@"发布成功！快去看看吧" preferredStyle:UIAlertControllerStyleAlert];
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeOut) userInfo:nil repeats:NO];
+    
     [self presentViewController:self.timeAlter animated:YES completion:nil];
     if (self.isSelectImage == 0) {
         NSLog(@"不包含图片的分享");

@@ -23,7 +23,7 @@
      注册观察者，接收通知
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToMenuStepView:) name:@"ToMenuStepView" object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(failedMenu) name:@"faliedMenu" object:nil];
     // Do any additional setup after loading the view.
     self.menuView = [[MenuView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     [self.view addSubview:self.menuView];
@@ -49,7 +49,17 @@
     menuDeVC.menuStepDictionary = self.menuListDictionary[@"result"][@"result"][@"list"][cellRowOfIndexPath];
     [self.navigationController pushViewController:menuDeVC animated:YES];
 }
+#pragma mark -菜单失败
+- (void)failedMenu {
+    UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"菜单库暂时未更新该菜品！" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [_alert addAction:sure];
+    [self presentViewController:_alert animated:YES completion:nil];
+}
 
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 /*
 #pragma mark - Navigation
 

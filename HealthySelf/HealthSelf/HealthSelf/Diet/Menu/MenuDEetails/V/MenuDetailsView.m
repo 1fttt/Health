@@ -59,7 +59,7 @@
         NSString* imageName = [NSString stringWithFormat:@"%@", self.menuMaterialDiciionary[@"pic"]];
         NSURL* urlImage = [NSURL URLWithString:imageName];
         [materialCell.menuImageView sd_setImageWithURL:urlImage];
-        
+        [materialCell.recordButton addTarget:self action:@selector(pressButton:) forControlEvents:UIControlEventTouchUpInside];
         // 清单
         UIColor *menuLineViewColor = [UIColor colorWithRed: 248 / 255.0f green:248 / 255.0f blue:248 / 255.0f alpha:1.0];
         for (int i = 0; i < [self.menuMaterialDiciionary[@"material"] count]; i++) {
@@ -142,6 +142,10 @@
         return stepCell;
     }
     return 0;
+}
+- (void)pressButton:(UIButton *)button {
+    NSLog(@"记录菜谱");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"recordMenu" object:nil userInfo:nil];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
