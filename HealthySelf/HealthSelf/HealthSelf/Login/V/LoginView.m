@@ -9,6 +9,12 @@
 #import <Masonry.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+@interface LoginView()
+@property (nonatomic, strong) UILabel *LightLabel;
+@property (nonatomic, strong) UIButton *weChatButton;
+@property (nonatomic, strong) UIButton *readButton;
+@property (nonatomic, strong) UILabel *readLabel;
+@end
 @implementation LoginView
 - (void)viewInit {
     UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
@@ -112,21 +118,77 @@
     }];
 #pragma mark Label
     self.labelHealth = [[UILabel alloc] init];
-    self.labelHealth.text = @" Keep Healthy";
+    self.labelHealth.text = @"To Keep Healthy";
     self.labelHealth.textColor = [UIColor whiteColor];
     /**
      关于字体斜体的设置- 我测试了好半天才发现只有英语能设置斜体等字体- 坑啊 Helvetica-BoldOblique
      Zapfino 花体 Georgia-BoldItalic
      */
-    self.labelHealth.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:33];
+    self.labelHealth.font = [UIFont fontWithName:@"TimesNewRomanPs-BoldItalicMT" size:20];
     self.labelHealth.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.labelHealth];
     [self.labelHealth mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.textFieldUserName).offset(-125);
+        make.bottom.equalTo(self.textFieldUserName).offset(-85);
         make.left.equalTo(@-10);
-        make.height.equalTo(@50);
         make.width.equalTo(@(ScreenWidth));
     }];
+    
+    
+    
+    
+    
+    self.readButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.readButton.tag = 120;
+    [self.readButton setImage:[UIImage imageNamed:@"weixuan.png"] forState:UIControlStateNormal];
+    [self.readButton addTarget:self action:@selector(seleMeth:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.readButton];
+    [self.readButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.buttontRegister mas_bottom]).offset(18.5);
+        make.left.equalTo(@46);
+        make.width.equalTo(@20);
+        make.height.equalTo(@20);
+    }];
+    
+    self.readLabel = [[UILabel alloc] init];
+    self.readLabel.text = @"我已阅读并同意服务协议和隐私保护指引";
+    self.readLabel.textColor = [UIColor whiteColor];
+    self.readLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+    [self addSubview:self.readLabel];
+    [self.readLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo([self.readButton mas_right]).offset(3);
+        make.top.equalTo([self.buttontRegister mas_bottom]).offset(20);
+    }];
+    
+    self.LightLabel = [[UILabel alloc] init];
+    self.LightLabel.text = @"Light Time";
+    self.LightLabel.textColor = [UIColor whiteColor];
+    /**
+     关于字体斜体的设置- 我测试了好半天才发现只有英语能设置斜体等字体- 坑啊 Helvetica-BoldOblique
+     Zapfino 花体 Georgia-BoldItalic
+     */
+    self.LightLabel.font = [UIFont fontWithName:@"Zapfino" size:35];
+    self.LightLabel.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.LightLabel];
+    [self.LightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.textFieldUserName).offset(-125);
+        make.left.equalTo(@-10);
+        make.width.equalTo(@(ScreenWidth));
+    }];
+    NSArray *imageArray = @[@"weixin-copy.png", @"qq.png", @"ios.png"];
+    for (int i = 0; i < 3; i++) {
+        self.weChatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.weChatButton.tag = i * 100 + 10;
+        [self.weChatButton setImage:[UIImage imageNamed:imageArray[i]] forState:UIControlStateNormal];
+        [self.weChatButton addTarget:self action:@selector(WeChatMetd:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.weChatButton];
+        [self.weChatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.buttontRegister mas_bottom]).offset(80);
+            make.left.equalTo([self.textFieldUserName mas_left]).offset(55 + (ScreenWidth / 8)* i);
+            make.width.equalTo(@33);
+            make.height.equalTo(@33);
+        }];
+    }
+    
 }
 #pragma mark TextFieldDelegateMEthod
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -151,6 +213,18 @@
 - (void)textToNil {
     self.textFieldUserName.text = nil;
     self.textFieldPassWord.text = nil;
+}
+- (void)seleMeth:(UIButton *)button {
+    if (button.tag == 120) {
+        button.tag = 121;
+        [button setImage:[UIImage imageNamed:@"xuan-1.png"] forState:UIControlStateNormal];
+    } else {
+        button.tag = 120;
+        [button setImage:[UIImage imageNamed:@"weixuan.png"] forState:UIControlStateNormal];
+    }
+}
+- (void)WeChatMetd:(UIButton *)button {
+    NSLog(@"%ld", button.tag);
 }
 /*
 // Only override drawRect: if you perform custom drawing.

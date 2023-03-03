@@ -80,6 +80,9 @@
 		2AD1B009296B04BA00EB5ACF /* yinliao.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1B008296B04BA00EB5ACF /* yinliao.png */; };
 		2AD1B00B296B06C300EB5ACF /* fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AD1B00A296B06C300EB5ACF /* fruit.png */; };
 		2AD26A9D298CD856000345B1 /* TableViewCellTop.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD26A9C298CD856000345B1 /* TableViewCellTop.m */; };
+		2AD6C92F29B0F418001DED24 /* RecordWtView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C92E29B0F418001DED24 /* RecordWtView.m */; };
+		2AD6C93229B0F426001DED24 /* RecordWtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93129B0F426001DED24 /* RecordWtViewController.m */; };
+		2AD6C93529B0F43E001DED24 /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93429B0F43E001DED24 /* RecordModel.m */; };
 		2ADB1F8E295DC565001F21A0 /* fanhui-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8D295DC565001F21A0 /* fanhui-2.png */; };
 		2ADB1F902961B304001F21A0 /* fanhui-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8F2961B304001F21A0 /* fanhui-3.png */; };
 		2ADB1F922961B648001F21A0 /* fenxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F912961B648001F21A0 /* fenxiang.png */; };
@@ -274,6 +277,12 @@
 		2AD1B00A296B06C300EB5ACF /* fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruit.png; sourceTree = "<group>"; };
 		2AD26A9B298CD856000345B1 /* TableViewCellTop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCellTop.h; sourceTree = "<group>"; };
 		2AD26A9C298CD856000345B1 /* TableViewCellTop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCellTop.m; sourceTree = "<group>"; };
+		2AD6C92D29B0F418001DED24 /* RecordWtView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordWtView.h; sourceTree = "<group>"; };
+		2AD6C92E29B0F418001DED24 /* RecordWtView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordWtView.m; sourceTree = "<group>"; };
+		2AD6C93029B0F426001DED24 /* RecordWtViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordWtViewController.h; sourceTree = "<group>"; };
+		2AD6C93129B0F426001DED24 /* RecordWtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordWtViewController.m; sourceTree = "<group>"; };
+		2AD6C93329B0F43E001DED24 /* RecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		2AD6C93429B0F43E001DED24 /* RecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
 		2ADA5B9829AF08B100E91F92 /* HealthSelf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthSelf.entitlements; sourceTree = "<group>"; };
 		2ADB1F8D295DC565001F21A0 /* fanhui-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-2.png"; sourceTree = "<group>"; };
 		2ADB1F8F2961B304001F21A0 /* fanhui-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-3.png"; sourceTree = "<group>"; };
@@ -586,6 +595,7 @@
 		2A3C247D2946242B008C8D07 /* Body */ = {
 			isa = PBXGroup;
 			children = (
+				2AD6C92929B0F370001DED24 /* reRecordWt */,
 				2A3C24852946F9EE008C8D07 /* C */,
 				2A3C24842946F9EA008C8D07 /* V */,
 				2A3C24832946F9E6008C8D07 /* M */,
@@ -999,6 +1009,43 @@
 				2A3F40A529910F4D001BA2BB /* CommentTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		2AD6C92929B0F370001DED24 /* reRecordWt */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6C92C29B0F3FF001DED24 /* M */,
+				2AD6C92B29B0F3FB001DED24 /* C */,
+				2AD6C92A29B0F3F7001DED24 /* V */,
+			);
+			path = reRecordWt;
+			sourceTree = "<group>";
+		};
+		2AD6C92A29B0F3F7001DED24 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6C92D29B0F418001DED24 /* RecordWtView.h */,
+				2AD6C92E29B0F418001DED24 /* RecordWtView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		2AD6C92B29B0F3FB001DED24 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6C93029B0F426001DED24 /* RecordWtViewController.h */,
+				2AD6C93129B0F426001DED24 /* RecordWtViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		2AD6C92C29B0F3FF001DED24 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6C93329B0F43E001DED24 /* RecordModel.h */,
+				2AD6C93429B0F43E001DED24 /* RecordModel.m */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		2AE6BD7E29719C1000314C7E /* MoreMenuView */ = {
@@ -1550,6 +1597,7 @@
 				2AFDF57329508B8E0056D231 /* SetModel.m in Sources */,
 				2A3F40A629910F4D001BA2BB /* CommentTableViewCell.m in Sources */,
 				2AFDF5CC2952FD920056D231 /* SearchFoodModel.m in Sources */,
+				2AD6C93229B0F426001DED24 /* RecordWtViewController.m in Sources */,
 				2A3F4092298E3B71001BA2BB /* EditViewController.m in Sources */,
 				2ADB1F952961C039001F21A0 /* FoodFirstTableViewCell.m in Sources */,
 				2AD1AFD029671B8700EB5ACF /* FoodCategoryModel.m in Sources */,
@@ -1581,6 +1629,7 @@
 				2ACA78DD29702A7300F124E3 /* MaterialTableViewCell.m in Sources */,
 				2ACA78D3296FCDA600F124E3 /* MenuDetailsModel.m in Sources */,
 				2A3C240C293DAE93008C8D07 /* RegisterViewController.m in Sources */,
+				2AD6C92F29B0F418001DED24 /* RecordWtView.m in Sources */,
 				2A3C248E2946FC4F008C8D07 /* DietModel.m in Sources */,
 				2A3C23C5293DACB0008C8D07 /* ViewController.m in Sources */,
 				2AFDF57629508B8E0056D231 /* PersonalInformationModel.m in Sources */,
@@ -1599,6 +1648,7 @@
 				2ADB1F982961C047001F21A0 /* FoodSecondTableViewCell.m in Sources */,
 				2A3C2409293DAE82008C8D07 /* RegisterView.m in Sources */,
 				2ACA78DA296FCDD600F124E3 /* MenuStepsTableViewCell.m in Sources */,
+				2AD6C93529B0F43E001DED24 /* RecordModel.m in Sources */,
 				2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */,
 				2AD1AFEA2969D20000EB5ACF /* FoodRecipesTableViewCell.m in Sources */,
 				2ACA78E029702C1F00F124E3 /* FoodDetailsModel.m in Sources */,

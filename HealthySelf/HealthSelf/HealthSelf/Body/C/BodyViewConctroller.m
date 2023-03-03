@@ -7,6 +7,8 @@
 
 #import "BodyViewConctroller.h"
 #import "BodyView.h"
+#import "SearchFoodViewController.h"
+#import "RecordWtViewController.h"
 #import <HealthKit/HealthKit.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
@@ -28,6 +30,7 @@
     [self.viewBody viewInit];
     self.navigationController.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToCgWtView) name:@"ToCgWtView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToSearchView) name:@"BodyToSearchFoodView" object:nil];
 }
 
 #pragma mark- MethodSteps
@@ -129,5 +132,10 @@
 */
 - (void)ToCgWtView {
     NSLog(@"change Data");
+}
+- (void)ToSearchView {
+    SearchFoodViewController *searchViewController = [[SearchFoodViewController alloc] init];
+    [self.navigationController pushViewController:searchViewController animated:YES];
+    
 }
 @end

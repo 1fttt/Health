@@ -9,6 +9,11 @@
 #import <Masonry.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
+@interface RegisterView()
+@property (nonatomic, strong) UIImageView *lightImageView;
+@property (nonatomic, strong) UIButton *readButton;
+@property (nonatomic, strong) UILabel *readLabel;
+@end
 @implementation RegisterView
 - (void)viewInit {
     UIColor *newGreen = [UIColor colorWithRed:30 / 255.0f green:183 / 255.0f blue:131 / 255.0f alpha:1.0];
@@ -43,6 +48,17 @@
         make.height.equalTo(@40);
         make.width.equalTo(@(ScreenWidth / 4 * 3 +20));
         make.top.equalTo(@(ScreenHeight / 2 - 200));
+    }];
+    
+    
+    self.lightImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"LightTime.png"]];
+    [self addSubview:self.lightImageView];
+    [self.lightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.textFieldTelNumber).offset(-15);
+        make.left.equalTo(@(ScreenWidth / 2 - 120));
+        make.width.equalTo(@240);
+        make.height.equalTo(@240);
+        
     }];
 #pragma mark VerificationCode
     //验证码
@@ -162,6 +178,28 @@
         make.height.equalTo(@36);
     }];
     
+    self.readButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.readButton.tag = 120;
+    [self.readButton setImage:[UIImage imageNamed:@"weixuan.png"] forState:UIControlStateNormal];
+    [self.readButton addTarget:self action:@selector(seleMeth:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.readButton];
+    [self.readButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo([self.buttontRegister mas_bottom]).offset(18.5);
+        make.left.equalTo(@46);
+        make.width.equalTo(@20);
+        make.height.equalTo(@20);
+    }];
+    
+    self.readLabel = [[UILabel alloc] init];
+    self.readLabel.text = @"我已阅读并同意服务协议和隐私保护指引";
+    self.readLabel.textColor = [UIColor whiteColor];
+    self.readLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+    [self addSubview:self.readLabel];
+    [self.readLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo([self.readButton mas_right]).offset(3);
+        make.top.equalTo([self.buttontRegister mas_bottom]).offset(20);
+    }];
+    
 }
 
 #pragma mark TextFieldDelegateMEthod
@@ -176,6 +214,16 @@
     
     [self.delegate returnButton:button];
 }
+- (void)seleMeth:(UIButton *)button {
+    if (button.tag == 120) {
+        button.tag = 121;
+        [button setImage:[UIImage imageNamed:@"xuan-1.png"] forState:UIControlStateNormal];
+    } else {
+        button.tag = 120;
+        [button setImage:[UIImage imageNamed:@"weixuan.png"] forState:UIControlStateNormal];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
