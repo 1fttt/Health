@@ -83,6 +83,9 @@
 		2AD6C92F29B0F418001DED24 /* RecordWtView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C92E29B0F418001DED24 /* RecordWtView.m */; };
 		2AD6C93229B0F426001DED24 /* RecordWtViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93129B0F426001DED24 /* RecordWtViewController.m */; };
 		2AD6C93529B0F43E001DED24 /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93429B0F43E001DED24 /* RecordModel.m */; };
+		2AD6C93D29B3381B001DED24 /* RulerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93929B3381B001DED24 /* RulerView.m */; };
+		2AD6C93E29B3381B001DED24 /* RulerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93A29B3381B001DED24 /* RulerLayout.m */; };
+		2AD6C93F29B3381B001DED24 /* RulerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6C93C29B3381B001DED24 /* RulerCollectionViewCell.m */; };
 		2ADB1F8E295DC565001F21A0 /* fanhui-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8D295DC565001F21A0 /* fanhui-2.png */; };
 		2ADB1F902961B304001F21A0 /* fanhui-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F8F2961B304001F21A0 /* fanhui-3.png */; };
 		2ADB1F922961B648001F21A0 /* fenxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = 2ADB1F912961B648001F21A0 /* fenxiang.png */; };
@@ -283,6 +286,12 @@
 		2AD6C93129B0F426001DED24 /* RecordWtViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordWtViewController.m; sourceTree = "<group>"; };
 		2AD6C93329B0F43E001DED24 /* RecordModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
 		2AD6C93429B0F43E001DED24 /* RecordModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
+		2AD6C93729B3381B001DED24 /* RulerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerLayout.h; sourceTree = "<group>"; };
+		2AD6C93829B3381B001DED24 /* RulerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerCollectionViewCell.h; sourceTree = "<group>"; };
+		2AD6C93929B3381B001DED24 /* RulerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerView.m; sourceTree = "<group>"; };
+		2AD6C93A29B3381B001DED24 /* RulerLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerLayout.m; sourceTree = "<group>"; };
+		2AD6C93B29B3381B001DED24 /* RulerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulerView.h; sourceTree = "<group>"; };
+		2AD6C93C29B3381B001DED24 /* RulerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulerCollectionViewCell.m; sourceTree = "<group>"; };
 		2ADA5B9829AF08B100E91F92 /* HealthSelf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthSelf.entitlements; sourceTree = "<group>"; };
 		2ADB1F8D295DC565001F21A0 /* fanhui-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-2.png"; sourceTree = "<group>"; };
 		2ADB1F8F2961B304001F21A0 /* fanhui-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fanhui-3.png"; sourceTree = "<group>"; };
@@ -1014,6 +1023,7 @@
 		2AD6C92929B0F370001DED24 /* reRecordWt */ = {
 			isa = PBXGroup;
 			children = (
+				2AD6C93629B3381B001DED24 /* 自定义RulerView */,
 				2AD6C92C29B0F3FF001DED24 /* M */,
 				2AD6C92B29B0F3FB001DED24 /* C */,
 				2AD6C92A29B0F3F7001DED24 /* V */,
@@ -1046,6 +1056,19 @@
 				2AD6C93429B0F43E001DED24 /* RecordModel.m */,
 			);
 			path = M;
+			sourceTree = "<group>";
+		};
+		2AD6C93629B3381B001DED24 /* 自定义RulerView */ = {
+			isa = PBXGroup;
+			children = (
+				2AD6C93729B3381B001DED24 /* RulerLayout.h */,
+				2AD6C93829B3381B001DED24 /* RulerCollectionViewCell.h */,
+				2AD6C93929B3381B001DED24 /* RulerView.m */,
+				2AD6C93A29B3381B001DED24 /* RulerLayout.m */,
+				2AD6C93B29B3381B001DED24 /* RulerView.h */,
+				2AD6C93C29B3381B001DED24 /* RulerCollectionViewCell.m */,
+			);
+			path = "自定义RulerView";
 			sourceTree = "<group>";
 		};
 		2AE6BD7E29719C1000314C7E /* MoreMenuView */ = {
@@ -1628,6 +1651,7 @@
 				2A3C23FC293DAD45008C8D07 /* LoginView.m in Sources */,
 				2ACA78DD29702A7300F124E3 /* MaterialTableViewCell.m in Sources */,
 				2ACA78D3296FCDA600F124E3 /* MenuDetailsModel.m in Sources */,
+				2AD6C93E29B3381B001DED24 /* RulerLayout.m in Sources */,
 				2A3C240C293DAE93008C8D07 /* RegisterViewController.m in Sources */,
 				2AD6C92F29B0F418001DED24 /* RecordWtView.m in Sources */,
 				2A3C248E2946FC4F008C8D07 /* DietModel.m in Sources */,
@@ -1642,11 +1666,13 @@
 				2A3C249D2946FCB4008C8D07 /* BodyViewConctroller.m in Sources */,
 				2AFDF5C92952FD7E0056D231 /* SearchFoodViewController.m in Sources */,
 				2AFDF57229508B8E0056D231 /* SetTableViewCell.m in Sources */,
+				2AD6C93F29B3381B001DED24 /* RulerCollectionViewCell.m in Sources */,
 				2A3C23D0293DACB2008C8D07 /* main.m in Sources */,
 				2AFDF57029508B8E0056D231 /* SecondTableViewCell.m in Sources */,
 				2AFDF57829508B8E0056D231 /* PersonalInformationView.m in Sources */,
 				2ADB1F982961C047001F21A0 /* FoodSecondTableViewCell.m in Sources */,
 				2A3C2409293DAE82008C8D07 /* RegisterView.m in Sources */,
+				2AD6C93D29B3381B001DED24 /* RulerView.m in Sources */,
 				2ACA78DA296FCDD600F124E3 /* MenuStepsTableViewCell.m in Sources */,
 				2AD6C93529B0F43E001DED24 /* RecordModel.m in Sources */,
 				2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */,

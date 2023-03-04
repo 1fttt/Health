@@ -131,11 +131,15 @@
 }
 */
 - (void)ToCgWtView {
-    NSLog(@"change Data");
+    RecordWtViewController *rcdVC = [[RecordWtViewController alloc] init];
+    [self presentViewController:rcdVC animated:YES completion:nil];
 }
 - (void)ToSearchView {
     SearchFoodViewController *searchViewController = [[SearchFoodViewController alloc] init];
     [self.navigationController pushViewController:searchViewController animated:YES];
     
+}
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end
