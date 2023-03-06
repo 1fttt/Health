@@ -29,8 +29,10 @@
 @implementation DietViewController
 
 - (void)viewDidLoad {
-    [self initTabBarItem];
     [super viewDidLoad];
+   
+    [self initTabBarItem];
+  
     // Do any additional setup after loading the view.
     self.viewDiet = [[DietView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     [self.view addSubview:self.viewDiet];
@@ -40,11 +42,13 @@
     self.viewDiet.moreButtonDelegate = self;
     self.viewDiet.menuButtonDelegate = self;
     self.access_token = [NSString stringWithFormat:@"24.60efbd59e1010dd36e2efdcb5c805623.2592000.1677916349.282335-30117396"];
+   
     /*
      注册观察者，接收通知
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToSearchView) name:@"ToSearchFoodView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToFoodCategoryView:) name:@"RecipesToFoodCategoryView" object:nil];
+  
     
 }
 - (void)initTabBarItem {
@@ -268,6 +272,7 @@
         NSLog(@"getEvEDayLabel查找失败");
     }];
 }
+
 /*
 #pragma mark - Navigation
 

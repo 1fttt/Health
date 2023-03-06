@@ -26,6 +26,7 @@
 @implementation DietView
 - (void)viewInit {
     self.backgroundColor = [UIColor whiteColor];
+    [self newBackSet];
 #pragma mark Label
     UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
     UIColor *labelGreen2 = [UIColor colorWithRed:235 / 255.0f green:255 / 255.0f blue:240 / 255.0f alpha:1.0];
@@ -391,7 +392,22 @@
 - (void)pressMenuButton:(UIButton *)menuButton {
     [self.menuButtonDelegate returnMenuButtonTag:menuButton];
 }
+- (void)newBackSet {
+    UIColor *labelGreen2 = [UIColor colorWithRed:190 / 255.0f green:225 / 255.0f blue:180 / 255.0f alpha:1.0];
+//        UIColor *labelGreen2 = [UIColor colorWithRed:125 / 255.0f green:210 / 255.0f blue:154 / 255.0f alpha:1.0];
+    //通过CAGradientLayer 设置渐变的背景。
+   CAGradientLayer *layer = [CAGradientLayer new];
+   //colors存放渐变的颜色的数组
+   layer.colors=@[(__bridge id)labelGreen2.CGColor,(__bridge id)[UIColor whiteColor].CGColor];
+   /**
+    * 起点和终点表示的坐标系位置，(0,0)表示左上角，(1,1)表示右下角
+    */
+   layer.startPoint = CGPointMake(0.5, 0);
+   layer.endPoint = CGPointMake(0.5, 1);
+   layer.frame = self.bounds;
+   [self.layer addSublayer:layer];
 
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

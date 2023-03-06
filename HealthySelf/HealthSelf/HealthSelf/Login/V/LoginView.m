@@ -21,6 +21,7 @@
     UIColor *newGreen2 = [UIColor colorWithRed:69 / 255.0f green:113 / 255.0f blue:81 / 255.0f alpha:1.0];
     UIColor *backGreen = [UIColor colorWithRed:20 / 255.0f green:220 / 255.0f blue:150 / 255.0f alpha:1.0];
     self.backgroundColor = backGreen;
+    [self newBackSet];
 #pragma mark UserName
     //用户名输入框
     self.textFieldUserName = [[UITextField alloc] init];
@@ -225,6 +226,22 @@
 }
 - (void)WeChatMetd:(UIButton *)button {
     NSLog(@"%ld", button.tag);
+}
+#pragma -mark 渐变背景
+- (void)newBackSet {
+    UIColor *backGreen = [UIColor colorWithRed:20 / 255.0f green:220 / 255.0f blue:150 / 255.0f alpha:1.0];
+    //通过CAGradientLayer 设置渐变的背景。
+   CAGradientLayer *layer = [CAGradientLayer new];
+   //colors存放渐变的颜色的数组
+   layer.colors=@[(__bridge id)backGreen.CGColor,(__bridge id)[UIColor whiteColor].CGColor];
+   /**
+    * 起点和终点表示的坐标系位置，(0,0)表示左上角，(1,1)表示右下角
+    */
+   layer.startPoint = CGPointMake(0.5, 0.6);
+   layer.endPoint = CGPointMake(0.5, 1);
+   layer.frame = self.bounds;
+   [self.layer addSublayer:layer];
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.

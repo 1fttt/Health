@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UILabel *addLabel;
 @property (nonatomic, strong) UIButton *getHKDataButton;
 @property (nonatomic, strong) UIButton *recordButton;
+@property (nonatomic, strong) UILabel *isShareLabel;
+@property (nonatomic, strong) UIButton *isShareButton;
 
 //rulerView
 @property (nonatomic, strong) RulerView *numberBottomRulerView;                 //数字据下
@@ -36,6 +38,8 @@
     [self lazyRcdBtn];
     [self numberBottomRulerDefaultLabel];
     [self numberBottomRulerView];
+    [self lazyIsShare];
+    [self lazyIsShareBtn];
    
     
 }
@@ -219,8 +223,36 @@
     }
     return _numberBottomRulerView;
 }
-
-
+- (UILabel *)lazyIsShare {
+    if (!_isShareLabel) {
+        _isShareLabel = [[UILabel alloc] init];
+        _isShareLabel.text = @"与朋友共享我的数据";
+        _isShareLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+        _isShareLabel.textColor = [UIColor grayColor];
+        [self.bottomBkView addSubview:_isShareLabel];
+        [_isShareLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.numberBottomRulerView mas_bottom]).offset(20);
+            make.left.equalTo(@(18));
+        }];
+    }
+    return _isShareLabel;
+}
+- (UIButton *)lazyIsShareBtn {
+    if (!_isShareButton) {
+        _isShareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _isShareButton.tag = 120;
+        [_isShareButton setImage:[UIImage imageNamed:@"weixuanzhong.png"] forState:UIControlStateNormal];
+        [_isShareButton addTarget:self action:@selector(seleMeth:) forControlEvents:UIControlEventTouchUpInside];
+        [self.bottomBkView addSubview:_isShareButton];
+        [_isShareButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.numberBottomRulerView mas_bottom]).offset(16);
+            make.right.equalTo(@-28);
+            make.width.equalTo(@32);
+            make.height.equalTo(@32);
+        }];
+    }
+    return _isShareButton;
+}
 #pragma mark -BtnMethod
 - (void)exitBtn {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"exit" object:nil userInfo:nil];
@@ -242,6 +274,16 @@
 - (void)rulerSelectValue:(double)value tag:(NSInteger)tag {
     if (tag == 1) {
         self.numberBottomRulerDefaultLabel.text = [NSString stringWithFormat:@"%li公斤", (long)value];
+    }
+}
+
+- (void)seleMeth:(UIButton *)button {
+    if (button.tag == 120) {
+        button.tag = 121;
+        [button setImage:[UIImage imageNamed:@"danxuanxuanzhong.png"] forState:UIControlStateNormal];
+    } else {
+        button.tag = 120;
+        [button setImage:[UIImage imageNamed:@"weixuanzhong.png"] forState:UIControlStateNormal];
     }
 }
 /*

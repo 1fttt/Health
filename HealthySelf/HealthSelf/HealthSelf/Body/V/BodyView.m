@@ -37,7 +37,7 @@
 - (void)viewInit {
     UIColor *newBackGroundGray = [UIColor colorWithRed:246 / 255.0f green: 247 / 255.0f blue: 250 / 255.0f alpha:1.0];
     self.backgroundColor = newBackGroundGray;
-    
+//    [self newBackSet];
     [self lazyTopView];
     [self lazyMkFrdButton];
     [self lazyScanButton];
@@ -358,6 +358,21 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     /*注册通知并发送*/
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BodyToSearchFoodView" object:nil userInfo:nil];
+}
+- (void)newBackSet {
+    UIColor *newBlue = [UIColor colorWithRed:94 / 255.0f green:186 / 255.0f blue:209 / 255.0f alpha:1.0];
+    //通过CAGradientLayer 设置渐变的背景。
+   CAGradientLayer *layer = [CAGradientLayer new];
+   //colors存放渐变的颜色的数组
+   layer.colors=@[(__bridge id)newBlue.CGColor,(__bridge id)[UIColor whiteColor].CGColor];
+   /**
+    * 起点和终点表示的坐标系位置，(0,0)表示左上角，(1,1)表示右下角
+    */
+   layer.startPoint = CGPointMake(0.2, 0);
+   layer.endPoint = CGPointMake(0.5, 1);
+   layer.frame = self.bounds;
+   [self.layer addSublayer:layer];
+
 }
 /*
 // Only override drawRect: if you perform custom drawing.
