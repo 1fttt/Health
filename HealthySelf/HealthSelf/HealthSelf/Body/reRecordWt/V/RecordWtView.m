@@ -147,7 +147,7 @@
         _recordButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
         _recordButton.tintColor = [UIColor whiteColor];
         _recordButton.backgroundColor = newBlue;
-        [_recordButton addTarget:self action:@selector(getHkData) forControlEvents:UIControlEventTouchUpInside];
+        [_recordButton addTarget:self action:@selector(changeWt) forControlEvents:UIControlEventTouchUpInside];
         [self.bottomBkView addSubview:_recordButton];
         [_recordButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@35);
@@ -263,6 +263,10 @@
 - (void)getHkData {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"GetHkData" object:nil];
 }
+- (void)changeWt {
+    NSDictionary *_wtDict = @{@"weight" : self.numberBottomRulerDefaultLabel.text};
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeWt" object:nil userInfo:_wtDict];
+}
 #pragma mark -Time
 - (void)NowTime {
     NSDate *date = [NSDate date]; // 获得时间对象
@@ -275,6 +279,7 @@
     if (tag == 1) {
         self.numberBottomRulerDefaultLabel.text = [NSString stringWithFormat:@"%li公斤", (long)value];
     }
+   
 }
 
 - (void)seleMeth:(UIButton *)button {

@@ -9,6 +9,7 @@
 #import "BodyView.h"
 #import "SearchFoodViewController.h"
 #import "RecordWtViewController.h"
+#import "BlcdViewController.h"
 #import <HealthKit/HealthKit.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
@@ -31,6 +32,8 @@
     self.navigationController.navigationBarHidden = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToCgWtView) name:@"ToCgWtView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToSearchView) name:@"BodyToSearchFoodView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeWt:) name:@"changeWt" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toBlcdDietView) name:@"toBlcdDietView" object:nil];
 }
 
 #pragma mark- MethodSteps
@@ -138,6 +141,16 @@
     SearchFoodViewController *searchViewController = [[SearchFoodViewController alloc] init];
     [self.navigationController pushViewController:searchViewController animated:YES];
     
+}
+- (void)changeWt :(NSNotification *)sender {
+    self.viewBody.crtWtNumLabel.text = sender.userInfo[@"weight"];
+    NSArray *newWtAry = @[@"82.18", sender.userInfo[@"weight"], @"76.10"];
+    self.viewBody.weightArray = newWtAry;
+}
+- (void)toBlcdDietView {
+    NSLog(@"to BlacncedView");
+    BlcdViewController *blcdViewC = [[BlcdViewController alloc] init];
+    [self.navigationController pushViewController:blcdViewC animated:YES];
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

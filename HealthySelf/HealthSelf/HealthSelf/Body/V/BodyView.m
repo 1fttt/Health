@@ -27,16 +27,20 @@
 @property (nonatomic, strong) UILabel *sliderLabel;
 @property (nonatomic, strong) UILabel *chLabel;
 @property (nonatomic, strong) UILabel *stWtNumLabel;
-@property (nonatomic, strong) UILabel *crtWtNumLabel;
 @property (nonatomic, strong) UILabel *TrtwtNumLabel;
 @property (nonatomic, strong) UIButton *changeWtButton;
 @property (nonatomic, strong) UITextField *topSrhTxtFld;
+
+// part2 - dietBlanced
+@property (nonatomic, strong) UIButton *dietBalButton;
+
 @end
 @implementation BodyView
 
 - (void)viewInit {
     UIColor *newBackGroundGray = [UIColor colorWithRed:246 / 255.0f green: 247 / 255.0f blue: 250 / 255.0f alpha:1.0];
     self.backgroundColor = newBackGroundGray;
+    self.weightArray = @[@"82.18", @"89.74", @"76.10"];
 //    [self newBackSet];
     [self lazyTopView];
     [self lazyMkFrdButton];
@@ -57,6 +61,8 @@
     [self lazyCwt];
     [self lazyTwt];
     [self lazyChagWtBt];
+    
+    [self lazyDietBtn];
     
 }
 # pragma mark- LazyMethod
@@ -274,7 +280,7 @@
 - (UILabel *)lazySwt {
     if (!_stWtNumLabel) {
         _stWtNumLabel = [[UILabel alloc] init];
-        _stWtNumLabel.text = @"89.74";
+        _stWtNumLabel.text = self.weightArray[0];
         _stWtNumLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
         [_weightBackView addSubview:_stWtNumLabel];
         [_stWtNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -287,7 +293,7 @@
 - (UILabel *)lazyCwt {
     if (!_crtWtNumLabel) {
         _crtWtNumLabel = [[UILabel alloc] init];
-        _crtWtNumLabel.text = @"82.18";
+        _crtWtNumLabel.text = self.weightArray[1];
         _crtWtNumLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
         [_weightBackView addSubview:_crtWtNumLabel];
         [_crtWtNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -300,7 +306,7 @@
 - (UILabel *)lazyTwt {
     if (!_TrtwtNumLabel) {
         _TrtwtNumLabel = [[UILabel alloc] init];
-        _TrtwtNumLabel.text = @"76.10";
+        _TrtwtNumLabel.text = self.weightArray[2];
         _TrtwtNumLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16];
         [_weightBackView addSubview:_TrtwtNumLabel];
         [_TrtwtNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -327,6 +333,21 @@
     return _changeWtButton;;
     
 }
+- (UIButton *)lazyDietBtn {
+    if (!_dietBalButton) {
+        _dietBalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_dietBalButton setImage:[UIImage imageNamed:@"WechatIMG469.jpeg"] forState:UIControlStateNormal];
+        [_dietBalButton addTarget:self action:@selector(toBladDietView) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_dietBalButton];
+        [_dietBalButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.weightBackView mas_bottom]).offset(15);
+            make.left.equalTo(@20);
+            make.width.equalTo(@(ScreenWidth - 30));
+            make.height.equalTo(@((ScreenWidth - 40) / 5 - 5));
+        }];
+    }
+    return _dietBalButton;;
+}
 #pragma mark -rsp Method
 - (void)pressButton:(UIButton *)button {
     if (button.tag == 0) {
@@ -348,9 +369,9 @@
     self.TrtwtNumLabel.text = @"*****";
 }
 - (void)wtLabelNoHidden {
-    self.crtWtNumLabel.text = @"89.74";
-    self.stWtNumLabel.text = @"82.18";
-    self.TrtwtNumLabel.text = @"76.10";
+    self.crtWtNumLabel.text = self.weightArray[1];
+    self.stWtNumLabel.text = self.weightArray[0];
+    self.TrtwtNumLabel.text = self.weightArray[2];
 }
 - (void)goSlider {
     _sliderLabel.text = [NSString stringWithFormat:@"已完成:%.1f%%", _slider.value];
@@ -358,6 +379,10 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     /*注册通知并发送*/
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BodyToSearchFoodView" object:nil userInfo:nil];
+}
+- (void)toBladDietView {
+    /*注册通知并发送*/
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"toBlcdDietView" object:nil userInfo:nil];
 }
 - (void)newBackSet {
     UIColor *newBlue = [UIColor colorWithRed:94 / 255.0f green:186 / 255.0f blue:209 / 255.0f alpha:1.0];
