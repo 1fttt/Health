@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     [self lazyBlcdView];
     [self.blcdView BlcdViewInit];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(blcdExit) name:@"blcdExit" object:nil];
 }
 - (BlcdView *)lazyBlcdView {
     if (!_blcdView) {
@@ -28,6 +29,9 @@
         [self.view addSubview:_blcdView];
     }
     return _blcdView;
+}
+- (void)blcdExit {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 /*
 #pragma mark - Navigation
