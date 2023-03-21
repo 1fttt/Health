@@ -34,6 +34,23 @@
 // part2 - dietBlanced
 @property (nonatomic, strong) UIButton *dietBalButton;
 
+@property (nonatomic, strong) UIView *blcdBackView;
+@property (nonatomic, strong) UILabel *blcdLabel;
+@property (nonatomic, strong) UIButton *blckTodayBtn;
+// 饮食摄入
+@property (nonatomic, strong) UILabel *intakeTitleLbl;
+@property (nonatomic, strong) UILabel *intakeLbl;
+//运动消耗
+@property (nonatomic, strong) UILabel *consumptionTitleLbl;
+@property (nonatomic, strong) UILabel *consumptionLbl;
+//还可以摄入
+@property (nonatomic, strong) UIImageView *cricleView;
+@property (nonatomic, strong) UILabel *eatNumLabel;
+@property (nonatomic, strong) UILabel *requesrLabel;
+@property (nonatomic, strong) UILabel *lineLbl;
+
+@property (nonatomic, strong) UILabel *detailsLabel;
+@property (nonatomic, strong) UIButton *detailsBtn;
 @end
 @implementation BodyView
 
@@ -41,7 +58,6 @@
     UIColor *newBackGroundGray = [UIColor colorWithRed:246 / 255.0f green: 247 / 255.0f blue: 250 / 255.0f alpha:1.0];
     self.backgroundColor = newBackGroundGray;
     self.weightArray = @[@"82.18", @"89.74", @"76.10"];
-//    [self newBackSet];
     [self lazyTopView];
     [self lazyMkFrdButton];
     [self lazyScanButton];
@@ -62,8 +78,21 @@
     [self lazyTwt];
     [self lazyChagWtBt];
     
+    //p3
     [self lazyDietBtn];
-    
+    [self lazyBlckBView];
+    [self LazyBlcdLbl];
+    [self lazyBlckBtn];
+    [self lazyIntakeTl];
+    [self lazyIntakeLbl];
+    [self lazyConsumyTl];
+    [self lazyConsumyLbl];
+    [self lazyCriView];
+    [self lazyEatNum];
+    [self lazyRequest];
+    [self lazyLineLbl];
+    [self lazyDtsLbl];
+    [self lazyDtsBtn];
 }
 # pragma mark- LazyMethod
 - (UIView *)lazyTopView {
@@ -333,6 +362,8 @@
     return _changeWtButton;;
     
 }
+
+#pragma mark -P3
 - (UIButton *)lazyDietBtn {
     if (!_dietBalButton) {
         _dietBalButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -347,6 +378,186 @@
         }];
     }
     return _dietBalButton;;
+}
+- (UIView *)lazyBlckBView {
+    if (!_blcdBackView) {
+        _blcdBackView = [[UIView alloc] init];
+        _blcdBackView.backgroundColor = [UIColor whiteColor];
+        _blcdBackView.layer.masksToBounds = YES;
+        _blcdBackView.layer.cornerRadius = 18.0;
+        [self addSubview:_blcdBackView];
+        [_blcdBackView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.dietBalButton mas_bottom]).offset(-10);
+            make.height.equalTo(@260);
+            make.left.equalTo(@20);
+            make.width.equalTo(@(ScreenWidth - 35));
+        }];
+    }
+    return _blcdBackView;
+}
+- (UILabel *)LazyBlcdLbl {
+    if (!_blcdLabel) {
+        _blcdLabel = [[UILabel alloc] init];
+        _blcdLabel.text = @"饮食运动记录";
+        _blcdLabel.font = [UIFont systemFontOfSize:14];
+        [_blcdBackView addSubview:_blcdLabel];
+        [_blcdLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@15);
+            make.top.equalTo(@20);
+        }];
+    }
+    return _blcdLabel;
+}
+- (UIButton *)lazyBlckBtn {
+    if (!_blckTodayBtn) {
+        _blckTodayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_blckTodayBtn setImage:[UIImage imageNamed:@"WechatIMG504.jpeg"] forState:UIControlStateNormal];
+        [_blckTodayBtn addTarget:self action:@selector(toBladDietView) forControlEvents:UIControlEventTouchUpInside];
+        [_blcdBackView addSubview:_blckTodayBtn];
+        [_blckTodayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@20);
+            make.right.equalTo(@-20);
+            make.width.equalTo(@80);
+            make.height.equalTo(@25);
+        }];
+    }
+    return _blckTodayBtn;
+}
+- (UILabel *)lazyIntakeTl {
+    if (!_intakeTitleLbl) {
+        _intakeTitleLbl = [[UILabel alloc] init];
+        _intakeTitleLbl.text = @"饮食摄入";
+        _intakeTitleLbl.font = [UIFont systemFontOfSize:11];
+        [_blcdBackView addSubview:_intakeTitleLbl];
+        [_intakeTitleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@55);
+            make.top.equalTo(@95);
+        }];
+    }
+    return _intakeTitleLbl;
+}
+- (UILabel *)lazyIntakeLbl {
+    if (!_intakeLbl) {
+        _intakeLbl = [[UILabel alloc] init];
+        _intakeLbl.text = @"0";
+        _intakeLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+        [_blcdBackView addSubview:_intakeLbl];
+        [_intakeLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@70);
+            make.top.equalTo([self.intakeTitleLbl mas_bottom]).offset(10);
+        }];
+    }
+    return _intakeLbl;
+}
+- (UILabel *)lazyConsumyTl {
+    if (!_consumptionTitleLbl) {
+        _consumptionTitleLbl = [[UILabel alloc] init];
+        _consumptionTitleLbl.text = @"运动消耗";
+        _consumptionTitleLbl.font = [UIFont systemFontOfSize:11];
+        [_blcdBackView addSubview:_consumptionTitleLbl];
+        [_consumptionTitleLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(@-55);
+            make.top.equalTo(@95);
+        }];
+    }
+    return _consumptionTitleLbl;
+}
+- (UILabel *)lazyConsumyLbl {
+    if (!_consumptionLbl) {
+        _consumptionLbl = [[UILabel alloc] init];
+        _consumptionLbl.text = @"0";
+        _consumptionLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+        [_blcdBackView addSubview:_consumptionLbl];
+        [_consumptionLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(@-70);
+            make.top.equalTo([self.intakeTitleLbl mas_bottom]).offset(10);
+        }];
+    }
+    return _consumptionLbl;
+}
+- (UIImageView *)lazyCriView {
+    if (!_cricleView) {
+        _cricleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yuanhuan.png"]];
+        [_blcdBackView addSubview:_cricleView];
+        [_cricleView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.blcdLabel mas_bottom]).offset(28);
+            make.left.equalTo([self.blcdLabel mas_right]).offset(17);
+            make.height.equalTo(@130);
+            make.width.equalTo(@130);
+        }];
+    }
+    return _cricleView;
+}
+- (UILabel *)lazyEatNum {
+    if (!_eatNumLabel) {
+        _eatNumLabel = [[UILabel alloc] init];
+        _eatNumLabel.text = @"2678";
+        _eatNumLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:21];
+        [_cricleView addSubview:_eatNumLabel];
+        [_eatNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@35);
+            make.top.equalTo(@30);
+        }];
+    }
+    return _eatNumLabel;
+}
+- (UILabel *)lazyRequest {
+    if (!_requesrLabel) {
+        _requesrLabel = [[UILabel alloc] init];
+        _requesrLabel.textColor = [UIColor grayColor];
+        _requesrLabel.text = @"推荐食用热量";
+        _requesrLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:13];
+        [_cricleView addSubview:_requesrLabel];
+        [_requesrLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@23);
+            make.top.equalTo([self.eatNumLabel mas_bottom]).offset(10);
+        }];
+    }
+    return _requesrLabel;
+}
+- (UILabel *)lazyLineLbl {
+    _lineLbl = [[UILabel alloc] init];
+    _lineLbl.text = @"- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ";
+    _lineLbl.textColor = [UIColor grayColor];
+    [_blcdBackView addSubview:_lineLbl];
+    [_lineLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.top.equalTo([self.cricleView mas_bottom]).offset(-10);
+    }];
+    return _lineLbl;
+}
+- (UILabel *)lazyDtsLbl {
+    NSArray *array = @[@"早餐", @"午餐", @"晚餐", @"加餐", @"运动"];
+    if (!_detailsLabel) {
+        for (int i = 0; i < 5; i++) {
+            _detailsLabel = [[UILabel alloc] init];
+            _detailsLabel.text = array[i];
+            _detailsLabel.font = [UIFont systemFontOfSize:11];
+            [_blcdBackView addSubview:_detailsLabel];
+            [_detailsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(@(33 + ScreenWidth / 6 * i));
+                make.top.equalTo([self.lineLbl mas_bottom]).offset(35);
+            }];
+        }
+    }
+    return _detailsLabel;
+}
+- (UIButton *)lazyDtsBtn {
+    NSArray *array = @[@"zaocan.png", @"zhushi-2.png", @"kafei.png", @"hanbao.png", @"huwai.png"];
+    if (!_detailsBtn) {
+        for (int i = 0; i < 5; i++) {
+            _detailsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [_detailsBtn setImage:[UIImage imageNamed:array[i]] forState:UIControlStateNormal];
+            [_blcdBackView addSubview:_detailsBtn];
+            [_detailsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(@(30 + ScreenWidth / 6 * i));
+                make.top.equalTo([self.lineLbl mas_bottom]).offset(2);
+                make.width.equalTo(@29);
+                make.height.equalTo(@29);
+            }];
+        }
+    }
+    return _detailsBtn;
 }
 #pragma mark -rsp Method
 - (void)pressButton:(UIButton *)button {

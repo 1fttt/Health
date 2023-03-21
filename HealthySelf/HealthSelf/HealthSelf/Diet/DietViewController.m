@@ -38,10 +38,11 @@
     [self.view addSubview:self.viewDiet];
     [self menuDictionary2Requet];
     [self getEvEDayLabel];
+//    [self getaccessToken];
     [self.viewDiet viewInit];
     self.viewDiet.moreButtonDelegate = self;
     self.viewDiet.menuButtonDelegate = self;
-    self.access_token = [NSString stringWithFormat:@"24.60efbd59e1010dd36e2efdcb5c805623.2592000.1677916349.282335-30117396"];
+    self.access_token = [NSString stringWithFormat:@"24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396"];
    
     /*
      注册观察者，接收通知
@@ -142,27 +143,43 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     UIImage* image = [info valueForKey:UIImagePickerControllerEditedImage];
     // 图片转64编码
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
-    NSString *base64String = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *base64String = [UIImageJPEGRepresentation(image, 0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     [self imageRequest:base64String];
+    NSLog(@"%@", base64String);
     [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
-    
 }
-//
+////
+//- (void)thirdNetWorkWithImage:(PhotoFixBlock) dataBlock error:(ErrorBlock) errorBlock image:(UIImage *)image {
+//    NSString *URL = @"https://aip.baidubce.com/rest/2.0/image-process/v1/dehaze?access_token=24.6198013a9734d1991ef0d04b93cb66da.2592000.1673878002.282335-28825566";
+//    NSString *base64Str = [UIImageJPEGRepresentation(image, 0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+//    NSDictionary *header = @{@"Accept":@"application/json", @"Content-Type":@"application/x-www-form-urlencoded"};
+//    NSDictionary *Body = @{@"image":base64Str, @"option":@"cartoon"};
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager POST:URL parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        PhotoFixModel *model = [[PhotoFixModel alloc] initWithDictionary:responseObject error:nil];
+//        dataBlock(model);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        errorBlock(error);
+//    }];
+//}
 - (void)imageRequest:(NSString *)imageBase64Str {
     //创建会话管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    NSString *url = @"https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general?access_token=24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396";
      //POST请求
-    NSDictionary *paramDict = @{@"access_token":self.access_token, @"image":imageBase64Str};
-    NSDictionary *headerDict = @{@"Content-Type":@"application/x-www-form-urlencoded"};
-    [manager POST:@"https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?" parameters:paramDict headers:headerDict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//    NSInteger baike_num = 1;
+    NSString *image = [NSString stringWithFormat:@"image=%@", imageBase64Str];
+    NSDictionary *Body = @{@"image":image, @"baike_num":@"1"};
+    NSDictionary *header = @{@"Content-Type":@"application/x-www-form-urlencoded"};
+    [manager POST:url parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"图片查找失败");
     }];
 }
+
 #pragma mark NetRequest
 - (void)searchCategoryRequest:(NSInteger)categoryString {
     //创建会话管理者
@@ -268,6 +285,25 @@
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     [manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         self.viewDiet.eveDDic = responseObject;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"getEvEDayLabel查找失败");
+    }];
+}
+
+// 获取accessToken
+- (void)getaccessToken {
+   // 6FjCQ4FlVH07ypI0KjzeGe72
+   // U9xlldH9GH3zQTKIVFLZxAFrj9VeoUP1
+
+    //创建会话管理者
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    // 发送GET请求
+    NSString *urlString = [NSString stringWithFormat:@"https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=6FjCQ4FlVH07ypI0KjzeGe72&client_secret=U9xlldH9GH3zQTKIVFLZxAFrj9VeoUP1&grant_type=client_credentials"];
+    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [manager GET:urlString parameters:nil headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"getEvEDayLabel查找失败");
     }];
