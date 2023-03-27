@@ -10,6 +10,7 @@
 #import "SearchFoodViewController.h"
 #import "RecordWtViewController.h"
 #import "BlcdViewController.h"
+#import "MapViewController.h"
 #import <HealthKit/HealthKit.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
@@ -34,6 +35,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ToSearchView) name:@"BodyToSearchFoodView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeWt:) name:@"changeWt" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toBlcdDietView) name:@"toBlcdDietView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toMapView) name:@"ToMapView" object:nil];
 }
 
 #pragma mark- MethodSteps
@@ -151,6 +153,10 @@
     NSLog(@"to BlacncedView");
     BlcdViewController *blcdViewC = [[BlcdViewController alloc] init];
     [self.navigationController pushViewController:blcdViewC animated:YES];
+}
+- (void)toMapView {
+    MapViewController *mapVC = [[MapViewController alloc] init];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

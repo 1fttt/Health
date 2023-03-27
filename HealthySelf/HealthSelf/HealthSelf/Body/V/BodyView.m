@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIView *topBackView;
 @property (nonatomic, strong) UIButton *makeFrdButton;
 @property (nonatomic, strong) UIButton *scanButton;
+@property (nonatomic, strong) UIButton *mapBtn;
 @property (nonatomic, strong) UITextField *searchField;
 @property (nonatomic, strong) UIImageView *topSchView;
 // part-1 wtNum
@@ -63,6 +64,7 @@
     [self lazyScanButton];
     [self lazyTopTxeFld];
     [self lazyTopSrchView];
+    [self lazyMapBtn];
     
     [self lazywtBackView];
     [self lazywtTLabel];
@@ -113,7 +115,7 @@
         [self.topBackView addSubview:_makeFrdButton];
         [_makeFrdButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(@-12);
-            make.right.equalTo(@-75);
+            make.right.equalTo(@-90);
             make.width.equalTo(@24);
             make.height.equalTo(@24);
         }];
@@ -136,6 +138,23 @@
     }
     
     return _scanButton;
+}
+- (UIButton *)lazyMapBtn {
+    if (!_mapBtn) {
+        _mapBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_mapBtn setImage:[UIImage imageNamed:@"dingwei.png"] forState:UIControlStateNormal];
+        [_mapBtn addTarget:self action:@selector(toMap) forControlEvents:UIControlEventTouchUpInside];
+        _mapBtn.tag = 999;
+        [self.topBackView addSubview:_mapBtn];
+        [_mapBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(@-12);
+            make.right.equalTo(@-55);
+            make.width.equalTo(@24);
+            make.height.equalTo(@24);
+        }];
+    }
+    
+    return _mapBtn;
 }
 - (UITextField *)lazyTopTxeFld {
     UIColor *newBackGroundGray = [UIColor colorWithRed:240 / 255.0f green: 240 / 255.0f blue: 242 / 255.0f alpha:1.0];
@@ -548,6 +567,8 @@
         for (int i = 0; i < 5; i++) {
             _detailsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             [_detailsBtn setImage:[UIImage imageNamed:array[i]] forState:UIControlStateNormal];
+            _detailsBtn.tag = 300 + i;
+            [_detailsBtn addTarget:self action:@selector(blcdBtn:) forControlEvents:UIControlEventTouchUpInside];
             [_blcdBackView addSubview:_detailsBtn];
             [_detailsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(@(30 + ScreenWidth / 6 * i));
@@ -609,6 +630,14 @@
    layer.frame = self.bounds;
    [self.layer addSublayer:layer];
 
+}
+- (void)blcdBtn:(UIButton *)blcdBtn {
+    NSLog(@"%ld", blcdBtn.tag);
+}
+- (void)toMap {
+    NSLog(@"to MapView");
+    /*注册通知并发送*/
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ToMapView" object:nil userInfo:nil];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

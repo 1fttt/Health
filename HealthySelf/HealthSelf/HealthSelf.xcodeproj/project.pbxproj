@@ -59,6 +59,8 @@
 		2A52DF9C29BA2CA6008FE780 /* WechatIMG468.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A52DF9329BA2CA6008FE780 /* WechatIMG468.jpeg */; };
 		2A52DF9D29BA2CA6008FE780 /* WechatIMG469.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A52DF9429BA2CA6008FE780 /* WechatIMG469.jpeg */; };
 		2A52DF9E29BA2CA6008FE780 /* WechatIMG465.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A52DF9529BA2CA6008FE780 /* WechatIMG465.jpeg */; };
+		2AA5F42829CF19D30024A34C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5F42729CF19D30024A34C /* MapViewController.m */; };
+		2AA5F42B29CF19F00024A34C /* HJCAnnotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AA5F42A29CF19F00024A34C /* HJCAnnotion.m */; };
 		2ACA78AD296EE0AA00F124E3 /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78AC296EE0AA00F124E3 /* MenuView.m */; };
 		2ACA78B0296EE0C200F124E3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78AF296EE0C200F124E3 /* MenuViewController.m */; };
 		2ACA78B3296EF5A600F124E3 /* MenuListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACA78B2296EF5A600F124E3 /* MenuListTableViewCell.m */; };
@@ -257,6 +259,10 @@
 		2A52DF9329BA2CA6008FE780 /* WechatIMG468.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG468.jpeg; sourceTree = "<group>"; };
 		2A52DF9429BA2CA6008FE780 /* WechatIMG469.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG469.jpeg; sourceTree = "<group>"; };
 		2A52DF9529BA2CA6008FE780 /* WechatIMG465.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WechatIMG465.jpeg; sourceTree = "<group>"; };
+		2AA5F42629CF19D30024A34C /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		2AA5F42729CF19D30024A34C /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		2AA5F42929CF19F00024A34C /* HJCAnnotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HJCAnnotion.h; sourceTree = "<group>"; };
+		2AA5F42A29CF19F00024A34C /* HJCAnnotion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJCAnnotion.m; sourceTree = "<group>"; };
 		2ACA78AB296EE0AA00F124E3 /* MenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
 		2ACA78AC296EE0AA00F124E3 /* MenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		2ACA78AE296EE0C200F124E3 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -631,6 +637,7 @@
 		2A3C247D2946242B008C8D07 /* Body */ = {
 			isa = PBXGroup;
 			children = (
+				2AA5F42529CF19BB0024A34C /* MapView */,
 				2A52DF7C29BA0B80008FE780 /* BalancedDeit */,
 				2AD6C92929B0F370001DED24 /* reRecordWt */,
 				2A3C24852946F9EE008C8D07 /* C */,
@@ -906,6 +913,17 @@
 				2A52DF9529BA2CA6008FE780 /* WechatIMG465.jpeg */,
 			);
 			path = sss;
+			sourceTree = "<group>";
+		};
+		2AA5F42529CF19BB0024A34C /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				2AA5F42629CF19D30024A34C /* MapViewController.h */,
+				2AA5F42729CF19D30024A34C /* MapViewController.m */,
+				2AA5F42929CF19F00024A34C /* HJCAnnotion.h */,
+				2AA5F42A29CF19F00024A34C /* HJCAnnotion.m */,
+			);
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		2ACA78A7296D357B00F124E3 /* Menu */ = {
@@ -1717,6 +1735,7 @@
 				2A3C24AA2946FD72008C8D07 /* CommitShareView.m in Sources */,
 				2A3C2406293DAE69008C8D07 /* RegisterModel.m in Sources */,
 				2AFDF57329508B8E0056D231 /* SetModel.m in Sources */,
+				2AA5F42B29CF19F00024A34C /* HJCAnnotion.m in Sources */,
 				2A3F40A629910F4D001BA2BB /* CommentTableViewCell.m in Sources */,
 				2AFDF5CC2952FD920056D231 /* SearchFoodModel.m in Sources */,
 				2AD6C93229B0F426001DED24 /* RecordWtViewController.m in Sources */,
@@ -1778,6 +1797,7 @@
 				2AD6C93529B0F43E001DED24 /* RecordModel.m in Sources */,
 				2AD1AFE72968798A00EB5ACF /* FoodOutlineTableViewCell.m in Sources */,
 				2A52DF8229BA0C0C008FE780 /* BlcdView.m in Sources */,
+				2AA5F42829CF19D30024A34C /* MapViewController.m in Sources */,
 				2AD1AFEA2969D20000EB5ACF /* FoodRecipesTableViewCell.m in Sources */,
 				2ACA78E029702C1F00F124E3 /* FoodDetailsModel.m in Sources */,
 				2AFDF57429508B8E0056D231 /* SetViewController.m in Sources */,

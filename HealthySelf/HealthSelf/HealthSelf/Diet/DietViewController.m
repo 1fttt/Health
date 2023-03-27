@@ -143,7 +143,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
     UIImage* image = [info valueForKey:UIImagePickerControllerEditedImage];
     // 图片转64编码
-    NSString *base64String = [UIImageJPEGRepresentation(image, 0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *base64String = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     [self imageRequest:base64String];
     NSLog(@"%@", base64String);
     [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
@@ -166,12 +166,10 @@
     //创建会话管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     NSString *url = @"https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general?access_token=24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396";
      //POST请求
-//    NSInteger baike_num = 1;
-    NSString *image = [NSString stringWithFormat:@"image=%@", imageBase64Str];
-    NSDictionary *Body = @{@"image":image, @"baike_num":@"1"};
+//    NSNumber *baike_num2 = [[NSNumber alloc] initWithLong:2];
+    NSDictionary *Body = @{@"image":imageBase64Str};
     NSDictionary *header = @{@"Content-Type":@"application/x-www-form-urlencoded"};
     [manager POST:url parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
@@ -185,7 +183,7 @@
     //创建会话管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     // 发送GET请求
     NSString *urlString = [NSString stringWithFormat:@"https://www.mxnzp.com/api/food_heat/food/list?id=%ld&page=1&app_id=icwnrnfenlpvforw&app_secret=N1BEY0R5ZkVMM1B0b2t6R3F6YkVzZz09", categoryString];
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
