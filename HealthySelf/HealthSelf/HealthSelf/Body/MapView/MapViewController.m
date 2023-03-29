@@ -11,7 +11,7 @@
 #import <Masonry.h>
 #import <CoreLocation/CoreLocation.h>
 @interface MapViewController ()<MKMapViewDelegate, CLLocationManagerDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *manager;
 @property (nonatomic, strong) UIButton *retBtn;
 @end
@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = YES;
     [self mapView];
@@ -31,16 +30,18 @@
     [self returnBtn];
 }
 - (UIButton *)returnBtn {
-    _retBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_retBtn setImage:[UIImage imageNamed:@"31fanhui1.png"] forState:UIControlStateNormal];
-    [_retBtn addTarget:self action:@selector(retBtnMth) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_retBtn];
-    [_retBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(@10);
-        make.top.equalTo(@25);
-        make.height.equalTo(@30);
-        make.width.equalTo(@30);
-    }];
+    if (!_retBtn) {
+        _retBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_retBtn setImage:[UIImage imageNamed:@"31fanhui1.png"] forState:UIControlStateNormal];
+        [_retBtn addTarget:self action:@selector(retBtnMth) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_retBtn];
+        [_retBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@10);
+            make.top.equalTo(@65);
+            make.height.equalTo(@30);
+            make.width.equalTo(@30);
+        }];
+    }
     return _retBtn;
 }
 /*
@@ -129,7 +130,7 @@
 
 #pragma mark Btn
 - (void)retBtnMth {
-    [self.navigationController popViewControllerAnimated:YES];
     NSLog(@"already Pop");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

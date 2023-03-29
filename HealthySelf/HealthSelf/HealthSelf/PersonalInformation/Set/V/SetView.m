@@ -49,7 +49,7 @@
     _arrayData = [[NSMutableArray alloc] init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+//    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [_tableView registerClass:[SetTableViewCell class] forCellReuseIdentifier:@"first"];
     [self addSubview:_tableView];
 }

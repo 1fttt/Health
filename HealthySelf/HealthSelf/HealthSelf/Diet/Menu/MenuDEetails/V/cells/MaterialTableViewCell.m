@@ -22,7 +22,6 @@
     // Configure the view for the selected state
 }
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    UIColor *newBackGroundGreen = [UIColor colorWithRed:127 / 255.0f green: 200 / 255.0f blue: 190 / 255.0f alpha:1.0];
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         UIColor *labelGreen = [UIColor colorWithRed:124 / 255.0f green:193 / 255.0f blue:156 / 255.0f alpha:1.0];
         self.backView = [[UIView alloc] init];

@@ -129,6 +129,9 @@
 - (void)failedMenu {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"failedMenu" object:nil userInfo:nil];
 }
+- (void)pressMoreButton {
+    NSLog(@"你忘写自己的方法了");
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

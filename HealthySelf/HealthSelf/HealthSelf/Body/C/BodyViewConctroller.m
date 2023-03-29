@@ -20,6 +20,8 @@
 @property (nonatomic, strong) HKHealthStore *hkHStore; /**< 健康数据 */
 @property (nonatomic, strong) HKObjectType *hkOType; /**< 获取的权限 */
 @property (nonatomic, strong) HKSampleType *hkSType; /**< 获取采样数据类型 */
+@property (nonatomic, assign) NSInteger allsteps;
+- (void)upDateWalkSteps;
 @end
 
 @implementation BodyViewConctroller
@@ -36,6 +38,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeWt:) name:@"changeWt" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toBlcdDietView) name:@"toBlcdDietView" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toMapView) name:@"ToMapView" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInitGetSteps) name:@"GetSteps" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SkinExtureAnalysis) name:@"SkinExtureAnalysis" object:nil];
 }
 
 #pragma mark- MethodSteps
@@ -71,14 +75,12 @@
 // 获取步数值
 - (void) handleGetWalkSteps {
     self.hkSType = [HKSampleType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
-    
     NSSortDescriptor *startSortDec = [NSSortDescriptor sortDescriptorWithKey:HKSampleSortIdentifierStartDate ascending:NO];
     NSSortDescriptor *endSortDec = [NSSortDescriptor sortDescriptorWithKey:HKSampleSortIdentifierEndDate ascending:NO];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *nowDate = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
     NSDate *startDate = [self handleGetDateWithCaledar:calendar nowDate:nowDate hour:0 minute:0 second:0];
     NSDate *endDate = [self handleGetDateWithCaledar:calendar nowDate:nowDate hour:23 minute:59 second:59];
-    
     NSPredicate *predicate = [HKQuery predicateForSamplesWithStartDate:startDate endDate:endDate options:HKQueryOptionNone]; // 筛选当天的数据
 //    __weak typeof(self) weakSelf = self;
     HKSampleQuery *hkSQ = [[HKSampleQuery alloc] initWithSampleType:self.hkSType predicate:predicate limit:HKObjectQueryNoLimit sortDescriptors:@[startSortDec, endSortDec] resultsHandler:^(HKSampleQuery * _Nonnull query, NSArray<__kindof HKSample *> * _Nullable results, NSError * _Nullable error) {
@@ -89,42 +91,27 @@
             NSInteger isUserWrite = [sampM.metadata[HKMetadataKeyWasUserEntered] integerValue];
             if (isUserWrite == 1) { // 用户手动录入的数据。
                 
-            }else {
+            } else {
                 double steps = [sampM.quantity doubleValueForUnit:unit];
                 NSInteger stepIntegrs = (NSInteger)steps;
                 allSteps += stepIntegrs;
             }
         }
-                    NSLog(@"获取步数成功:%ld", (long)allSteps);
+        // 这里提示我不能在其他线程更新UI，回到主线程即可
+        self.allsteps = allSteps;
+        NSLog(@"获取步数成功:%ld", (long)allSteps);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self upDateWalkSteps];
+        });
     }];
     [self.hkHStore executeQuery:hkSQ]; // 执行
-    /**
-返回数据格式
-     {
-       HKSample = {
-         HKObject = {
-           NSObject = {
-             isa = HKCumulativeQuantitySample
-           }
-           _UUID = xxx
-           _sourceRevision = xxx
-           _device = nil
-           _metadata = 0x000000028291c940 1 key/value pair
-           _provenanceID = 0
-           _sourceBundleIdentifier = nil
-           _creationTimestamp = 675566015.49851298
-           _contributor = nil
-         }
-         _sampleType = 0x000000028257aca0
-         _startTimestamp = 675565980
-         _endTimestamp = 675565980
-       }
-       _quantity = 0x000000028291f2e0
-       _freezeState = 2
-       _count = 1
-       _codableQuantitySample = nil
-     }
-     */
+}
+- (void)upDateWalkSteps {
+    if (self.allsteps == 0) {
+        self.viewBody.stepsLbl.text = @"今日未运动";
+    } else {
+        self.viewBody.stepsLbl.text = [NSString stringWithFormat:@"%ld步", (long)self.allsteps];
+    }
 }
 /*
 #pragma mark - Navigation
@@ -157,6 +144,10 @@
 - (void)toMapView {
     MapViewController *mapVC = [[MapViewController alloc] init];
     [self.navigationController pushViewController:mapVC animated:YES];
+}
+//肤质分析
+- (void)SkinExtureAnalysis {
+    
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

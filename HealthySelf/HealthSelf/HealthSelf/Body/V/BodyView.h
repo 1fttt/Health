@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)viewInit;
 @property (nonatomic, strong) UILabel *crtWtNumLabel;
 @property (nonatomic, copy) NSArray *weightArray;
+@property (nonatomic, strong) UILabel *stepsLbl;
 
 @end
 

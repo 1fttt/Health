@@ -52,6 +52,17 @@
 
 @property (nonatomic, strong) UILabel *detailsLabel;
 @property (nonatomic, strong) UIButton *detailsBtn;
+
+// part4 steps And Face
+@property (nonatomic, strong) UIButton *stepButton;
+@property (nonatomic, strong) UIImageView *stepImg;
+@property (nonatomic, strong) UILabel *stepTlLbl;
+@property (nonatomic, strong) UILabel *stepPointLbl;
+
+@property (nonatomic, strong) UIButton *faceBtn;
+@property (nonatomic, strong) UIImageView *faceImg;
+@property (nonatomic, strong) UILabel *faceTlLbl;
+@property (nonatomic, strong) UILabel *facePointLbl;
 @end
 @implementation BodyView
 
@@ -95,8 +106,22 @@
     [self lazyLineLbl];
     [self lazyDtsLbl];
     [self lazyDtsBtn];
+    
+    //p4-step
+    [self lazyStepBtn];
+    [self lazyStpImg];
+    [self lazySTLbl];
+    [self lazyStepsLbl];
+    [self lazyPointLbl];
+    
+    //p4-Face
+    [self lazyFaceBtn];
+    [self lazyFaceImg];
+    [self lazyfacTLbl];
+    [self lazyfacePointLbl];
 }
 # pragma mark- LazyMethod
+
 - (UIView *)lazyTopView {
     if (!_topBackView) {
         _topBackView = [[UIView alloc] init];
@@ -382,7 +407,7 @@
     
 }
 
-#pragma mark -P3
+#pragma mark -Prat3
 - (UIButton *)lazyDietBtn {
     if (!_dietBalButton) {
         _dietBalButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -458,11 +483,11 @@
 - (UILabel *)lazyIntakeLbl {
     if (!_intakeLbl) {
         _intakeLbl = [[UILabel alloc] init];
-        _intakeLbl.text = @"0";
+        _intakeLbl.text = @"879";
         _intakeLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
         [_blcdBackView addSubview:_intakeLbl];
         [_intakeLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(@70);
+            make.left.equalTo(@60);
             make.top.equalTo([self.intakeTitleLbl mas_bottom]).offset(10);
         }];
     }
@@ -484,11 +509,11 @@
 - (UILabel *)lazyConsumyLbl {
     if (!_consumptionLbl) {
         _consumptionLbl = [[UILabel alloc] init];
-        _consumptionLbl.text = @"0";
+        _consumptionLbl.text = @"304";
         _consumptionLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
         [_blcdBackView addSubview:_consumptionLbl];
         [_consumptionLbl mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(@-70);
+            make.right.equalTo(@-60);
             make.top.equalTo([self.intakeTitleLbl mas_bottom]).offset(10);
         }];
     }
@@ -580,6 +605,137 @@
     }
     return _detailsBtn;
 }
+#pragma mark-Part4
+- (UIButton *)lazyStepBtn {
+    if (!_stepButton) {
+        self.stepButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.stepButton.layer.masksToBounds = YES;
+        self.stepButton.layer.cornerRadius = 16.0;
+        self.stepButton.backgroundColor = [UIColor whiteColor];
+        [self.stepButton addTarget:self action:@selector(getSteps) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.stepButton];
+        [self.stepButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.blcdBackView mas_bottom]).offset(15);
+            make.width.equalTo(@(ScreenWidth / 3 + 25));
+            make.height.equalTo(@(ScreenWidth / 18 * 6));
+            make.left.equalTo(@20);
+        }];
+    }
+    return _stepButton;
+}
+- (UIImageView *)lazyStpImg {
+    if (!_stepImg) {
+        self.stepImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"stepBtn.png"]];
+        [self.stepButton addSubview:self.stepImg];
+        [self.stepImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@55);
+            make.right.equalTo(@-5);
+            make.width.equalTo(@65);
+            make.height.equalTo(@65);
+        }];
+    }
+    return _stepImg;
+}
+- (UILabel *)lazySTLbl {
+    if (!_stepTlLbl) {
+        _stepTlLbl = [[UILabel alloc] init];
+        _stepTlLbl.text = @"今日运动步数";
+        _stepTlLbl.font = [UIFont systemFontOfSize:14];
+        [self.stepButton addSubview:_stepTlLbl];
+        [_stepTlLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@15);
+            make.left.equalTo(@10);
+        }];
+    }
+    return _stepTlLbl;
+}
+- (UILabel *)lazyStepsLbl {
+    if (!_stepsLbl) {
+        _stepsLbl = [[UILabel alloc] init];
+        _stepsLbl.text = [NSString stringWithFormat:@"1909步"];
+        _stepsLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+        [_stepButton addSubview:_stepsLbl];
+        [_stepsLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.stepTlLbl mas_bottom]).offset(15);
+            make.left.equalTo(@25);
+        }];
+    }
+    return _stepsLbl;
+}
+- (UILabel *)lazyPointLbl {
+    if (!_stepPointLbl) {
+        _stepPointLbl = [[UILabel alloc] init];
+        _stepPointLbl.text = @"(点击更新今日步数)";
+        _stepPointLbl.textColor = [UIColor grayColor];
+        _stepPointLbl.font = [UIFont systemFontOfSize:11];
+        [_stepButton addSubview:_stepPointLbl];
+        [_stepPointLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.stepsLbl mas_bottom]).offset(30);
+            make.left.equalTo(@10);
+        }];
+    }
+    return _stepPointLbl;
+}
+- (UIButton *)lazyFaceBtn {
+    if (!_faceBtn) {
+        self.faceBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.faceBtn.layer.masksToBounds = YES;
+        self.faceBtn.layer.cornerRadius = 16.0;
+        self.faceBtn.backgroundColor = [UIColor whiteColor];
+        [self.faceBtn addTarget:self action:@selector(SkinExtureAnalysis) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.faceBtn];
+        [self.faceBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.blcdBackView mas_bottom]).offset(15);
+            make.width.equalTo(@(ScreenWidth / 3 + 25));
+            make.height.equalTo(@(ScreenWidth / 18 * 6));
+            make.right.equalTo(@-20);
+        }];
+    }
+    return _faceBtn;
+}
+- (UIImageView *)lazyFaceImg {
+    if (!_faceImg) {
+        _faceImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"faceBtn.png"]];
+        [self.faceBtn addSubview:self.faceImg];
+        [_faceImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@55);
+            make.right.equalTo(@-5);
+            make.width.equalTo(@65);
+            make.height.equalTo(@65);
+        }];
+    }
+    return _faceImg;
+}
+- (UILabel *)lazyfacTLbl {
+    if (!_faceTlLbl) {
+        _faceTlLbl = [[UILabel alloc] init];
+        _faceTlLbl.text = @"点击进行肤质测试";
+        _faceTlLbl.font = [UIFont systemFontOfSize:14];
+        [self.faceBtn addSubview:_faceTlLbl];
+        [_faceTlLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@15);
+            make.left.equalTo(@10);
+        }];
+    }
+    return _faceTlLbl;
+}
+- (UILabel *)lazyfacePointLbl {
+    UIColor *newBlue = [UIColor colorWithRed:94 / 255.0f green:186 / 255.0f blue:209 / 255.0f alpha:1.0];
+    if (!_facePointLbl) {
+        _facePointLbl = [[UILabel alloc] init];
+        _facePointLbl.text = @"试试和LightTime进行皮肤交流-生成自己的皮肤报告";
+        _facePointLbl.textColor = newBlue;
+        _facePointLbl.font = [UIFont fontWithName:@"Helvetica-Bold" size:12];
+        _facePointLbl.numberOfLines = 0;
+        [_faceBtn addSubview:_facePointLbl];
+        [_facePointLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo([self.faceTlLbl mas_bottom]).offset(10);
+            make.left.equalTo(@10);
+            make.width.equalTo(@(ScreenWidth / 5));
+        }];
+    }
+    return _facePointLbl;
+}
 #pragma mark -rsp Method
 - (void)pressButton:(UIButton *)button {
     if (button.tag == 0) {
@@ -638,6 +794,15 @@
     NSLog(@"to MapView");
     /*注册通知并发送*/
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ToMapView" object:nil userInfo:nil];
+}
+//获取步数
+- (void)getSteps {
+//    NSLog(@"getWalkSteps");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"GetSteps" object:nil userInfo:nil];
+}
+//肤质测试
+- (void)SkinExtureAnalysis {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SkinExtureAnalysis" object:nil userInfo:nil];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
