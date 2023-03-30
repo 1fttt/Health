@@ -42,8 +42,6 @@
     [self.viewDiet viewInit];
     self.viewDiet.moreButtonDelegate = self;
     self.viewDiet.menuButtonDelegate = self;
-    self.access_token = [NSString stringWithFormat:@"24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396"];
-   
     /*
      注册观察者，接收通知
      */
@@ -148,20 +146,6 @@
     NSLog(@"%@", base64String);
     [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
 }
-////
-//- (void)thirdNetWorkWithImage:(PhotoFixBlock) dataBlock error:(ErrorBlock) errorBlock image:(UIImage *)image {
-//    NSString *URL = @"https://aip.baidubce.com/rest/2.0/image-process/v1/dehaze?access_token=24.6198013a9734d1991ef0d04b93cb66da.2592000.1673878002.282335-28825566";
-//    NSString *base64Str = [UIImageJPEGRepresentation(image, 0.1) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-//    NSDictionary *header = @{@"Accept":@"application/json", @"Content-Type":@"application/x-www-form-urlencoded"};
-//    NSDictionary *Body = @{@"image":base64Str, @"option":@"cartoon"};
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager POST:URL parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        PhotoFixModel *model = [[PhotoFixModel alloc] initWithDictionary:responseObject error:nil];
-//        dataBlock(model);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        errorBlock(error);
-//    }];
-//}
 - (void)imageRequest:(NSString *)imageBase64Str {
     //创建会话管理者
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];

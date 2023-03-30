@@ -11,16 +11,22 @@
 #import "RecordWtViewController.h"
 #import "BlcdViewController.h"
 #import "MapViewController.h"
+
 #import <HealthKit/HealthKit.h>
+#import <AFNetworking.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
-@interface BodyViewConctroller ()
+@interface BodyViewConctroller ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong)BodyView *viewBody;
 //HealthKit
 @property (nonatomic, strong) HKHealthStore *hkHStore; /**< 健康数据 */
 @property (nonatomic, strong) HKObjectType *hkOType; /**< 获取的权限 */
 @property (nonatomic, strong) HKSampleType *hkSType; /**< 获取采样数据类型 */
 @property (nonatomic, assign) NSInteger allsteps;
+
+//face
+@property (nonatomic, strong) UIImagePickerController* imagePickerController;
+
 - (void)upDateWalkSteps;
 @end
 
@@ -147,7 +153,78 @@
 }
 //肤质分析
 - (void)SkinExtureAnalysis {
-    
+    [self tapAvator];
+}
+#pragma mark CamareMethod
+// 返回imagePickerController实例
+- (UIImagePickerController *)imagePickerController {
+    if (_imagePickerController == nil) {
+        _imagePickerController = [[UIImagePickerController alloc] init];
+        _imagePickerController.delegate = self; //delegate遵循了两个代理
+        _imagePickerController.allowsEditing = YES;
+    }
+    return _imagePickerController;
+}
+// 点击imageView
+- (void)tapAvator {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *camera = [UIAlertAction actionWithTitle:@"从相机拍摄您的皮肤" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self toCamera];
+        }];
+        UIAlertAction *album = [UIAlertAction actionWithTitle:@"从相册选取照片" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self toPhoto];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+
+        [alert addAction:camera];
+        [alert addAction:album];
+        [alert addAction:cancel];
+
+        [self presentViewController:alert animated:YES completion:nil];
+}
+// 跳转到相机
+#pragma mark 相机
+- (void)toCamera {
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePickerController.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.imagePickerController.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+// 跳转到相册
+- (void)toPhoto {
+    //选择相册时，设置UIImagePickerController对象相关属性
+    self.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //跳转到UIImagePickerController控制器弹出相册
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+}
+
+// 选中之后的事件
+// didFinishPicking imagePickerController协议函数
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    UIImage* image = [info valueForKey:UIImagePickerControllerEditedImage];
+    // 图片转64编码
+    NSString *base64String = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    [self imageRequest:base64String];
+//    NSLog(@"%@", base64String);
+    [self.imagePickerController dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)imageRequest:(NSString *)imageBase64Str {
+    //创建会话管理者
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+//https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396
+
+    NSString *url = @"//https://aip.baidubce.com/rest/2.0/face/v1/merge?access_token=24.5156c3350534d49b01b7161906f8d485.2592000.1681983018.282335-30117396";
+     //POST请求
+    NSDictionary *Body = @{@"image":imageBase64Str};
+    NSDictionary *header = @{@"Content-Type":@"application/x-www-form-urlencoded"};
+    [manager POST:url parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"图片查找失败");
+    }];
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

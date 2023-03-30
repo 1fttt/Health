@@ -129,7 +129,7 @@
 - (void)failedMenu {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"failedMenu" object:nil userInfo:nil];
 }
-- (void)pressMoreButton {
+- (void)pressMoreButton:(UIButton *)button {
     NSLog(@"你忘写自己的方法了");
 }
 /*
