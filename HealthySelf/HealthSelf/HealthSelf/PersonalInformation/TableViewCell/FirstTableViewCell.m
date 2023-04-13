@@ -30,7 +30,7 @@
         [self.contentView addSubview:_avatarsButton];
         
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.text = @"hhhhhhhhhh";
+        _nameLabel.text = @"不知江月待何人";
         _nameLabel.font = [UIFont systemFontOfSize:18];
         [self.contentView addSubview:_nameLabel];
         

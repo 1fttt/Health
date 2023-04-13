@@ -15,6 +15,7 @@
     self = [super initWithFrame:frame];
     [self initTableView];
     _textArray = @[@[@"个人信息",@"收货地址",@"账号设置",@"偏好设置"],@[@"消息设置",@"管理Siri捷径",@"数据同步设置",@"清理缓存",@"网络诊断"],@[@"协议与条款",@"隐私政策摘要",@"个人信息收集清单",@"第三方信息共享清单"],@[@"推荐给朋友",@"商务合作",@"投诉举报",@"关于我们"]];
+    
     UIView* headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SIZE_WIDTH, 100)];
     headView.backgroundColor = [UIColor whiteColor];
     [self addSubview:headView];
@@ -49,7 +50,7 @@
     _arrayData = [[NSMutableArray alloc] init];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-//    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     [_tableView registerClass:[SetTableViewCell class] forCellReuseIdentifier:@"first"];
     [self addSubview:_tableView];
 }

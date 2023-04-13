@@ -45,22 +45,48 @@
             {
                 int a = i/4;
                 int b = i%4;
-                UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
-                button.tag = i;
-                [button setImage:[UIImage imageNamed:array[i]] forState:UIControlStateNormal];
-                [self.contentView addSubview:button];
+                _button = [UIButton buttonWithType:UIButtonTypeCustom];
+                _button.tag = i;
+                [_button setImage:[UIImage imageNamed:array[i]] forState:UIControlStateNormal];
+                [self.contentView addSubview:_button];
                 
-                [button mas_makeConstraints:^(MASConstraintMaker *make) {
+                [_button mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.left.mas_equalTo(30+100*b);
                     make.top.mas_equalTo(10+a*70);
                     make.width.mas_equalTo(50);
                     make.height.mas_equalTo(50);
                 }];
+                [_button addTarget:self action:@selector(jumpPage:) forControlEvents:UIControlEventTouchUpInside];
             }
     }
     
     return self;
 }
-
+- (void)jumpPage:(UIButton *)button{
+    if (button.tag == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"firstVToC" object:nil];
+    }
+    if (button.tag == 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"secondVToC"object:nil];
+    }
+    if (button.tag == 2) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"thirdVToC"object:nil];
+    }
+    if (button.tag == 3) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"forthVToC"object:nil];
+    }
+    if (button.tag == 4) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"fifthVToC"object:nil];
+    }
+    if (button.tag == 5) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"sixthVToC"object:nil];
+    }
+    if (button.tag == 6) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"seventhVToC"object:nil];
+    }
+    if (button.tag == 7) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"eighthVToC"object:nil];
+    }
+}
 
 @end

@@ -21,7 +21,6 @@
     self.setModel = [[SetModel alloc] init];
     
     [self.setView.backButton addTarget:self action:@selector(pressBackButton) forControlEvents:UIControlEventTouchUpInside];
-    // Do any additional setup after loading the view.
 }
 
 - (void)pressBackButton {

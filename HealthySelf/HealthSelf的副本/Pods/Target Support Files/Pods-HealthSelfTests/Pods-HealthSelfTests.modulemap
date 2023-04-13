@@ -1,6 +1,0 @@
-framework module Pods_HealthSelfTests {
-  umbrella header "Pods-HealthSelfTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

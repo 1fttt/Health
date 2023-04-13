@@ -10,7 +10,7 @@
 #import "PersonalInformationModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PersonalInformationViewController : UIViewController
+@interface PersonalInformationViewController : UIViewController<PersonalInformationViewDelegate>
 @property (nonatomic, strong)PersonalInformationView* personalInformationView;
 @property (nonatomic, strong)PersonalInformationModel* personalInformationModel;
 @end

@@ -48,8 +48,12 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, SIZE_WIDTH, SIZE_HEIGHT-80) style:UITableViewStyleGrouped];
     _arrayData = [[NSMutableArray alloc] init];
     _tableView.backgroundColor = [UIColor colorWithWhite:1.15 alpha:0.8];
+    _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.sectionHeaderHeight = 10;
+    _tableView.sectionFooterHeight = 10;
+    _tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0.0f, 10, _tableView.bounds.size.width, 10)];
     [_tableView registerClass:[FirstTableViewCell class] forCellReuseIdentifier:@"first"];
     [_tableView registerClass:[SecondTableViewCell class] forCellReuseIdentifier:@"second"];
     [_tableView registerClass:[ThirdTableViewCell class] forCellReuseIdentifier:@"third"];
@@ -76,9 +80,20 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         FirstTableViewCell* cell = [_tableView dequeueReusableCellWithIdentifier:@"first" forIndexPath:indexPath];
+//        cell.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:246.0/255.0 blue:250.0/255.0 alpha:1];
         cell.backgroundColor = [UIColor whiteColor];
         cell.layer.masksToBounds = YES;
         cell.layer.cornerRadius = 35;
+        
+        UIImageView*  vipImageView = [[UIImageView alloc] init];
+        vipImageView.image = [UIImage imageNamed:@"huiyuan.jpg"];
+        [cell.contentView addSubview:vipImageView];
+        [vipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.top.mas_equalTo(80);
+            make.width.mas_equalTo(self.bounds.size.width-20);
+            make.height.mas_equalTo(110);
+        }];
         return cell;
     }
     if (indexPath.section == 1) {
@@ -156,5 +171,110 @@
     }
     return 0;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 2) {
+            [_delegate jumpView:indexPath.row];
+    }
+}
+//- (void)jumpPage:(UIButton *)button{
+//    NSLog(@"%ld",button.tag);
+////    if(tag == 0)
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"firstVToC" object:nil];
+//}
+
+//#pragma mark - Table view data source
+
+//// 重新绘制cell边框
+//
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//
+// if ([cell respondsToSelector:@selector(tintColor)]) {
+//
+// // if (tableView == self.tableView) {
+//
+// CGFloat cornerRadius = 20.f;
+//
+// cell.backgroundColor = UIColor.clearColor;
+//
+// CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+//
+// CGMutablePathRef pathRef = CGPathCreateMutable();
+//
+// CGRect bounds = CGRectInset(cell.bounds, 10, 0);
+//
+// BOOL addLine = NO;
+//
+// if (indexPath.row == 0 && indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1) {
+//
+// CGPathAddRoundedRect(pathRef, nil, bounds, cornerRadius, cornerRadius);
+//
+// } else if (indexPath.row == 0) {
+//
+// CGPathMoveToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMaxY(bounds));
+//
+// CGPathAddArcToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMinY(bounds), CGRectGetMidX(bounds), CGRectGetMinY(bounds), cornerRadius);
+//
+// CGPathAddArcToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMinY(bounds), CGRectGetMaxX(bounds), CGRectGetMidY(bounds), cornerRadius);
+//
+// CGPathAddLineToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMaxY(bounds));
+//
+// addLine = YES;
+//
+// } else if (indexPath.row == [tableView numberOfRowsInSection:indexPath.section]-1) {
+//
+// CGPathMoveToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMinY(bounds));
+//
+// CGPathAddArcToPoint(pathRef, nil, CGRectGetMinX(bounds), CGRectGetMaxY(bounds), CGRectGetMidX(bounds), CGRectGetMaxY(bounds), cornerRadius);
+//
+// CGPathAddArcToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMaxY(bounds), CGRectGetMaxX(bounds), CGRectGetMidY(bounds), cornerRadius);
+//
+// CGPathAddLineToPoint(pathRef, nil, CGRectGetMaxX(bounds), CGRectGetMinY(bounds));
+//
+// } else {
+//
+// CGPathAddRect(pathRef, nil, bounds);
+//
+// addLine = YES;
+//
+// }
+//
+// layer.path = pathRef;
+//
+// CFRelease(pathRef);
+//
+// //颜色修改
+//
+// layer.fillColor = [UIColor colorWithWhite:1.f alpha:0.5f].CGColor;
+//
+// layer.strokeColor=[UIColor whiteColor].CGColor;
+//
+// if (addLine == YES) {
+//
+// CALayer *lineLayer = [[CALayer alloc] init];
+//
+// CGFloat lineHeight = (1.f / [UIScreen mainScreen].scale);
+//
+// lineLayer.frame = CGRectMake(CGRectGetMinX(bounds)+10, bounds.size.height-lineHeight, bounds.size.width-10, lineHeight);
+//
+// lineLayer.backgroundColor = tableView.separatorColor.CGColor;
+//
+// [layer addSublayer:lineLayer];
+//
+// }
+//
+// UIView *testView = [[UIView alloc] initWithFrame:bounds];
+//
+// [testView.layer insertSublayer:layer atIndex:0];
+//
+// testView.backgroundColor = UIColor.clearColor;
+//
+// cell.backgroundView = testView;
+//
+// }
+//
+////  }
+//
+//}
 
 @end
