@@ -99,5 +99,9 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 4) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Exit" object:nil];
+    }
+}
 @end

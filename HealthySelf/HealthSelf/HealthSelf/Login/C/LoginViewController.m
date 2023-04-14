@@ -55,6 +55,11 @@
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveUserMessage:) name:@"userMessage" object:nil];
 }
+// 给其他界面传token
+- (void)sentToken {
+    NSLog(@"send");
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"sendToken" object:nil userInfo:self.dictionaryPostUser];
+}
 #pragma mark DelegateButton
 - (void)returnButton:(UIButton *)button {
     if (button.tag == 0) {
@@ -62,22 +67,7 @@
          Login函数和后台交互判断是否能登陆
          */
         [self Login];
-        if (self.isLogin == 1) {
-            [self ToMainView];
-        } else if (self.isLogin == 0) {
-            UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户不存在!" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-            [_alert addAction:sure];
-            [self presentViewController:_alert animated:YES completion:nil];
-//            NSLog(@"用户不存在");
-        } else {
-            UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码错误!" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
-            [_alert addAction:sure];
-            [self presentViewController:_alert animated:YES completion:nil];
-//            NSLog(@"密码错误");
-        }
-    }  else {
+    } else {
         self.ViewConRegistr = [[RegisterViewController alloc] init];
         [self.navigationController pushViewController:self.ViewConRegistr animated:YES];
     }
@@ -91,18 +81,35 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 - (void)Login {
-    NSLog(@"%@", self.dictionaryUser);
-//    [self postJsonToServe];
-    if ([self.dictionaryUser[@"username"] isEqualToString:@"15592498106"] && [self.dictionaryUser[@"password"] isEqualToString:@"123456"]) {
-        self.isLogin = 1;
-    } else {
-        if ([self.dictionaryUser[@"userName"] isEqualToString:@"15592498106"]) {
-            self.isLogin = 1;
-        } else {
-            self.isLogin = 1;
-        }
-    }
+    [self postJsonToServe];
 }
+- (void)login2 {
+    if ([self.dictionaryPostUser[@"total"] intValue] == 1) {
+        self.isLogin = 1;
+    } else if ([self.dictionaryPostUser[@"total"] intValue] == 0) {
+        self.isLogin = 0;
+    } else {
+        self.isLogin = 2;
+    }
+    if (self.isLogin == 1) {
+        [self ToMainView];
+        
+    } else if (self.isLogin == 0) {
+        UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户不存在!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [_alert addAction:sure];
+        [self presentViewController:_alert animated:YES completion:nil];
+        //            NSLog(@"用户不存在");
+    } else {
+        UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码错误!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [_alert addAction:sure];
+        [self presentViewController:_alert animated:YES completion:nil];
+        //            NSLog(@"密码错误");
+    }
+    NSLog(@"%ld", self.isLogin);
+}
+   
 #pragma mark POST
 /*
      后台要的是json数据
@@ -115,11 +122,12 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"http://43.143.248.30:8082/login" parameters:self.dictionaryUser headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://43.143.248.30:8082/user/login" parameters:self.dictionaryUser headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
         self.dictionaryPostUser = responseObject;
+        [self login2];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error");
+        NSLog(@"error_LoginMessage Failed");
     }];
 }
 #pragma mark 跳转主界面函数
@@ -175,6 +183,10 @@
     // 一句话设置选中状态下的颜色
     self.viewControllerCommityShare.tabBarController.tabBar.tintColor = backGreen;
     self.viewControllerCommityShare.tabBarItem = tabBarCommt;
+    
+    
+    self.viewControllerCommityShare.token = self.dictionaryPostUser[@"data"];
+    NSLog(@"%@",  self.dictionaryPostUser[@"data"]);
 }
 /*
 #pragma mark - Navigation

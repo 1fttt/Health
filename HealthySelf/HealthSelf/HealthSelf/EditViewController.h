@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface EditViewController : UIViewController
+@property (nonatomic, strong) NSString *token;
 
 @end
 

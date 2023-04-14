@@ -7,6 +7,7 @@
 
 #import "EditViewController.h"
 #import "EditView.h"
+#import <AFNetworking/AFNetworking.h>
 #import <Masonry.h>
 #define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight  [UIScreen mainScreen].bounds.size.height
@@ -34,6 +35,7 @@
      注册观察者，接收通知
      */
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tapAvator) name:@"Camare" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postEdit:) name:@"sendToken" object:nil];
 }
 #pragma mark button
 - (void)returnButton:(UIButton *)button {
@@ -80,8 +82,8 @@
 - (void)correctText {
     self.timeAlter = [UIAlertController alertControllerWithTitle:@"提示" message:@"发布成功！快去看看吧" preferredStyle:UIAlertControllerStyleAlert];
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeOut) userInfo:nil repeats:NO];
-    
     [self presentViewController:self.timeAlter animated:YES completion:nil];
+    [self POSTCmtMsg];
     if (self.isSelectImage == 0) {
         NSLog(@"不包含图片的分享");
     } else {
@@ -140,6 +142,18 @@
     self.editView.imageViewAvatar.image = image;
     self.isSelectImage = 1;
     // 选中图片之后才调用，cancel不调用
+}
+- (void)POSTCmtMsg {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    NSDictionary *header = @{@"authorization": self.token};
+    NSDictionary *postEditDict = @{@"title":self.editView.titleTextField.text, @"images":@"WechatIMG39.jpeg", @"content":@""};
+    [manager POST:@"http://43.143.248.30:8082/blog" parameters:postEditDict headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@", responseObject);
+        //timer
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"ERROR_Edit%@", error);
+    }];
 }
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

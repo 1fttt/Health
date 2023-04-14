@@ -32,11 +32,11 @@
 @end
 @implementation CommitShareView
 - (void)viewInit {
-    self.userImgaeArray = @[@"IMG_2400.JPG", @"WechatIMG421.jpeg", @"WechatIMG420.jpeg"];
-    self.userIdArray = @[@"Viper3冲冲冲", @"吃不胖的阿道", @"营养日历"];
-    self.userTitleArray = @[@"健身专家", @"专业美食博主", @"Healthy官方日历"];
-    self.userCommentArray = @[@"快乐在发酵，生活在前行，所有的美好都在路上。", @"今天吃了一份热量炸弹，感觉不错，希望我在减肥路上越走越远。", @"今日营养日历：蛋白棒-抗饿饱腹补营养，轻负美味又便捷！"];
-    self.userTxtImageArray = @[@"WechatIMG414.jpeg", @"WechatIMG423.jpeg", @"WechatIMG419.jpeg"];
+    self.userImgaeArray = @[@"IMG_2400.JPG", @"WechatIMG421.jpeg", @"WechatIMG420.jpeg", @"touxiang.JPG"];
+    self.userIdArray = @[@"Viper3冲冲冲", @"吃不胖的阿道", @"营养日历", @"不知江月待何人"];
+    self.userTitleArray = @[@"健身专家", @"专业美食博主", @"Healthy官方日历", @"iOS混子"];
+    self.userCommentArray = @[@"快乐在发酵，生活在前行，所有的美好都在路上。", @"今天吃了一份热量炸弹，感觉不错，希望我在减肥路上越走越远。", @"今日营养日历：蛋白棒-抗饿饱腹补营养，轻负美味又便捷！", @"在录演示视频，吃个鱼！"];
+    self.userTxtImageArray = @[@"WechatIMG414.jpeg", @"WechatIMG423.jpeg", @"WechatIMG419.jpeg", @"WechatIMG39.jpeg"];
     [self setTopView];
     [self creatTableView];
 }
@@ -64,9 +64,9 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return  1;
+        return 1;
     } else {
-        return 3;
+        return 4;
     }
     return 0;
 }

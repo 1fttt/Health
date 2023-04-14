@@ -63,7 +63,9 @@
     }
 }
 - (void)toEditView {
+    
     EditViewController *editVC = [[EditViewController alloc] init];
+    editVC.token = self.token;
     [self presentViewController:editVC animated:YES completion:nil];
 }
 /*

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CommitShareViewConreoller : UIViewController
+@property (nonatomic, strong) NSString *token;
 
 @end
 

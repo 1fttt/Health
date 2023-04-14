@@ -156,12 +156,16 @@
     NSDictionary *Body = @{@"image":imageBase64Str};
     NSDictionary *header = @{@"Content-Type":@"application/x-www-form-urlencoded"};
     [manager POST:url parameters:Body headers:header progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", responseObject);
+//        NSLog(@"%@", responseObject);
+//        NSLog(@"%@-%@", responseObject[@"result"][0][@"keyword"], responseObject[@"result"][0][@"root"]);
+        UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"查询成功" message:@"面食-热量：500千卡-推荐中午食用-黄灯🍜" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [_alert addAction:sure];
+        [self presentViewController:_alert animated:YES completion:nil];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"图片查找失败");
     }];
 }
-
 #pragma mark NetRequest
 - (void)searchCategoryRequest:(NSInteger)categoryString {
     //创建会话管理者

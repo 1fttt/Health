@@ -70,17 +70,17 @@ NSInteger myTIme;
 }
 // 发送服务器获取验证码
 - (void)POSTJSONToServe {
-    self.userTelDictionary = @{@"telNumber":self.viewRegister.textFieldTelNumber.text};
+    self.userTelDictionary = @{@"username":self.viewRegister.textFieldTelNumber.text};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"" parameters:self.userTelDictionary headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    NSLog(@"%@", self.userTelDictionary);
+    [manager POST:@"http://43.143.248.30:8082/user/sendMail" parameters:self.userTelDictionary headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        self.userVerificationCodeDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+        self.userVerificationCodeDict = responseObject;
         //timer
         myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeDel) userInfo:nil repeats:YES];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"error");
+        NSLog(@"error_RegisterMessage");
+        NSLog(@"%@", error);
         myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timeDel) userInfo:nil repeats:YES];
     }];
 }
@@ -92,7 +92,7 @@ NSInteger myTIme;
     NSString *strCode = self.viewRegister.textFieldVerificationCode.text;
     NSString *strPassWord = self.viewRegister.textFieldPassWord.text;
     NSString *strPassSureWord = self.viewRegister.textFieldSurePassWord.text;
-    if ([strCode isEqualToString:self.userVerificationCodeDict[@"code"]] && ([strPassWord isEqualToString:strPassSureWord] == 1)) {
+    if ([strCode isEqualToString:self.userVerificationCodeDict[@"data"]] && ([strPassWord isEqualToString:strPassSureWord] == 1)) {
         self.isAllowRegister = 1;
     }
 }
@@ -108,13 +108,12 @@ NSInteger myTIme;
 - (void)succeedRegisterPOST {
     NSString *strUsername = self.viewRegister.textFieldTelNumber.text;
     NSString *strPassWord = self.viewRegister.textFieldPassWord.text;
-    self.userMessageDictionary = @{@"userName":strUsername, @"passWord":strPassWord};
+    self.userMessageDictionary = @{@"username":strUsername, @"password":strPassWord};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"" parameters:self.userMessageDictionary headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager POST:@"http://43.143.248.30:8082/user/register" parameters:self.userMessageDictionary headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
-        self.userVerificationCodeDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"注册失败");
     }];

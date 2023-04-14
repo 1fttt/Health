@@ -16,5 +16,53 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15B4C741-A46C-4CC6-8DC2-FA8739B074E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthSelf/Register/C/RegisterViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-POSTJSONToServe"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "15B4C741-A46C-4CC6-8DC2-FA8739B074E3 - a0301f1136011e9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RegisterViewController POSTJSONToServe]"
+                  moduleName = "HealthSelf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liyuteng/Desktop/Health/HealthySelf/HealthSelf/HealthSelf/Register/C/RegisterViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "15B4C741-A46C-4CC6-8DC2-FA8739B074E3 - ed9b5ed5eeabb2c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[RegisterViewController POSTJSONToServe]_block_invoke"
+                  moduleName = "HealthSelf"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liyuteng/Desktop/Health/HealthySelf/HealthSelf/HealthSelf/Register/C/RegisterViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -224,6 +224,10 @@
         NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"图片查找失败");
+        UIAlertController *_alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您当前在黑夜，分析结果可能与实际不符。肤质：健康，推荐阳光下进行拍照" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [_alert addAction:sure];
+        [self presentViewController:_alert animated:YES completion:nil];
     }];
 }
 - (void)dealloc {

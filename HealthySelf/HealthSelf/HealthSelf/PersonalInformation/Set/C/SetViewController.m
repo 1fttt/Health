@@ -6,7 +6,7 @@
 //
 
 #import "SetViewController.h"
-
+#import "LoginViewController.h"
 @interface SetViewController ()
 
 @end
@@ -21,10 +21,16 @@
     self.setModel = [[SetModel alloc] init];
     
     [self.setView.backButton addTarget:self action:@selector(pressBackButton) forControlEvents:UIControlEventTouchUpInside];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(Exit) name:@"Exit" object:nil];
 }
 
 - (void)pressBackButton {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)Exit {
+    LoginViewController *lg = [[LoginViewController alloc] init];
+    UIWindow *keyWindow = self.view.window.windowScene.keyWindow;
+    keyWindow.rootViewController = lg;
 }
 /*
 #pragma mark - Navigation
